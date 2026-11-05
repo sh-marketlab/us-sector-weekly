@@ -1,0 +1,38 @@
+name: update-data
+
+on:
+  schedule:
+    # 美東收盤後 40 分鐘（UTC 21:40 = 台北隔日 05:40；夏令時間也在收盤後）
+    - cron: "40 21 * * 4,5"
+  workflow_dispatch:
+    inputs:
+      session:
+        description: "thu / fri / auto"
+        default: "auto"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q tests
+      - run: python scripts/fetch_data.py --session "${{ github.event.inputs.session || 'auto' }}"
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+          git diff --cached --quiet || git commit -m "data: $(date -u +%F) session update"
+          git pull --rebase origin main
+          git push
