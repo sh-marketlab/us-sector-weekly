@@ -263,6 +263,14 @@ def main() -> None:
         "us": us,
         "taiwan": tw,
     }
+    # 聯準會資產負債表與資金市場（失敗不影響週報主體）
+    try:
+        from liquidity import build_liquidity
+        out["liquidity"] = build_liquidity()
+    except Exception as e:  # noqa: BLE001
+        print(f"[warn] liquidity: {type(e).__name__} {e}")
+        out["liquidity"] = {"error": f"流動性資料未取得（{type(e).__name__}）"}
+
     DATA.mkdir(parents=True, exist_ok=True)
     (DATA / "history").mkdir(exist_ok=True)
     txt = json.dumps(out, ensure_ascii=False, indent=1, allow_nan=False, default=str)

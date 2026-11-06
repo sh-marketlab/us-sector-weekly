@@ -29,31 +29,82 @@
   "groups": {
     "megacap": {
       "name": "科技巨頭",
-      "tickers": ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"]
+      "tickers": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "META",
+        "NVDA",
+        "TSLA"
+      ]
     },
     "semis": {
       "name": "半導體",
-      "tickers": ["SMH", "SOXX", "NVDA", "AVGO", "AMD", "TSM", "MU", "ASML"]
+      "tickers": [
+        "SMH",
+        "SOXX",
+        "NVDA",
+        "AVGO",
+        "AMD",
+        "TSM",
+        "MU",
+        "ASML"
+      ]
     },
     "defensive": {
       "name": "防禦（金融·必需·食品水）",
-      "tickers": ["XLF", "XLP", "PHO", "KO", "PG", "JPM"]
+      "tickers": [
+        "XLF",
+        "XLP",
+        "PHO",
+        "KO",
+        "PG",
+        "JPM"
+      ]
     },
     "energy": {
       "name": "能源",
-      "tickers": ["XLE", "XOP", "XOM", "CVX"]
+      "tickers": [
+        "XLE",
+        "XOP",
+        "XOM",
+        "CVX"
+      ]
     },
     "frontier": {
       "name": "太空·量子·長壽",
-      "tickers": ["UFO", "RKLB", "IONQ", "RGTI", "QBTS", "LLY"]
+      "tickers": [
+        "UFO",
+        "RKLB",
+        "IONQ",
+        "RGTI",
+        "QBTS",
+        "LLY"
+      ]
     },
     "ai_software": {
       "name": "AI 軟體與資安",
-      "tickers": ["IGV", "CIBR", "PLTR", "CRWD", "PANW", "NOW"]
+      "tickers": [
+        "IGV",
+        "CIBR",
+        "PLTR",
+        "CRWD",
+        "PANW",
+        "NOW"
+      ]
     },
     "dc_grid": {
       "name": "資料中心與電網",
-      "tickers": ["GRID", "VRT", "ETN", "PWR", "CEG", "VST", "EQIX"]
+      "tickers": [
+        "GRID",
+        "VRT",
+        "ETN",
+        "PWR",
+        "CEG",
+        "VST",
+        "EQIX"
+      ]
     }
   },
   "taiwan": {
@@ -62,13 +113,55 @@
       "^TWOII": "櫃買指數"
     },
     "fx": "TWD=X",
-    "adr": {"us": "TSM", "tw": "2330.TW", "ratio": 5},
+    "adr": {
+      "us": "TSM",
+      "tw": "2330.TW",
+      "ratio": 5
+    },
     "mapping": {
-      "semis": {"name": "台股半導體", "tickers": ["2330.TW", "2454.TW", "2303.TW", "3711.TW"]},
-      "megacap": {"name": "台股 AI 伺服器", "tickers": ["2382.TW", "2317.TW", "3231.TW", "6669.TW"]},
-      "dc_grid": {"name": "台股重電·散熱", "tickers": ["1513.TW", "1519.TW", "1503.TW", "3017.TW", "3324.TWO"]},
-      "ai_software": {"name": "台股網通", "tickers": ["2345.TW", "5388.TWO"]},
-      "defensive": {"name": "台股金融", "tickers": ["2881.TW", "2882.TW", "2891.TW"]}
+      "semis": {
+        "name": "台股半導體",
+        "tickers": [
+          "2330.TW",
+          "2454.TW",
+          "2303.TW",
+          "3711.TW"
+        ]
+      },
+      "megacap": {
+        "name": "台股 AI 伺服器",
+        "tickers": [
+          "2382.TW",
+          "2317.TW",
+          "3231.TW",
+          "6669.TW"
+        ]
+      },
+      "dc_grid": {
+        "name": "台股重電·散熱",
+        "tickers": [
+          "1513.TW",
+          "1519.TW",
+          "1503.TW",
+          "3017.TW",
+          "3324.TWO"
+        ]
+      },
+      "ai_software": {
+        "name": "台股網通",
+        "tickers": [
+          "2345.TW",
+          "5388.TWO"
+        ]
+      },
+      "defensive": {
+        "name": "台股金融",
+        "tickers": [
+          "2881.TW",
+          "2882.TW",
+          "2891.TW"
+        ]
+      }
     }
   },
   "rules": {
@@ -76,5 +169,9 @@
     "lean_rs_pp": 0.3,
     "volume_spike": 1.5,
     "_note": "☆ 自訂、無外部參考點的門檻：強勢=週內相對SPY ≥+1.0pp 且當日資金分數>0；偏強=≥+0.3pp；弱勢=≤−1.0pp 且當日資金分數<0；偏弱=≤−0.3pp；其餘中性。由上往下依序判定。量比≥1.5 標示放量。"
+  },
+  "liquidity": {
+    "iorb_minus_upper": -0.1,
+    "_note": "IORB＝聯邦基金目標區間上限＋此值（百分點）；FOMC 調整技術性設定時修改"
   }
 }

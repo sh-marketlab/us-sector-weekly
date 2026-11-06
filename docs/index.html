@@ -366,6 +366,9 @@ function render(D, C){
   const mc = us.macro.map(m => `<div class="card"><div class="k">${esc(m.name)}</div><div class="v num">${f(m.value)}</div><div class="d">${m.day_bp !== undefined ? `當日 <span class="${cls(m.day_bp)}">${sg(m.day_bp,1,"bp")}</span>` : `當日 <span class="${cls(m.day_pct)}">${sg(m.day_pct)}</span>`} · 週內 <span class="${cls(m.wtd_pct)}">${sg(m.wtd_pct)}</span></div></div>`).join("");
   h += `<h3>總經背景 — 利率、美元、恐慌、商品</h3><div class="cards">${mc}</div>`;
 
+  // 資金足跡（聯準會 H.4.1、資金市場、財政部）
+  h += sec("資金足跡 — 聯準會資產負債表與財政部", renderLiq(D, C0));
+
   // 接下來
   if (C0.watch && C0.watch.length){
     h += sec("接下來要看的日程與信號", `<div class="tablewrap"><table><tr><th>日期</th><th>事件</th><th>為什麼重要</th></tr>${C0.watch.map(w => `<tr><td class="l" style="white-space:nowrap">${esc(w.date)}</td><td class="l">${rich(w.what)}</td><td class="l">${rich(w.why)}</td></tr>`).join("")}</table></div>${C0.thresholds ? `<p><b>觀察警戒線（☆ 自訂）：</b>${rich(C0.thresholds)}</p>` : ""}`);
@@ -387,11 +390,40 @@ function render(D, C){
   const src = [
     {name: "Yahoo Finance", note: "美股、台股、匯率、商品日收盤與成交量（經 yfinance）"},
     {name: "臺灣證券交易所 BFI82U", note: "三大法人買賣金額統計"},
+    {name: "聯準會 H.4.1、紐約聯準銀行、美國財政部、CFTC", note: "資金足跡區塊；完整出處見資金足跡週報頁"},
     ...(C0.sources || [])
   ];
   h += sec("出處", `<ul class="bul">${src.map(s => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name)}${s.note ? `：${rich(s.note)}` : ""}</li>`).join("")}</ul>`);
   h += `<footer>由 GitHub Actions 自動更新數據、Claude 排程寫入新聞解讀。本頁僅供研究參考，非投資建議。</footer>`;
   $("#main").innerHTML = h;
+}
+
+function renderLiq(D, C0){
+  const L = D.liquidity, key = `${D.session_date}-${D.session}`;
+  if (!L) return `<div class="empty">這一期沒有流動性資料（此功能自 2026-11 起加入）。</div>`;
+  const H = L.h41 || {}, card = k => (H.cards || []).find(c => c.key === k) || {};
+  const rate = n => (L.rates || []).find(x => x.name === n) || {};
+  const SC = {"正常":"#2f9a72","注意":"#e8a23a","警告":"#d1453b","方向":"#8b9690"}, SI = {"正常":"●","注意":"▲","警告":"■","方向":"○"};
+  const sp = s => s ? pill(`${SI[s] || ""} ${s === "方向" ? "只記方向" : s}`, SC[s] || "#999") : "";
+  const B = v => nz(v) ? Number(v).toLocaleString("en-US", {maximumFractionDigits: 1, minimumFractionDigits: 1}) : "—";
+  const c = (t, v, u, d, s) => `<div class="card"><div class="k">${t} ${sp(s)}</div><div class="v num">${v}<small style="font-size:.5em">${u}</small></div><div class="d">${d}</div></div>`;
+  const res = card("reserves"), tga = card("tga"), rrp = card("rrp_others"), nl = H.net_liquidity || {}, so = rate("SOFR－IORB（bp）");
+  const hy = rate("高收益債利差"), hs = ((L.market || {}).credit || [])[0] || {};
+  let h = H.error ? `<div class="empty">${esc(H.error)}</div>` : "";
+  h += C0.liquidity_lede ? `<div class="callout">${rich(C0.liquidity_lede)}</div>` : `<p>沿著聯準會 H.4.1（${md(H.week)} 當週）看資金去了哪裡：準備金是銀行體系的「剩餘資金」，TGA 是財政部的金庫，國內逆回購是 MMF 的閒錢緩衝墊。</p>`;
+  h += `<div class="cards">` +
+    c("銀行準備金（週平均）", B(res.avg), " B", `週變化 <span class="${cls(res.chg_wk)}">${sg(res.chg_wk,1,"")}</span> · 一年位置 ${res.pct ?? "—"}%`, res.signal) +
+    c("TGA（週三）", B(tga.wed), " B", `週平均 <span class="${cls(tga.chg_wk)}">${sg(tga.chg_wk,1,"")}</span> · 一年位置 ${tga.pct ?? "—"}%`, tga.signal) +
+    c("國內逆回購（週三）", B(rrp.wed), " B", "緩衝墊；低於 100 B 視為耗盡", rrp.signal) +
+    c("淨流動性（週三）", B(nl.level), " B", `一週 <span class="${cls(nl.chg)}">${sg(nl.chg,1,"")}</span>（計算）`, null) +
+    c("SOFR－IORB", nz(so.value) ? so.value.toFixed(0) : "—", " bp", `一年位置 ${so.pct ?? "—"}%`, so.signal) +
+    (nz(hy.value) ? c("高收益債利差", hy.value.toFixed(2), "%", `一年位置 ${hy.pct ?? "—"}%`, hy.signal)
+                  : c("HYG/SHY", nz(hs.value) ? hs.value.toFixed(4) : "—", "", `一年位置 ${hs.pct ?? "—"}%`, hs.signal)) + `</div>`;
+  if (C0.liquidity_chain && C0.liquidity_chain.length) h += `<div class="panel"><div class="chain">${C0.liquidity_chain.map((s, i) => `${i ? '<div class="arr">▶</div>' : ""}<div class="step" style="border-color:${s.color || "#2f7d6b"}"><div class="h" style="background:${s.color || "#2f7d6b"}">${esc(s.title)}</div><div class="b">${rich(s.detail)}</div></div>`).join("")}</div></div>`;
+  if (C0.qra_note) h += `<p><b>財政部 QRA：</b>${rich(C0.qra_note)}</p>`;
+  h += plainBox(C0.plain_liquidity);
+  h += `<p><a href="liquidity.html?r=${esc(key)}"><b>→ 打開完整「資金足跡週報」</b></a>：H.4.1 五步驟、準備金瀑布圖、四週趨勢、TGA 情境、利率階梯、信用與金融情勢、公債標售、MMF、CFTC、QRA、預測答案表。</p>`;
+  return h;
 }
 
 function renderTW(D, tw, C0){

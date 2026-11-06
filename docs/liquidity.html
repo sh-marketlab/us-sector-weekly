@@ -187,7 +187,7 @@ function render(D, L, C, key){
   // 標售與交易商
   const A = L.auctions || [];
   h += sec("auctions", "本週公債標售 — 投標倍數與需求強度", A.length ? `<div class="two"><div class="panel">${hbars(A.map(x => ({...x, lab: `${md(x.date)} ${x.term}`})), "btc", "lab")}<p class="note">☆ 自訂：高於 3 倍強、2.5–3 倍普通、低於 2.5 倍偏弱。</p></div><div>${tbl(["日期", "期限", "規模", "得標利率", "倍數", "交易商", "間接"], A.map(x => `<tr><td>${md(x.date)}</td><td class="l">${esc(x.term)}${x.reopening === "Yes" ? "（增額）" : ""}</td><td class="num">${f(x.size_b, 0)}</td><td class="num">${nz(x.rate) ? x.rate.toFixed(3) + "%" : "—"}</td><td class="num"><b>${f(x.btc, 2)}</b></td><td class="num">${nz(x.dealer_pct) ? f(x.dealer_pct, 1) + "%" : "—"}</td><td class="num">${nz(x.indirect_pct) ? f(x.indirect_pct, 1) + "%" : "—"}</td></tr>`))}</div></div>` : empty("標售資料未取得")) +
-    (L.dealers && (L.dealers.positions || []).length ? `<h3>主要交易商公債部位（${md(L.dealers.asof)}，十億美元）</h3>${tbl(["代號", "說明", "部位"], L.dealers.positions.map(x => `<tr><td class="l small">${esc(x.key)}</td><td class="l small">${esc(x.desc)}</td><td class="num">${B(x.value_b)}</td></tr>`))}` : "") +
+    (L.dealers && (L.dealers.positions || []).length ? `<h3>主要交易商公債部位（${md(L.dealers.asof)}，十億美元）</h3>${tbl(["項目", "淨部位", "較前週"], L.dealers.positions.map(x => `<tr><td class="l">${esc(x.desc)}</td><td class="num ${cls(x.value_b)}">${sg(x.value_b)}</td><td class="num ${cls(x.chg_b)}">${sg(x.chg_b)}</td></tr>`)) + `<p class="note">淨部位＝多頭－空頭。交易商大量持有公債（正值擴大）代表被動吸收供給的壓力。</p>`}` : "") +
     (C0.auction_note ? `<p>${rich(C0.auction_note)}</p>` : "");
 
   // MMF

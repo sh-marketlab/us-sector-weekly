@@ -350,7 +350,7 @@ def fred(series_id: str, start: str) -> pd.Series | None:
     return s.dropna()
 
 
-def ind(name, s: pd.Series | None, *, unit="%", d=2, bad=None, fixed=None, chg_unit="bp", group="", note="", star_note=True):
+def ind(name, s: pd.Series | None, *, unit="%", d=2, bad=None, fixed=None, chg_unit="bp", group="", note="", max_age=21):
     """一般指標卡：目前值、一週變化、一年位置與判定。"""
     if s is None or not len(s.dropna()):
         return {"name": name, "group": group, "value": None, "signal": None, "note": note or "資料未取得"}
@@ -361,6 +361,8 @@ def ind(name, s: pd.Series | None, *, unit="%", d=2, bad=None, fixed=None, chg_u
     p = pct_rank(yr.tolist(), v)
     chg = None if wk is None else (v - wk) * (100 if chg_unit == "bp" else 1)
     sig = worse(pct_signal(p, bad) if bad else None, fixed(v) if fixed else None)
+    if (pd.Timestamp(date.today()) - dt).days > max_age:
+        sig, note = "方向", f"{note}；⚠ 資料停在 {dt:%Y-%m-%d}，來源未更新，暫不判定".lstrip("；")
     return {"name": name, "group": group, "value": r(v, d), "unit": unit, "date": dt.strftime("%Y-%m-%d"),
             "chg_wk": r(chg, 1 if chg_unit == "bp" else d), "chg_unit": chg_unit, "pct": p,
             "lo": r(yr.min(), d), "hi": r(yr.max(), d), "signal": sig or "方向", "note": note}
@@ -388,15 +390,26 @@ def auctions(days: int = 9) -> list[dict]:
             btc = _num(x.get("bidToCoverRatio"))
             if btc is None:
                 continue
-            comp = _num(x.get("competitiveAccepted")) or _num(x.get("totalAccepted"))
-            pd_acc, ind_acc = _num(x.get("primaryDealerAccepted")), _num(x.get("indirectBidderAccepted"))
-            out.append({"date": (x.get("auctionDate") or "")[:10], "type": x.get("securityType"), "term": x.get("securityTerm"),
+            pdw = _num(x.get("primaryDealersCompetitiveParAwarded")) or 0
+            ind_ = _num(x.get("indirectBiddersCompetitiveParAwarded")) or 0
+            dr = _num(x.get("directBiddersCompetitiveParAwarded")) or 0
+            comp = pdw + ind_ + dr
+            term = x.get("securityTerm") or ""
+            if x.get("floatingRate") == "Yes":
+                term += " FRN"
+            if x.get("inflationProtected") == "Yes":
+                term += " TIPS"
+            if x.get("cashManagementBill") == "Yes":
+                term += " CMB"
+            out.append({"date": (x.get("competitiveAuctionCloseDate") or x.get("auctionDate") or "")[:10],
+                        "type": x.get("securityType"), "term": term,
                         "size_b": r((_num(x.get("offeringAmount")) or 0) / 1e9, 1),
-                        "rate": _num(x.get("highYield")) or _num(x.get("highInvestmentRate")) or _num(x.get("highDiscountRate")),
+                        "rate": _num(x.get("highYield")) or _num(x.get("investmentRate")) or _num(x.get("highRate"))
+                                or _num(x.get("highDiscountMargin")),
                         "btc": r(btc, 2), "band": bid_to_cover_band(btc),
-                        "dealer_pct": r(100 * pd_acc / comp, 1) if pd_acc and comp else None,
-                        "indirect_pct": r(100 * ind_acc / comp, 1) if ind_acc and comp else None,
-                        "reopening": x.get("reopening"), "cmb": x.get("cashManagementBillCMB")})
+                        "dealer_pct": r(100 * pdw / comp, 1) if comp else None,
+                        "indirect_pct": r(100 * ind_ / comp, 1) if comp else None,
+                        "reopening": x.get("reopening")})
     except Exception as e:  # noqa: BLE001
         log(f"TreasuryDirect 標售失敗：{e}")
     out.sort(key=lambda x: x["date"])
@@ -428,17 +441,22 @@ def cftc() -> list[dict]:
     return out
 
 
+PD_KEYS = [("PDPOSGST-TOT", "公債合計（不含 TIPS）"), ("PDPOSGS-B", "Bills"), ("PDPOSGSC-L2", "附息 2 年內"), ("PDPOSGSC-G2L3", "附息 2–3 年"),
+           ("PDPOSGSC-G3L6", "附息 3–6 年"), ("PDPOSGSC-G6L7", "附息 6–7 年"), ("PDPOSGSC-G7L11", "附息 7–11 年"),
+           ("PDPOSGSC-G11L21", "附息 11–21 年"), ("PDPOSGSC-G21", "附息 21 年以上"), ("PDPOSGS-BFRN", "FRN")]
+
+
 def primary_dealers() -> dict | None:
-    lst = get("https://markets.newyorkfed.org/api/pd/list/timeseries.json").json()["pd"]["timeseries"]
-    desc = {x["keyid"]: x["description"] for x in lst if x.get("seriesbreak") == "SBN2024"}
+    """紐約聯準銀行主要交易商淨部位（多−空，百萬美元→十億），代號後綴 C＝較前週變化。"""
     latest = get("https://markets.newyorkfed.org/api/pd/latest/SBN2024.json").json()["pd"]["timeseries"]
     val = {x["keyid"]: (_num(x.get("value")), x.get("asofdate")) for x in latest}
     pick = []
-    for k, dsc in desc.items():
-        if k.startswith("PDPOS") and "U.S. Treasury" in dsc and "TIPS" not in dsc and k in val and val[k][0] is not None:
-            pick.append({"key": k, "desc": dsc, "value_b": r(val[k][0] / 1000, 1), "asof": val[k][1]})
-    pick.sort(key=lambda x: x["key"])
-    return {"asof": pick[0]["asof"] if pick else None, "positions": pick[:12]} if pick else None
+    for k, nm in PD_KEYS:
+        if k in val and val[k][0] is not None:
+            ch = val.get(k + "C", (None, None))[0]
+            pick.append({"key": k, "desc": nm, "value_b": r(val[k][0] / 1000, 1), "chg_b": r(ch / 1000, 1) if ch is not None else None,
+                         "asof": val[k][1]})
+    return {"asof": pick[0]["asof"], "positions": pick} if pick else None
 
 
 # ============================================================ 市場內部、全球、商品（Yahoo）
@@ -574,7 +592,7 @@ def build_liquidity() -> dict:
             s = fred(sid, start)
             if s is not None and sid == "RESPPLLOPNWW":
                 s = s / 1000.0
-            rates_block.append(ind(nm, s, group="FRED（選用）", **kw) if s is not None else
+            rates_block.append(ind(nm, s, group="FRED（選用）", max_age=60, **kw) if s is not None else
                                {"name": nm, "group": "FRED（選用）", "value": None, "note": "未設定 FRED_API_KEY，資料未取得"})
         except Exception as e:  # noqa: BLE001
             log(f"FRED {sid} 失敗：{e}")

@@ -28,6 +28,8 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python -m pytest -q tests
       - run: python scripts/fetch_data.py --session "${{ github.event.inputs.session || 'auto' }}"
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
