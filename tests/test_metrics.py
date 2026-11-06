@@ -61,3 +61,19 @@ def test_signal(rs, flow, exp):
 def test_adr_premium():
     # 台股 1000 元 ×5 ÷ 32 = 156.25 美元；ADR 171.875 → 溢價 10%
     assert adr_premium(171.875, 1000, 32, 5) == pytest.approx(10.0)
+
+
+def test_expected_session_date():
+    from datetime import date, datetime
+    from metrics import expected_session_date
+    hol = {date(2026, 11, 26)}
+    # 週四 21:20 ET（收盤後）→ 當天
+    assert expected_session_date(datetime(2026, 11, 5, 21, 20), hol) == date(2026, 11, 5)
+    # 週四 15:00 ET（盤中）→ 前一交易日
+    assert expected_session_date(datetime(2026, 11, 5, 15, 0), hol) == date(2026, 11, 4)
+    # 週六 → 週五
+    assert expected_session_date(datetime(2026, 11, 7, 10, 0), hol) == date(2026, 11, 6)
+    # 感恩節週四晚上 → 週三
+    assert expected_session_date(datetime(2026, 11, 26, 20, 0), hol) == date(2026, 11, 25)
+    # 週一早上 → 上週五
+    assert expected_session_date(datetime(2026, 11, 9, 8, 0), hol) == date(2026, 11, 6)

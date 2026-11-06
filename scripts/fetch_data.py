@@ -22,7 +22,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from metrics import (adr_premium, confirm_verdict, mean_or_none, pct, session_metrics,  # noqa: E402
-                     signal, thursday_index, _r)
+                     expected_session_date, signal, thursday_index, _r)
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "docs" / "data"
@@ -220,6 +220,7 @@ def build_tw(px: dict, us_date: pd.Timestamp, us_groups: list[dict]) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--session", choices=["thu", "fri", "auto"], default="auto")
+    ap.add_argument("--allow-stale", action="store_true", help="資料過期也照寫（除錯用）")
     args = ap.parse_args()
 
     us_t = [*CFG["indices"], *CFG["macro"], *CFG["sectors"], CFG["taiwan"]["adr"]["us"]]
@@ -232,7 +233,16 @@ def main() -> None:
     px = download(us_t + tw_t)
     spy = px[CFG["benchmark"]]
     session_date = spy.index[-1]
-    today_et = datetime.now(ET).date()
+    now_et = datetime.now(ET)
+    today_et = now_et.date()
+
+    # 新鮮度檢查：Yahoo 還沒補上最近交易日的日K時，直接失敗、不寫檔（避免被誤判成休市）
+    import holidays
+    nyse = holidays.financial_holidays("NYSE", years=[today_et.year - 1, today_et.year])
+    expected = expected_session_date(now_et.replace(tzinfo=None), set(nyse.keys()))
+    if session_date.date() < expected and not args.allow_stale:
+        print(f"::error::STALE_DATA: SPY 最後一根日K是 {session_date.date()}，預期 {expected}（Yahoo 尚未更新）。不寫檔。")
+        sys.exit(2)
 
     session = args.session
     if session == "auto":
@@ -248,7 +258,7 @@ def main() -> None:
         "session": session,
         "session_date": session_date.strftime("%Y-%m-%d"),
         "thu_date": thu_date.strftime("%Y-%m-%d") if thu_date is not None else None,
-        "market_closed_today": session_date.date() != today_et and today_et.weekday() < 5,
+        "market_closed_today": today_et.weekday() < 5 and today_et in nyse,
         "rules_note": CFG["rules"]["_note"],
         "us": us,
         "taiwan": tw,

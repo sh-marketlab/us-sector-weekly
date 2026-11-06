@@ -98,3 +98,23 @@ def adr_premium(us_px: float, tw_px: float, usdtwd: float, ratio: float) -> Opti
 def mean_or_none(vals):
     v = [x for x in vals if x is not None]
     return _r(sum(v) / len(v)) if v else None
+
+
+def expected_session_date(now_et, holidays_set, close_buffer_min: int = 30):
+    """依美東現在時間，推算「應該已經有收盤資料」的最近一個美股交易日。
+
+    收盤（16:00 ET）後 close_buffer_min 分鐘才算當天；週末與 holidays_set 內的日期跳過。
+    """
+    from datetime import time as _time, timedelta as _td
+    d = now_et.date()
+    cutoff = (datetime_combine(d, _time(16, 0)) + _td(minutes=close_buffer_min)).time()
+    if now_et.time() < cutoff:
+        d -= _td(days=1)
+    while d.weekday() >= 5 or d in holidays_set:
+        d -= _td(days=1)
+    return d
+
+
+def datetime_combine(d, t):
+    from datetime import datetime as _dt
+    return _dt.combine(d, t)
