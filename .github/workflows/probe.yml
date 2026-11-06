@@ -10,4 +10,5 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install pandas requests
-      - run: python scripts/probe_liquidity.py
+      - run: python -u scripts/probe_liquidity.py
+        timeout-minutes: 15

@@ -9,9 +9,18 @@ WORAL WREPO WLFN WDFOL WLOFDL SOFR IORB EFFR DFEDTARU DFEDTARL DTB4WK DTB3 DTB6 
 T10Y3M T10Y2Y DFII10 T10YIE BAMLH0A0HYM2 BAMLC0A0CM NFCI STLFSI4 DTWEXBGS WM2NS BUSLOANS ICSA
 H41RESPPALDKNWW H41RESPPALDKXAWNWW RESPPALGUOMNWW WUDSHO WLCFOCEL WFRBCSWAP""".split()
 
-S = requests.Session(); S.headers["User-Agent"] = "us-sector-weekly/1.0"
+S = requests.Session(); S.headers["User-Agent"] = "Mozilla/5.0 (us-sector-weekly research script)"
+for u in ["https://fred.stlouisfed.org/graph/fredgraph.csv?id=WALCL",
+          "https://www.federalreserve.gov/releases/h41/current/h41.htm",
+          "https://www.federalreserve.gov/releases/h41/20261029/",
+          "https://www.federalreserve.gov/datadownload/Choose.aspx?rel=H41"]:
+    t = time.time()
+    try:
+        r = S.get(u, timeout=15); print(f"PING {r.status_code} {len(r.content)}B {time.time()-t:.1f}s {u}", flush=True)
+    except Exception as e:
+        print(f"PING ERR {time.time()-t:.1f}s {u} {e}", flush=True)
 def fred(i):
-    r = S.get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={i}&cosd=2025-09-01", timeout=30)
+    r = S.get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={i}&cosd=2025-09-01", timeout=12)
     if r.status_code != 200 or "DATE" not in r.text[:200].upper():
         return None
     df = pd.read_csv(io.StringIO(r.text)); df.columns = ["d", "v"]
@@ -22,16 +31,16 @@ for i in IDS:
     try:
         s = fred(i)
         if s is None or not len(s):
-            print(f"MISS {i}"); continue
+            print(f"MISS {i}", flush=True); continue
         at = lambda d: s[s.index <= d].iloc[-1] if (s.index <= d).any() else None
-        print(f"OK {i:22s} n={len(s):4d} last={s.index[-1].date()} {s.iloc[-1]:.4f} | 10/28={at('2026-10-28')} 10/21={at('2026-10-21')}")
+        print(f"OK {i:22s} n={len(s):4d} last={s.index[-1].date()} {s.iloc[-1]:.4f} | 10/28={at('2026-10-28')} 10/21={at('2026-10-21')}", flush=True)
     except Exception as e:
-        print(f"ERR {i} {e}")
+        print(f"ERR {i} {e}", flush=True)
     time.sleep(0.3)
 
 def show(name, url):
     try:
-        r = S.get(url, timeout=30); print(f"== {name} {r.status_code}")
+        r = S.get(url, timeout=20); print(f"== {name} {r.status_code}")
         j = r.json(); d = j.get("data", j) if isinstance(j, dict) else j
         if isinstance(d, list):
             print(json.dumps(d[:3], ensure_ascii=False)[:1500])

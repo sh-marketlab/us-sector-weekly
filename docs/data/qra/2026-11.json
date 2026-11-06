@@ -1,0 +1,56 @@
+{
+  "key": "2026-11",
+  "announced": "2026-11-04",
+  "next_announcement": "2027-02-03",
+  "borrowing_estimate": {
+    "released": "2026-11-02",
+    "current_quarter": {"label": "2026 年 10–12 月", "net_marketable_b": 618, "end_cash_b": 850, "vs_prior_b": -10, "ex_cash_effect_vs_prior_b": 24},
+    "next_quarter": {"label": "2027 年 1–3 月", "net_marketable_b": 800, "end_cash_b": 1000},
+    "prior_quarter_actual": {"label": "2026 年 7–9 月", "net_marketable_b": 742, "estimate_b": 739, "end_cash_b": 984, "assumed_end_cash_b": 950}
+  },
+  "refunding": {
+    "total_b": 125, "maturing_private_b": 97, "new_cash_b": 28, "settle": "2026-11-16",
+    "auctions": [
+      {"tenor": "3 年", "size_b": 58, "date": "2026-11-09"},
+      {"tenor": "10 年", "size_b": 42, "date": "2026-11-10"},
+      {"tenor": "30 年", "size_b": 25, "date": "2026-11-12"}
+    ]
+  },
+  "coupon_sizes": {
+    "tenors": ["2Y", "3Y", "5Y", "7Y", "10Y", "20Y", "30Y", "FRN"],
+    "rows": [
+      {"month": "2026-08", "actual": true,  "v": [69, 58, 70, 44, 42, 16, 25, 28]},
+      {"month": "2026-09", "actual": true,  "v": [69, 58, 70, 44, 39, 13, 22, 28]},
+      {"month": "2026-10", "actual": true,  "v": [69, 58, 70, 44, 39, 13, 22, 30]},
+      {"month": "2026-11", "actual": false, "v": [69, 58, 70, 44, 42, 16, 25, 28]},
+      {"month": "2026-12", "actual": false, "v": [69, 58, 70, 44, 39, 13, 22, 28]},
+      {"month": "2027-01", "actual": false, "v": [69, 58, 70, 44, 39, 13, 22, 30]}
+    ],
+    "guidance": "名目附息債與 FRN 標售規模「未來數季」維持不變（措辭沿用）"
+  },
+  "tips": [{"what": "11 月 10 年 TIPS 增額", "size_b": 19}, {"what": "12 月 5 年 TIPS 增額", "size_b": 24}, {"what": "1 月 10 年 TIPS 新發", "size_b": 21}],
+  "bills": "11 月下旬前維持基準 Bills 規模，月底可能發行短天期 CMB；12 月中企業稅入帳後縮減短天期 Bills；1 月因季節性支出擴大整條 Bills 曲線。",
+  "tga": {"end_dec_assumption_b": 850, "end_mar_assumption_b": 1000, "peak_b": 1025, "peak_band_b": 50, "peak_when": "11 月下旬與 1 月下旬"},
+  "buybacks": {"liquidity_support_b": 70, "cash_mgmt_b": 25, "cash_mgmt_bucket": "1 個月–2 年"},
+  "structural": [
+    "7 年期票券自 2027 年 3 月起改為每季新發、兩次增額（比照 10 年期）。",
+    "財政部持續觀察 SOMA 買進 Bills 與民間對 Bills 的需求成長。"
+  ],
+  "tbac": {
+    "recommendation": "本季名目附息債、FRN、TIPS 規模維持不變；FY2027 下半年可能需要擴大附息債規模，增量集中在 2–10 年。建議調整前瞻指引措辭。",
+    "funding_gap": "主要交易商中位數預估：以現行附息債規模，FY2028–29 合計資金缺口約 2.14 兆美元；FY2027 缺口小，可用 Bills 補。",
+    "views": [
+      "殖利率上升主要反映成長、政策預期與能源價格，而非發債造成的供給衝擊。",
+      "目前沒有證據顯示 AI／SI 相關企業發債排擠長天期公債需求，但融資循環仍在早期。",
+      "MMF 資產已持平，Bills 市場開始出現價格敏感跡象。",
+      "8 月以來 2 年殖利率約升 50bp、10 年約升 40bp；10 年一度約 5.4%、30 年約 5.7%（10 月初）。",
+      "紐約聯準銀行 ACM 模型的 10 年期限溢酬 9 月約升 20bp。"
+    ]
+  },
+  "sources": [
+    {"name": "美國財政部 季度再融資聲明（2026/11/4）", "url": "https://home.treasury.gov/news/press-releases"},
+    {"name": "TBAC 致財政部長報告（2026/11/4）", "url": "https://home.treasury.gov/news/press-releases"},
+    {"name": "TBAC 會議紀錄（2026/11/3）", "url": "https://home.treasury.gov/news/press-releases"},
+    {"name": "財政部借款估計（2026/11/2）", "url": "https://home.treasury.gov/news/press-releases/sb0675"}
+  ]
+}
