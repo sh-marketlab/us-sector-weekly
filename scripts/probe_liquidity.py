@@ -27,16 +27,21 @@ def fred(i):
     df["v"] = pd.to_numeric(df["v"], errors="coerce"); df["d"] = pd.to_datetime(df["d"])
     return df.dropna().set_index("d")["v"]
 
-for i in IDS:
+import concurrent.futures as cf
+def one(i):
     try:
         s = fred(i)
         if s is None or not len(s):
-            print(f"MISS {i}", flush=True); continue
+            return f"MISS {i}"
         at = lambda d: s[s.index <= d].iloc[-1] if (s.index <= d).any() else None
-        print(f"OK {i:22s} n={len(s):4d} last={s.index[-1].date()} {s.iloc[-1]:.4f} | 10/28={at('2026-10-28')} 10/21={at('2026-10-21')}", flush=True)
+        return (f"OK {i:22s} n={len(s):4d} last={s.index[-1].date()} {s.iloc[-1]:.4f} | 10/28={at('2026-10-28')} 10/21={at('2026-10-21')}")
     except Exception as e:
-        print(f"ERR {i} {e}", flush=True)
-    time.sleep(0.3)
+        return f"ERR {i} {type(e).__name__} {e}"
+ex = cf.ThreadPoolExecutor(8)
+futs = {ex.submit(one, i): i for i in IDS}
+done, pend = cf.wait(futs, timeout=150)
+for fu in done: print(fu.result(), flush=True)
+for fu in pend: print("TIMEOUT", futs[fu], flush=True)
 
 def show(name, url):
     try:
