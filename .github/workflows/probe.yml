@@ -4,11 +4,13 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install pandas requests lxml html5lib beautifulsoup4
-      - run: timeout 360 python -u scripts/probe_liquidity.py || true
-        timeout-minutes: 8
+      - run: pip install -r requirements.txt
+      - run: python -u scripts/liquidity.py
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}

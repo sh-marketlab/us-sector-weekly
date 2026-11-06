@@ -3,3 +3,4 @@ pandas>=2.0
 requests>=2.31
 pytest>=8.0
 holidays>=0.50
+lxml>=5.0
