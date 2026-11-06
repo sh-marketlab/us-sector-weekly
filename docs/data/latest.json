@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T01:47:11+00:00",
+ "generated_at": "2026-11-06T02:20:04+00:00",
  "session": "other",
  "session_date": "2026-11-04",
  "thu_date": null,
@@ -1054,10 +1054,10 @@
     "ticker": "^TWII",
     "name": "加權指數",
     "date": "2026-11-06",
-    "close": 38126.1914,
-    "day_pct": -11.23,
-    "wtd_pct": -15.67,
-    "m1_pct": -21.35,
+    "close": 39003.4883,
+    "day_pct": -9.19,
+    "wtd_pct": -13.73,
+    "m1_pct": -19.54,
     "vol_ratio": 0.0,
     "flow": -0.0,
     "stale": false
@@ -1065,10 +1065,10 @@
   ],
   "usdtwd": {
    "date": "2026-11-06",
-   "close": 33.033,
-   "day_pct": 0.65,
-   "wtd_pct": 1.43,
-   "m1_pct": 3.72,
+   "close": 32.985,
+   "day_pct": 0.5,
+   "wtd_pct": 1.28,
+   "m1_pct": 3.57,
    "vol_ratio": null,
    "flow": null,
    "stale": false
@@ -1227,31 +1227,31 @@
     "us_day_pct": -2.86,
     "us_wtd_pct": 20.05,
     "tw_name": "台股半導體",
-    "tw_day_pct": -9.6,
-    "tw_wtd_pct": -19.34,
+    "tw_day_pct": -7.11,
+    "tw_wtd_pct": -17.11,
     "members": [
      {
       "ticker": "2330.TW",
-      "close": 2050.0,
-      "day_pct": -8.48,
-      "wtd_pct": -13.5,
-      "vol_ratio": 1.46,
+      "close": 2115.0,
+      "day_pct": -5.58,
+      "wtd_pct": -10.76,
+      "vol_ratio": 2.01,
       "stale": false
      },
      {
       "ticker": "2454.TW",
-      "close": 3115.0,
-      "day_pct": -9.97,
-      "wtd_pct": -20.43,
-      "vol_ratio": 0.43,
+      "close": 3235.0,
+      "day_pct": -6.5,
+      "wtd_pct": -17.37,
+      "vol_ratio": 1.14,
       "stale": false
      },
      {
       "ticker": "2303.TW",
-      "close": 88.6,
-      "day_pct": -9.96,
-      "wtd_pct": -20.54,
-      "vol_ratio": 0.21,
+      "close": 92.1,
+      "day_pct": -6.4,
+      "wtd_pct": -17.4,
+      "vol_ratio": 0.71,
       "stale": false
      },
      {
@@ -1259,7 +1259,7 @@
       "close": 515.0,
       "day_pct": -9.97,
       "wtd_pct": -22.9,
-      "vol_ratio": 0.23,
+      "vol_ratio": 0.39,
       "stale": false
      }
     ]
@@ -1271,31 +1271,31 @@
     "us_day_pct": 2.32,
     "us_wtd_pct": 2.63,
     "tw_name": "台股 AI 伺服器",
-    "tw_day_pct": -8.11,
-    "tw_wtd_pct": -14.29,
+    "tw_day_pct": -6.55,
+    "tw_wtd_pct": -12.84,
     "members": [
      {
       "ticker": "2382.TW",
-      "close": 281.0,
-      "day_pct": -6.33,
-      "wtd_pct": -11.64,
-      "vol_ratio": 0.81,
+      "close": 286.5,
+      "day_pct": -4.5,
+      "wtd_pct": -9.91,
+      "vol_ratio": 1.23,
       "stale": false
      },
      {
       "ticker": "2317.TW",
-      "close": 216.0,
-      "day_pct": -8.09,
-      "wtd_pct": -12.02,
-      "vol_ratio": 0.92,
+      "close": 220.0,
+      "day_pct": -6.38,
+      "wtd_pct": -10.39,
+      "vol_ratio": 1.19,
       "stale": false
      },
      {
       "ticker": "3231.TW",
-      "close": 155.0,
-      "day_pct": -8.01,
-      "wtd_pct": -15.53,
-      "vol_ratio": 0.44,
+      "close": 159.5,
+      "day_pct": -5.34,
+      "wtd_pct": -13.08,
+      "vol_ratio": 0.65,
       "stale": false
      },
      {
@@ -1303,7 +1303,7 @@
       "close": 1485.0,
       "day_pct": -10.0,
       "wtd_pct": -17.96,
-      "vol_ratio": 0.27,
+      "vol_ratio": 0.45,
       "stale": false
      }
     ]
@@ -1315,31 +1315,31 @@
     "us_day_pct": -7.73,
     "us_wtd_pct": -5.64,
     "tw_name": "台股重電·散熱",
-    "tw_day_pct": -8.92,
-    "tw_wtd_pct": -18.9,
+    "tw_day_pct": -7.77,
+    "tw_wtd_pct": -17.85,
     "members": [
      {
       "ticker": "1513.TW",
-      "close": 133.0,
-      "day_pct": -7.32,
-      "wtd_pct": -13.07,
-      "vol_ratio": 0.75,
+      "close": 135.5,
+      "day_pct": -5.57,
+      "wtd_pct": -11.44,
+      "vol_ratio": 1.05,
       "stale": false
      },
      {
       "ticker": "1519.TW",
-      "close": 449.5,
-      "day_pct": -8.92,
-      "wtd_pct": -18.42,
-      "vol_ratio": 0.23,
+      "close": 457.5,
+      "day_pct": -7.29,
+      "wtd_pct": -16.97,
+      "vol_ratio": 0.4,
       "stale": false
      },
      {
       "ticker": "1503.TW",
-      "close": 154.0,
-      "day_pct": -8.61,
-      "wtd_pct": -16.98,
-      "vol_ratio": 0.64,
+      "close": 158.0,
+      "day_pct": -6.23,
+      "wtd_pct": -14.82,
+      "vol_ratio": 0.89,
       "stale": false
      },
      {
@@ -1347,7 +1347,7 @@
       "close": 2310.0,
       "day_pct": -9.94,
       "wtd_pct": -25.36,
-      "vol_ratio": 0.07,
+      "vol_ratio": 0.13,
       "stale": false
      },
      {
@@ -1355,7 +1355,7 @@
       "close": 1055.0,
       "day_pct": -9.83,
       "wtd_pct": -20.68,
-      "vol_ratio": 0.02,
+      "vol_ratio": 0.04,
       "stale": false
      }
     ]
@@ -1375,7 +1375,7 @@
       "close": 1245.0,
       "day_pct": -9.78,
       "wtd_pct": -22.91,
-      "vol_ratio": 0.09,
+      "vol_ratio": 0.13,
       "stale": false
      }
     ]
@@ -1387,31 +1387,31 @@
     "us_day_pct": 2.85,
     "us_wtd_pct": 3.75,
     "tw_name": "台股金融",
-    "tw_day_pct": -9.4,
-    "tw_wtd_pct": -11.91,
+    "tw_day_pct": -7.11,
+    "tw_wtd_pct": -9.7,
     "members": [
      {
       "ticker": "2881.TW",
-      "close": 140.0,
-      "day_pct": -9.97,
-      "wtd_pct": -13.31,
-      "vol_ratio": 0.7,
+      "close": 144.5,
+      "day_pct": -7.07,
+      "wtd_pct": -10.53,
+      "vol_ratio": 0.99,
       "stale": false
      },
      {
       "ticker": "2882.TW",
-      "close": 101.0,
-      "day_pct": -9.82,
-      "wtd_pct": -12.93,
-      "vol_ratio": 0.64,
+      "close": 103.5,
+      "day_pct": -7.59,
+      "wtd_pct": -10.78,
+      "vol_ratio": 0.92,
       "stale": false
      },
      {
       "ticker": "2891.TW",
-      "close": 68.6,
-      "day_pct": -8.41,
-      "wtd_pct": -9.5,
-      "vol_ratio": 0.33,
+      "close": 69.9,
+      "day_pct": -6.68,
+      "wtd_pct": -7.78,
+      "vol_ratio": 0.51,
       "stale": false
      }
     ]
