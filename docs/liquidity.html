@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>資金足跡週報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="picker"><select id="pick" aria-label="選擇期別"></select></div>
+    <div class="eyebrow" id="eyebrow">FED BALANCE SHEET · H.4.1</div>
+    <div class="rainbow"></div>
+    <h1 id="title">資金足跡 <span class="hl">週報</span></h1>
+    <p class="sub" id="subtitle">載入中…</p>
+    <p class="intro" id="intro"></p>
+    <div class="kpis" id="kpis"></div>
+    <div class="navtop" id="navtop"></div>
+  </div>
+</header>
+<main class="wrap" id="main"></main>
+
+<script>
+(()=>{
+"use strict";
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const rich = s => esc(s).replace(/&lt;(\/?)(b|em|br)&gt;/g, "<$1$2>");
+const nz = v => v !== null && v !== undefined && !Number.isNaN(v);
+const f = (v, d = 1) => nz(v) ? Number(v).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d}) : "—";
+const sg = (v, d = 1, u = "") => nz(v) ? (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d}) + u : "—";
+const cls = v => !nz(v) ? "flat" : v > 0 ? "up" : v < 0 ? "dn" : "flat";
+const md = d => d ? `${+d.slice(5,7)}/${+d.slice(8,10)}` : "—";
+const plainBox = t => t ? `<div class="plain"><b class="lbl">白話說</b>— ${rich(t)}</div>` : "";
+const sec = (id, title, html) => `<h2 id="${id}">${esc(title)}</h2>${html}`;
+const SIGC = {"正常": "s0", "注意": "s1", "警告": "s2", "方向": "s3", "解讀": "s3"};
+const SIGI = {"正常": "●", "注意": "▲", "警告": "■", "方向": "○", "解讀": "○"};
+const sig = s => s ? `<span class="sig ${SIGC[s] || "s3"}">${SIGI[s] || ""} ${esc(s === "方向" ? "只記方向" : s)}</span>` : "—";
+const B = v => nz(v) ? `${f(v, 1)}` : "—";   // 十億美元
+const tbl = (head, rows) => `<div class="tablewrap"><table><tr>${head.map(h => `<th>${esc(h)}</th>`).join("")}</tr>${rows.join("")}</table></div>`;
+const empty = t => `<div class="empty">${esc(t)}</div>`;
+async function getJSON(u){ try{ const r = await fetch(u, {cache:"no-store"}); return r.ok ? r.json() : null; }catch(e){ return null; } }
+
+function rangeBar(x){
+  if (!nz(x.lo) || !nz(x.hi) || !nz(x.value) || x.hi === x.lo) return "—";
+  const p = Math.max(0, Math.min(100, (x.value - x.lo) / (x.hi - x.lo) * 100));
+  return `<div class="rng" title="一年低 ${x.lo}、高 ${x.hi}"><div class="band" style="left:20%;right:20%"></div><div class="dot" style="left:${p}%"></div></div>`;
+}
+
+function waterfallSVG(items){
+  const it = items.filter(x => nz(x.impact)); if (!it.length) return empty("沒有資料");
+  const w = 900, h = 260, pad = {l: 40, r: 10, t: 20, b: 60}, bw = (w - pad.l - pad.r) / it.length;
+  let run = 0; const bars = it.map(x => { if (x.total) return {x, a: 0, b: x.impact}; const a = run; run += x.impact; return {x, a, b: run}; });
+  const vals = bars.flatMap(b => [b.a, b.b, 0]); const lo = Math.min(...vals), hi = Math.max(...vals), sp = (hi - lo) || 1;
+  const Y = v => pad.t + (hi - v) * (h - pad.t - pad.b) / sp;
+  let s = `<svg viewBox="0 0 ${w} ${h}" width="100%"><line x1="${pad.l}" x2="${w-pad.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="#9aa6a0"/>`;
+  bars.forEach((b, i) => {
+    const x = pad.l + i * bw + bw * .15, top = Y(Math.max(b.a, b.b)), hh = Math.max(Math.abs(Y(b.a) - Y(b.b)), 1);
+    const c = b.x.total ? "#17231e" : b.x.impact >= 0 ? "var(--up)" : "var(--dn)";
+    s += `<rect x="${x}" y="${top}" width="${bw*.7}" height="${hh}" fill="${c}" rx="3"/>`;
+    s += `<text x="${x + bw*.35}" y="${top - 5}" font-size="12" text-anchor="middle" font-weight="700" fill="${c}">${sg(b.x.impact, 1)}</text>`;
+    s += `<text x="${x + bw*.35}" y="${h - pad.b + 18}" font-size="12" text-anchor="middle" fill="#4b5a53">${esc(b.x.name.replace("（差額）", ""))}</text>`;
+  });
+  return `<div class="sx">${s}</svg></div>`;
+}
+
+function hbars(items, key, label){
+  const it = items.filter(x => nz(x[key])); if (!it.length) return empty("沒有資料");
+  const m = Math.max(...it.map(x => Math.abs(x[key]))) || 1, w = 520, rh = 26, lw = 110, h = it.length * rh + 6;
+  let s = `<svg viewBox="0 0 ${w} ${h}" width="100%">`;
+  it.forEach((x, i) => { const y = i * rh + 4, len = Math.abs(x[key]) / m * (w - lw - 70);
+    s += `<text x="${lw - 6}" y="${y + 15}" font-size="12" text-anchor="end">${esc(x[label])}</text><rect x="${lw}" y="${y + 3}" width="${Math.max(len, 1)}" height="${rh - 10}" rx="3" fill="var(--brand)" opacity=".85"/><text x="${lw + len + 6}" y="${y + 15}" font-size="12" font-weight="700">${f(x[key], key === "btc" ? 2 : 1)}${key === "share" ? "%" : ""}</text>`; });
+  return s + `</svg>`;
+}
+
+function spark(vals, labels, {w = 520, h = 120, unit = ""} = {}){
+  const v = vals.filter(nz); if (v.length < 2) return empty("資料不足");
+  const lo = Math.min(...v), hi = Math.max(...v), sp = (hi - lo) || 1;
+  const X = i => 10 + i * (w - 90) / (vals.length - 1), Y = x => 12 + (hi - x) * (h - 34) / sp;
+  const pts = vals.map((x, i) => nz(x) ? `${X(i)},${Y(x)}` : null).filter(Boolean).join(" ");
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%"><polyline fill="none" stroke="var(--violet)" stroke-width="2" points="${pts}"/><circle cx="${X(vals.length-1)}" cy="${Y(v[v.length-1])}" r="4" fill="var(--violet)"/><text x="${X(vals.length-1)+8}" y="${Y(v[v.length-1])+4}" font-size="12" font-weight="700" fill="var(--violet)">${f(v[v.length-1], 1)}${unit}</text><text x="10" y="${h-4}" font-size="11" fill="#7c8a83">${esc(labels[0] || "")} → ${esc(labels[labels.length-1] || "")}　高 ${f(hi,1)} · 低 ${f(lo,1)}</text></svg>`;
+}
+
+function ladderSVG(items, target){
+  const it = items.filter(x => nz(x.rate)); if (!it.length) return empty("沒有資料");
+  const rs = it.map(x => x.rate), lo = Math.min(...rs) - .05, hi = Math.max(...rs) + .05;
+  const w = 900, h = it.length * 30 + 40, X = v => 230 + (v - lo) * (w - 300) / (hi - lo);
+  let s = `<svg viewBox="0 0 ${w} ${h}" width="100%">`;
+  if (target && nz(target[0]) && nz(target[1])) s += `<rect x="${X(target[0])}" y="4" width="${X(target[1]) - X(target[0])}" height="${h - 30}" fill="#2f7d6b18"/><text x="${X(target[0])}" y="${h - 10}" font-size="11" fill="#2f7d6b">目標區間 ${target[0].toFixed(2)}–${target[1].toFixed(2)}%</text>`;
+  [...it].sort((a, b) => a.rate - b.rate).forEach((x, i) => { const y = 20 + i * 30;
+    s += `<text x="220" y="${y + 4}" font-size="13" text-anchor="end">${esc(x.name)}</text><line x1="230" x2="${X(x.rate)}" y1="${y}" y2="${y}" stroke="#dfe6e2"/><circle cx="${X(x.rate)}" cy="${y}" r="6" fill="var(--brand)"/><text x="${X(x.rate) + 10}" y="${y + 4}" font-size="12" font-weight="700">${x.rate.toFixed(2)}%</text>`; });
+  return `<div class="sx">${s}</svg></div>`;
+}
+
+function indTable(list){
+  if (!list || !list.length) return empty("資料未取得");
+  return tbl(["指標", "目前值", "基準日", "一週變化", "一年位置", "判定", "說明"], list.map(x => x.value === null || x.value === undefined
+    ? `<tr><td class="l">${esc(x.name)}</td><td colspan="5" class="c note">—</td><td class="l note">${esc(x.note || "資料未取得")}</td></tr>`
+    : `<tr><td class="l">${esc(x.name)}</td><td class="num"><b>${f(x.value, x.unit === "B" ? 1 : (Math.abs(x.value) < 10 ? (x.unit === "" ? 4 : 2) : 2))}</b>${x.unit === "%" ? "%" : x.unit === "bp" ? "bp" : ""}</td><td>${md(x.date)}</td><td class="num ${cls(x.chg_wk)}">${sg(x.chg_wk, x.chg_unit === "bp" ? 0 : (Math.abs(x.chg_wk) < 1 ? 3 : 2), x.chg_unit === "bp" ? "bp" : "")}</td><td>${nz(x.pct) ? x.pct + "%" : "—"}<br>${rangeBar(x)}</td><td>${sig(x.signal)}</td><td class="l small">${esc(x.note || "")}</td></tr>`));
+}
+
+// ------------------------------------------------------------------ render
+function render(D, L, C, key){
+  const H = L.h41 || {}, Q = L.qra, C0 = C || {};
+  const card = k => (H.cards || []).find(c => c.key === k) || {};
+  const res = card("reserves"), tga = card("tga"), rrpd = card("rrp_others"), nl = H.net_liquidity || {};
+  $("#eyebrow").textContent = `FED BALANCE SHEET · H.4.1 · 週三 ${H.week || "—"}`;
+  $("#title").innerHTML = `資金足跡 <span class="hl">週報</span>`;
+  $("#subtitle").innerHTML = C0.liquidity_headline ? rich(C0.liquidity_headline) : `聯準會資產負債表、資金市場、財政部 TGA 與 QRA — ${md(H.week)} 當週`;
+  $("#intro").innerHTML = C0.liquidity_intro ? rich(C0.liquidity_intro) : "沿著聯準會 H.4.1 追蹤「錢去了哪裡」：先看方向，再看位置、原因、結果與性質；再對照資金市場利率、信用、財政部發債與部位。";
+  const k = (bg, t, v, u, d) => `<div class="kpi" style="background:${bg}"><div class="k">${t}</div><div class="v num">${v}<small>${u}</small></div><div class="d">${d}</div></div>`;
+  $("#kpis").innerHTML =
+    k("#2a6f8f", "銀行準備金（週平均）", B(res.avg), " B", `週變化 ${sg(res.chg_wk)} · 一年位置 ${nz(res.pct) ? res.pct + "%" : "—"} · ${res.signal || ""}`) +
+    k("#c9463c", "TGA 財政部帳戶（週三）", B(tga.wed), " B", `週平均 ${sg(tga.chg_wk)} · 一年位置 ${nz(tga.pct) ? tga.pct + "%" : "—"}`) +
+    k("#6a4fd1", "國內逆回購（週三）", B(rrpd.wed), " B", `緩衝墊 · ${rrpd.signal || ""}`) +
+    k("#2f8a5a", "淨流動性（週三）", B(nl.level), " B", `一週 ${sg(nl.chg)} · 簡易變化 ${sg(nl.simple_chg)}`);
+  $("#navtop").innerHTML = `<a href="index.html${key ? "?r=" + key : ""}">← 回到美股板塊週報</a><a href="#qra">財政部 QRA</a><a href="#score">預測答案表</a>`;
+
+  let h = "";
+  if (H.error) h += `<div class="plain"><b class="lbl">注意</b>— ${esc(H.error)}</div>`;
+
+  // 一眼看懂
+  const flowRows = [
+    ["聯準會信用供給", card("supply").wed ?? null, sg((H.rows || []).find(x => x.key === "supply")?.chg_wk), "資金供給端"],
+    ["銀行準備金", res.avg, sg(res.chg_wk), "週平均；系統內剩餘資金"],
+    ["TGA 政府帳戶", tga.wed, sg(tga.chg_wk), "週三餘額；週平均變化，增加＝吸走準備金"],
+    ["逆回購 RRP（國內）", rrpd.wed, sg(rrpd.chg_wk), "MMF 停在聯準會的閒錢；緩衝墊"],
+  ].map(r => `<tr><td class="l"><b>${r[0]}</b></td><td class="num">${B(r[1] ?? (H.rows || []).find(x => x.key === "supply")?.wed)}</td><td class="num">${r[2]}</td><td class="l">${r[3]}</td></tr>`);
+  h += sec("glance", "一眼看懂 — 本週資金流向",
+    (C0.liquidity_lede ? `<div class="callout">${rich(C0.liquidity_lede)}</div>` : autoLede(H)) +
+    tbl(["資金項目", "目前（十億美元）", "週變化", "說明"], flowRows) +
+    `<p class="note">準備金＝供給－TGA－RRP－現金－其他項目。單位：十億美元（B）；1 兆＝1,000 B。</p>` +
+    chainHTML(C0.liquidity_chain) + plainBox(C0.plain_liquidity));
+
+  // 訊號燈
+  const rmap = Object.fromEntries((L.rates || []).map(x => [x.name, x]));
+  const lightRows = (H.cards || []).map(c => `<tr><td>${sig(c.signal)}</td><td class="l">${esc(c.name)}</td><td class="num">${B(c.avg)}／${B(c.wed)}</td><td class="num ${cls(c.chg_wk)}">${sg(c.chg_wk)}</td><td>${nz(c.pct) ? c.pct + "%" : "—"}</td><td class="l small">${esc(c.note)}</td></tr>`);
+  ["SOFR－IORB（bp）", "高收益債利差", "美國 10 年期公債", "實質利率 10 年 TIPS", "NFCI 芝加哥聯準銀行"].forEach(n => { const x = rmap[n]; if (x && nz(x.value)) lightRows.push(`<tr><td>${sig(x.signal)}</td><td class="l">${esc(n)}</td><td class="num">${f(x.value, 2)}${x.unit === "%" ? "%" : ""}</td><td class="num ${cls(x.chg_wk)}">${sg(x.chg_wk, 0, x.chg_unit === "bp" ? "bp" : "")}</td><td>${nz(x.pct) ? x.pct + "%" : "—"}</td><td class="l small">${esc(x.note)}</td></tr>`); });
+  const vix = ((L.market || {}).sentiment || [])[0];
+  if (vix && nz(vix.value)) lightRows.push(`<tr><td>${sig(vix.signal)}</td><td class="l">VIX</td><td class="num">${f(vix.value, 2)}</td><td class="num ${cls(vix.chg_wk)}">${sg(vix.chg_wk, 2)}</td><td>${vix.pct}%</td><td class="l small">${esc(vix.note)}</td></tr>`);
+  h += sec("lights", "訊號燈 — 整體判定", tbl(["判定", "指標", "週平均／週三", "週變化", "一年位置", "基準"], lightRows) +
+    `<p class="note">★＝參考最近一年分布（約 61 週）；☆＝沒有外部依據、自訂的研習門檻；○＝只記方向。邊界值歸入較差的一側。</p>` +
+    (C0.liquidity_watch && C0.liquidity_watch.length ? `<h3>本週需要確認的事項</h3><ul class="bul">${C0.liquidity_watch.map(x => `<li>${rich(x)}</li>`).join("")}</ul>` : ""));
+
+  // 五步驟
+  const steps = C0.liquidity_steps && C0.liquidity_steps.length ? C0.liquidity_steps : autoSteps(H);
+  h += sec("steps", "H.4.1 分析順序 — 五步驟", `<div class="steps">${steps.map((s, i) => `<div class="card"><b>${i + 1}. ${esc(s.title)}</b>　${rich(s.body)}</div>`).join("")}</div>`);
+
+  // 瀑布圖與淨流動性
+  h += sec("waterfall", "準備金為何變化 — 瀑布圖（週平均變化）", `<div class="panel">${waterfallSVG(H.waterfall || [])}<p class="note">向上＝使準備金增加，向下＝使準備金減少。吸收項（TGA、逆回購、現金、其他存款、其他負債）已取負號。計算值，十億美元。</p></div>` +
+    `<div class="cards"><div class="card"><div class="k">淨流動性（週三）</div><div class="v num">${B(nl.level)}</div><div class="d">一週 <span class="${cls(nl.chg)}">${sg(nl.chg)}</span></div></div><div class="card"><div class="k">只扣國內逆回購</div><div class="v num">${B(nl.level_domestic)}</div><div class="d">一週 <span class="${cls(nl.chg_domestic)}">${sg(nl.chg_domestic)}</span></div></div><div class="card"><div class="k">簡易流動性變化</div><div class="v num ${cls(nl.simple_chg)}">${sg(nl.simple_chg)}</div><div class="d">前週 ${sg(nl.simple_chg_prev)}</div></div><div class="card"><div class="k">聯準會總資產（週三）</div><div class="v num">${B(nl.total_assets_wed)}</div><div class="d">一週 <span class="${cls(nl.total_assets_chg)}">${sg(nl.total_assets_chg)}</span></div></div></div><p class="note">${esc(nl.formula || "")}（計算值）</p>`);
+
+  // 明細
+  h += sec("items", "各項資產與負債 — H.4.1 Table 1", (H.rows || []).length ? tbl(["項目", "週平均", "週變化", "週三", "週三變化", "一年變化"], (H.rows || []).map(x => `<tr><td class="l">${esc(x.name)}</td><td class="num">${B(x.avg)}</td><td class="num ${cls(x.chg_wk)}">${sg(x.chg_wk)}</td><td class="num">${B(x.wed)}</td><td class="num ${cls(x.chg_wed)}">${sg(x.chg_wed)}</td><td class="num ${cls(x.chg_yr)}">${sg(x.chg_yr)}</td></tr>`)) : empty("資料未取得") +
+    "") + `<h3>Table 1A 備忘項目 — 外國機構與擔保品</h3>` + ((H.memo || []).length ? tbl(["項目", "週平均", "週變化", "週三"], H.memo.map(x => `<tr><td class="l">${esc(x.name)}</td><td class="num">${B(x.avg)}</td><td class="num ${cls(x.chg_wk)}">${sg(x.chg_wk)}</td><td class="num">${B(x.wed)}</td></tr>`)) : empty("資料未取得")) +
+    (C0.loan_check && C0.loan_check.length ? `<h3>貸款原因四項檢查</h3>` + tbl(["問題", "確認數值", "判斷"], C0.loan_check.map(x => `<tr><td class="l">${rich(x.q)}</td><td class="l">${rich(x.value)}</td><td>${rich(x.verdict)}</td></tr>`)) : "");
+
+  // 四週趨勢、方向檢查
+  h += sec("trend", "最近四週趨勢與方向檢查", (H.trend || []).length ? tbl(["週三", "準備金週平均", "TGA 週平均", "逆回購週平均", "總資產週三", "訊號"], H.trend.map(t => `<tr><td>${md(t.week)}</td><td class="num">${B(t.reserves)}，<span class="${cls(t.reserves_chg)}">${sg(t.reserves_chg)}</span></td><td class="num">${B(t.tga)}，<span class="${cls(t.tga_chg)}">${sg(t.tga_chg)}</span></td><td class="num">${B(t.rrp)}，<span class="${cls(t.rrp_chg)}">${sg(t.rrp_chg)}</span></td><td class="num">${B(t.total_assets)}</td><td>${sig(t.signal)}</td></tr>`)) : empty("資料未取得") +
+    "") + `<h3>週三 vs 週平均</h3>` + tbl(["項目", "週三變化", "週平均變化", "判定"], (H.direction || []).map(x => `<tr><td class="l">${esc(x.name)}</td><td class="num ${cls(x.chg_wed)}">${sg(x.chg_wed)}</td><td class="num ${cls(x.chg_avg)}">${sg(x.chg_avg)}</td><td class="l">${esc(x.verdict || "—")}</td></tr>`)) + `<p class="note">週三單日值波動較大；方向不同時以週平均判讀趨勢。</p>`;
+
+  // TGA 情境與每日 TGA
+  const td = L.tga_daily || [];
+  const qc = L.qra_check;
+  h += sec("tga", "TGA 情境 — 政府帳戶對銀行流動性的影響", tbl(["情境", "TGA 路徑", "TGA 變化", "準備金終點", "一年位置", "判定"], (H.tga_scenarios || []).map(x => `<tr><td class="l"><b>${esc(x.name)}</b></td><td class="l">${esc(x.path)}</td><td class="num ${cls(-x.tga_change)}">${sg(x.tga_change)}</td><td class="num">${B(x.reserves_end)}</td><td>${nz(x.pct) ? x.pct + "%" : "—"}</td><td>${sig(x.signal)}</td></tr>`)) +
+    `<p class="note">計算值，假設其他因素不變、TGA 增減一對一反映到準備金。起點為 ${md(H.week)} 週三的 TGA ${B(tga.wed)} 與準備金 ${B(res.wed)}。</p>` +
+    `<div class="two"><div class="panel"><b>每日 TGA（財政部 Daily Treasury Statement，十億美元）</b>${spark(td.map(x => x.tga), td.map(x => md(x.date)), {unit: " B"})}</div>` +
+    `<div class="panel"><b>對照 QRA</b>${qc ? `<p>本週三 TGA <b>${B(qc.tga_wed)}</b>；財政部估計高峰 ${B(qc.peak)} ±${B(qc.band)}（${esc(Q?.tga?.peak_when || "")}），${qc.in_peak_band ? "<b>已在高峰區間內</b>" : "不在高峰區間內"}；距年底假設 ${B(qc.end_dec)} 還差 ${sg(qc.gap_to_end_dec)}（計算）。</p>` : empty("QRA 或 TGA 資料未取得")}</div></div>` + plainBox(C0.plain_tga));
+
+  // 到期結構
+  h += sec("maturity", "聯準會持有公債的到期結構 — Table 2", (H.maturity || []).length ? `<div class="two"><div class="panel">${hbars(H.maturity, "share", "bucket")}</div><div>${tbl(["到期", "持有", "占比", "週變化"], H.maturity.map(x => `<tr><td class="l">${esc(x.bucket)}</td><td class="num">${B(x.holdings)}</td><td class="num">${f(x.share, 1)}%</td><td class="num ${cls(x.weekly_change)}">${sg(x.weekly_change)}</td></tr>`))}<p class="note">${esc(H.maturity_note || "")}</p></div></div>` : empty("資料未取得"));
+
+  // 利率階梯
+  const LD = L.rate_ladder || {};
+  h += sec("ladder", "資金市場利率階梯 — 短期利率位於哪裡", `<div class="panel">${ladderSVG(LD.items || [], LD.target)}</div><p class="note">${(LD.items || []).map(x => `${esc(x.name)}：${esc(x.src)}${x.date ? "（" + md(x.date) + "）" : ""}`).join("；")}</p>` + plainBox(C0.plain_ladder || "聯準會用「下限」逆回購利率與「上限」常備回購利率把短期利率夾在區間內。SOFR 若明顯高於 IORB，代表市場上借錢變貴，資金偏緊。"));
+
+  // 延伸指標
+  const groups = {};
+  (L.rates || []).forEach(x => (groups[x.group] = groups[x.group] || []).push(x));
+  Object.values(L.market || {}).forEach(lst => lst.forEach(x => (groups[x.group] = groups[x.group] || []).push(x)));
+  h += sec("ext", "延伸指標 — 利率、信用、金融情勢、市場內部、全球與原物料", Object.entries(groups).map(([g, lst]) => `<h3>${esc(g)}</h3>${indTable(lst)}`).join("") +
+    `<p class="note">一年位置＝最近一年資料中「不高於目前值」的比例。長條灰底為一年範圍、深色區為第 20–80 百分位、黑點為目前值。比率指標的一週變化為絕對差。</p>`);
+
+  // 標售與交易商
+  const A = L.auctions || [];
+  h += sec("auctions", "本週公債標售 — 投標倍數與需求強度", A.length ? `<div class="two"><div class="panel">${hbars(A.map(x => ({...x, lab: `${md(x.date)} ${x.term}`})), "btc", "lab")}<p class="note">☆ 自訂：高於 3 倍強、2.5–3 倍普通、低於 2.5 倍偏弱。</p></div><div>${tbl(["日期", "期限", "規模", "得標利率", "倍數", "交易商", "間接"], A.map(x => `<tr><td>${md(x.date)}</td><td class="l">${esc(x.term)}${x.reopening === "Yes" ? "（增額）" : ""}</td><td class="num">${f(x.size_b, 0)}</td><td class="num">${nz(x.rate) ? x.rate.toFixed(3) + "%" : "—"}</td><td class="num"><b>${f(x.btc, 2)}</b></td><td class="num">${nz(x.dealer_pct) ? f(x.dealer_pct, 1) + "%" : "—"}</td><td class="num">${nz(x.indirect_pct) ? f(x.indirect_pct, 1) + "%" : "—"}</td></tr>`))}</div></div>` : empty("標售資料未取得")) +
+    (L.dealers && (L.dealers.positions || []).length ? `<h3>主要交易商公債部位（${md(L.dealers.asof)}，十億美元）</h3>${tbl(["代號", "說明", "部位"], L.dealers.positions.map(x => `<tr><td class="l small">${esc(x.key)}</td><td class="l small">${esc(x.desc)}</td><td class="num">${B(x.value_b)}</td></tr>`))}` : "") +
+    (C0.auction_note ? `<p>${rich(C0.auction_note)}</p>` : "");
+
+  // MMF
+  const M = C0.mmf;
+  h += sec("mmf", "貨幣市場基金 MMF — 停泊資金的位置與方向", M ? `${M.rows && M.rows.length ? tbl(["類型", "資產規模", "週變化"], M.rows.map(x => `<tr><td class="l">${esc(x.type)}</td><td class="num">${B(x.assets)}</td><td class="num ${cls(x.chg)}">${sg(x.chg, 2)}</td></tr>`)) : ""}<p>${rich(M.text || "")}</p><p class="note">${esc(M.source || "ICI")}</p>` : empty("ICI 網站擋自動下載，MMF 數據由排程任務搜尋後寫入；本期尚未取得。"));
+
+  // CFTC
+  const CF = L.cftc || [];
+  h += sec("cftc", "CFTC 期貨部位", CF.length ? tbl(["標的", "基準日", "投機（非商業）淨部位", "較前週", "槓桿資金淨部位", "較前週", "資產管理淨部位", "較前週"], CF.map(x => `<tr><td class="l">${esc(x.name)}</td><td>${md(x.date)}</td><td class="num ${cls(x.noncomm_net)}">${sg(x.noncomm_net, 0)}</td><td class="num ${cls(x.noncomm_chg)}">${sg(x.noncomm_chg, 0)}</td><td class="num ${cls(x.levmoney_net)}">${sg(x.levmoney_net, 0)}</td><td class="num ${cls(x.levmoney_chg)}">${sg(x.levmoney_chg, 0)}</td><td class="num ${cls(x.assetmgr_net)}">${sg(x.assetmgr_net, 0)}</td><td class="num ${cls(x.assetmgr_chg)}">${sg(x.assetmgr_chg, 0)}</td></tr>`)) + `<p class="note">單位：合約口數。CFTC 每週五公布、週二基準。</p>` : empty("CFTC 資料未取得"));
+
+  // QRA
+  h += sec("qra", "財政部季度再融資 QRA", Q ? renderQRA(Q, C0) : empty("尚未建立 QRA 資料檔"));
+
+  // 12 領域、三類資產
+  h += sec("issues", "議題檢查表與資產資金流向", (C0.issues_12 && C0.issues_12.length ? tbl(["領域", "檢查內容"], C0.issues_12.map(x => `<tr><td class="l" style="white-space:nowrap"><b>${esc(x.area)}</b></td><td class="l">${rich(x.check)}</td></tr>`)) : empty("12 領域檢查表由排程任務寫入。")) +
+    `<h3>各類資產資金移動</h3>` + assetFlows(D, C0));
+
+  // 預測答案表
+  h += sec("score", "預測答案表與評分", scoreHTML(C0));
+
+  // 限制、來源
+  const lim = ["H.4.1 每週四美東 16:30 公布、截至週三；週四報告若早於公布時間，會沿用前一週並在此註明。",
+    "IORB 以聯邦基金目標區間上限 −0.10 個百分點推算（計算）；若聯準會調整技術性設定需更新 config。",
+    "高收益債利差、STLFSI、遞延資產、M2、C&I 貸款、初領失業救濟金需要 FRED API key（GitHub secret FRED_API_KEY），未設定時顯示「資料未取得」。",
+    "MMF（ICI）與 12 領域檢查表由排程任務搜尋補上，屬二手整理。",
+    ...(L.log || []).filter(x => /失敗|未取得/.test(x)).map(x => "本期資料問題：" + x), ...(C0.liquidity_limits || [])];
+  h += sec("limits", "限制", `<ul class="bul">${lim.map(x => `<li>${rich(x)}</li>`).join("")}</ul>`);
+  const src = [["聯準會 H.4.1", "https://www.federalreserve.gov/releases/h41/"], ["紐約聯準銀行 Markets Data（SOFR、EFFR、逆回購、常備回購、主要交易商）", "https://markets.newyorkfed.org/"],
+    ["美國財政部 每日殖利率", "https://home.treasury.gov/resource-center/data-chart-center/interest-rates"], ["FiscalData 每日 TGA", "https://fiscaldata.treasury.gov/datasets/daily-treasury-statement/"],
+    ["TreasuryDirect 標售結果", "https://www.treasurydirect.gov/auctions/"], ["芝加哥聯準銀行 NFCI", "https://www.chicagofed.org/research/data/nfci/current-data"],
+    ["CFTC Commitments of Traders", "https://publicreporting.cftc.gov/"], ["Yahoo Finance", "https://finance.yahoo.com/"]];
+  h += sec("sources", "出處", `<ul class="bul">${src.map(s => `<li><a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])}</a></li>`).join("")}${(Q?.sources || []).map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a></li>`).join("")}${(C0.liquidity_sources || []).map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>${s.note ? "：" + rich(s.note) : ""}</li>`).join("")}</ul>`);
+  h += `<footer>H.4.1 產出時間 ${esc(L.generated_at || "")}。本頁僅供研究參考，非投資建議。</footer>`;
+  $("#main").innerHTML = h;
+}
+
+function chainHTML(ch){
+  if (!ch || !ch.length) return "";
+  return `<h3>傳導路徑</h3><div class="panel"><div class="chain">${ch.map((s, i) => `${i ? '<div class="arr">▶</div>' : ""}<div class="step" style="border-color:${s.color || "#2f7d6b"}"><div class="h" style="background:${s.color || "#2f7d6b"}">${esc(s.title)}</div><div class="b">${rich(s.detail)}</div></div>`).join("")}</div></div>`;
+}
+
+function autoLede(H){
+  const c = k => (H.cards || []).find(x => x.key === k) || {};
+  const r = c("reserves"), t = c("tga"), nl = H.net_liquidity || {};
+  if (!H.cards) return "";
+  return `<div class="callout">截至 ${md(H.week)} 當週：準備金週平均 <b>${B(r.avg)}</b>（${sg(r.chg_wk)}，一年位置 ${r.pct ?? "—"}%），TGA 週三 <b>${B(t.wed)}</b>（週平均 ${sg(t.chg_wk)}），淨流動性 ${B(nl.level)}（${sg(nl.chg)}）。（自動摘要；解讀寫入後會替換）</div>`;
+}
+
+function autoSteps(H){
+  const g = k => (H.rows || []).find(x => x.key === k) || {};
+  const wf = H.waterfall || [], big = [...wf].filter(x => !x.total).sort((a, b) => Math.abs(b.impact) - Math.abs(a.impact))[0];
+  return [
+    {title: "方向 — 資金釋出了嗎", body: `總資產週三 ${B(H.net_liquidity?.total_assets_wed)}（${sg(H.net_liquidity?.total_assets_chg)}）；供給因素週平均 ${sg(g("supply").chg_wk)}。`},
+    {title: "位置 — 資金在哪裡", body: `準備金 ${B(g("reserves").wed)}、TGA ${B(g("tga").wed)}、逆回購 ${B(g("rrp").wed)}（國內 ${B(g("rrp_others").wed)}）。`},
+    {title: "原因 — 透過什麼工具", body: `Bills ${sg(g("bills").chg_wk)}、MBS ${sg(g("mbs").chg_wk)}、名目公債 ${sg(g("nb_nominal").chg_wk)}、Primary credit ${sg(g("primary").chg_wk)}、回購 ${sg(g("repo_others").chg_wk)}。`},
+    {title: "結果 — 準備金實際增減", body: `準備金週平均 ${sg(g("reserves").chg_wk)}；影響最大的是「${esc(big?.name || "—")}」${sg(big?.impact)}。`},
+    {title: "性質 — 短期或長期供給", body: `貸款 ${B(g("primary").avg)}、常備回購 ${B(g("repo_others").avg)}、央行美元交換 ${B(g("swaps").wed)}；短期工具使用量越大，代表越多臨時性資金需求。`},
+  ];
+}
+
+function assetFlows(D, C0){
+  if (C0.asset_flows && C0.asset_flows.length) return tbl(["類別", "所含資產", "流向"], C0.asset_flows.map(x => `<tr><td class="l"><b>${esc(x.class)}</b></td><td class="l">${esc(x.assets)}</td><td class="l">${rich(x.flow)}</td></tr>`));
+  if (!D || !D.us) return empty("沒有資料");
+  const i = t => D.us.indices.find(x => x.ticker === t) || {}, m = n => D.us.macro.find(x => x.ticker === n) || {};
+  const rows = [["風險資產", "S&P 500、那斯達克100、羅素2000", `SPY ${sg(i("SPY").day_pct, 2, "%")}、QQQ ${sg(i("QQQ").day_pct, 2, "%")}、IWM ${sg(i("IWM").day_pct, 2, "%")}`],
+    ["安全資產", "美國公債、美元", `10 年殖利率 ${sg(m("^TNX").day_bp, 1, "bp")}、美元指數 ${sg(m("DX-Y.NYB").day_pct, 2, "%")}`],
+    ["避險資產", "黃金、原油", `黃金 ${sg(m("GC=F").day_pct, 2, "%")}、WTI ${sg(m("CL=F").day_pct, 2, "%")}`],
+    ["市場情緒", "VIX", `VIX ${f(m("^VIX").value, 2)}（${sg(m("^VIX").day_pct, 1, "%")}）`]];
+  return tbl(["類別", "所含資產", "當日變化"], rows.map(r => `<tr><td class="l"><b>${r[0]}</b></td><td class="l">${r[1]}</td><td class="l">${r[2]}</td></tr>`)) + `<p class="note">自動整理自週報數據（${esc(D.session_date)}）。</p>`;
+}
+
+function scoreHTML(C0){
+  const G = {"命中": "s0", "部分命中": "s1", "未命中": "s2", "暫不判定": "s3"};
+  let h = "";
+  if (C0.scorecard && C0.scorecard.length) h += `<h3>上期預測評分</h3>` + tbl(["項目", "預測", "實際", "評分"], C0.scorecard.map(x => `<tr><td class="l">${rich(x.item)}</td><td class="l">${rich(x.prediction)}</td><td class="l">${rich(x.actual)}</td><td><span class="sig ${G[x.grade] || "s3"}">${esc(x.grade)}</span></td></tr>`));
+  if (C0.predictions && C0.predictions.length) h += `<h3>本期預測（${esc(C0.predictions_target || "下個交易日")}）</h3>` + tbl(["項目", "預測範圍", "目前", "依據（解讀）"], C0.predictions.map(x => `<tr><td class="l">${rich(x.item)}</td><td class="l"><b>${rich(x.range)}</b></td><td class="l">${rich(x.current || "")}</td><td class="l">${rich(x.basis || "")}</td></tr>`));
+  return h ? h + `<p class="note">只看數字，屬解讀，並非投資建議。評分：命中／部分命中／未命中／暫不判定。</p>` : empty("預測與評分由週五報告寫入，下週四報告評分。");
+}
+
+function renderQRA(Q, C0){
+  const be = Q.borrowing_estimate || {}, cq = be.current_quarter || {}, nq = be.next_quarter || {}, pq = be.prior_quarter_actual || {}, rf = Q.refunding || {}, cs = Q.coupon_sizes || {};
+  let h = `<p class="note">公告日 ${esc(Q.announced)}；下次 QRA ${esc(Q.next_announcement)}。</p>`;
+  h += `<div class="cards"><div class="card"><div class="k">${esc(cq.label)} 借款估計</div><div class="v num">${f(cq.net_marketable_b, 0)}<small style="font-size:.5em"> B</small></div><div class="d">較前次 ${sg(cq.vs_prior_b, 0)}；年底現金假設 ${f(cq.end_cash_b, 0)}</div></div>
+    <div class="card"><div class="k">${esc(nq.label)} 借款估計</div><div class="v num">${f(nq.net_marketable_b, 0)}<small style="font-size:.5em"> B</small></div><div class="d">季末現金假設 ${f(nq.end_cash_b, 0)}</div></div>
+    <div class="card"><div class="k">${esc(pq.label)} 實際</div><div class="v num">${f(pq.net_marketable_b, 0)}<small style="font-size:.5em"> B</small></div><div class="d">估計 ${f(pq.estimate_b, 0)}；季末現金 ${f(pq.end_cash_b, 0)}（假設 ${f(pq.assumed_end_cash_b, 0)}）</div></div>
+    <div class="card"><div class="k">本次再融資</div><div class="v num">${f(rf.total_b, 0)}<small style="font-size:.5em"> B</small></div><div class="d">到期 ${f(rf.maturing_private_b, 0)}，新增現金 ${f(rf.new_cash_b, 0)}</div></div></div>`;
+  h += tbl(["標售", "規模（B）", "日期"], (rf.auctions || []).map(a => `<tr><td class="l">${esc(a.tenor)}</td><td class="num">${f(a.size_b, 0)}</td><td>${md(a.date)}</td></tr>`));
+  h += `<h3>名目附息債與 FRN 標售規模（十億美元）</h3>` + tbl(["月份", ...(cs.tenors || [])], (cs.rows || []).map(r => `<tr${r.actual ? "" : ' class="hl"'}><td>${esc(r.month)}${r.actual ? "" : "（預計）"}</td>${r.v.map(v => `<td class="num">${v}</td>`).join("")}</tr>`)) + `<p class="note">${esc(cs.guidance || "")}</p>`;
+  const t = Q.tga || {}, bb = Q.buybacks || {};
+  h += `<ul class="bul"><li><b>TGA：</b>年底假設 ${f(t.end_dec_assumption_b, 0)}、3 月底 ${f(t.end_mar_assumption_b, 0)}；高峰估計 ${f(t.peak_b, 0)} ±${f(t.peak_band_b, 0)}（${esc(t.peak_when)}）。</li>
+    <li><b>Bills：</b>${esc(Q.bills || "")}</li><li><b>TIPS：</b>${(Q.tips || []).map(x => `${esc(x.what)} ${x.size_b}`).join("、")}</li>
+    <li><b>買回：</b>流動性支持最多 ${bb.liquidity_support_b}、現金管理（${esc(bb.cash_mgmt_bucket)}）最多 ${bb.cash_mgmt_b}。</li>${(Q.structural || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  const tb = Q.tbac || {};
+  h += `<h3>TBAC（借款諮詢委員會）重點</h3><p><b>建議：</b>${esc(tb.recommendation || "")}</p><p><b>資金缺口：</b>${esc(tb.funding_gap || "")}</p><ul class="bul">${(tb.views || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  h += (C0.qra_note ? `<div class="callout">${rich(C0.qra_note)}</div>` : "") + plainBox(C0.plain_qra || "財政部每季告訴市場「接下來要借多少錢、借多長」。借得越多、越長，市場要吸收的公債越多；錢先放進 TGA 時會吸走銀行準備金，花出去時再放回來。");
+  return h;
+}
+
+// ------------------------------------------------------------------ boot
+async function boot(){
+  const idx = await getJSON("data/index.json") || [];
+  const want = new URLSearchParams(location.search).get("r");
+  const keys = idx.map(x => x.key).reverse();
+  const key = (want && keys.includes(want)) ? want : keys[0];
+  $("#pick").innerHTML = keys.map(k => `<option value="${k}"${k === key ? " selected" : ""}>${k.slice(0,10)} ${k.endsWith("fri") ? "週五" : k.endsWith("thu") ? "週四" : "快照"}</option>`).join("") || `<option>最新</option>`;
+  $("#pick").onchange = e => { location.search = "?r=" + e.target.value; };
+  const D = key ? await getJSON(`data/history/${key}.json`) : await getJSON("data/latest.json");
+  if (!D){ $("#subtitle").textContent = "尚無數據，請先執行 GitHub Actions。"; return; }
+  const L = D.liquidity;
+  if (!L){ $("#subtitle").textContent = "這一期沒有流動性資料（此功能自 2026-11 起加入）。"; return; }
+  const C = await getJSON(`data/commentary/${D.session_date}-${D.session}.json`);
+  render(D, L, C, key);
+}
+boot();
+})();
+</script>
+</body>
+</html>

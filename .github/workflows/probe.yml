@@ -11,6 +11,4 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - run: python -u scripts/liquidity.py
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      - run: python -u scripts/probe_liquidity.py
