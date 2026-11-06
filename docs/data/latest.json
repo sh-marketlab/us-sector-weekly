@@ -1,0 +1,1483 @@
+{
+ "generated_at": "2026-11-06T01:47:11+00:00",
+ "session": "other",
+ "session_date": "2026-11-04",
+ "thu_date": null,
+ "market_closed_today": true,
+ "rules_note": "☆ 自訂、無外部參考點的門檻：強勢=週內相對SPY ≥+1.0pp 且當日資金分數>0；偏強=≥+0.3pp；弱勢=≤−1.0pp 且當日資金分數<0；偏弱=≤−0.3pp；其餘中性。由上往下依序判定。量比≥1.5 標示放量。",
+ "us": {
+  "benchmark": {
+   "date": "2026-11-04",
+   "close": 766.81,
+   "day_pct": 1.65,
+   "wtd_pct": 1.47,
+   "m1_pct": -1.58,
+   "vol_ratio": 1.58,
+   "flow": 2.6,
+   "stale": false
+  },
+  "indices": [
+   {
+    "ticker": "SPY",
+    "name": "S&P 500",
+    "date": "2026-11-04",
+    "close": 766.81,
+    "day_pct": 1.65,
+    "wtd_pct": 1.47,
+    "m1_pct": -1.58,
+    "vol_ratio": 1.58,
+    "flow": 2.6,
+    "stale": false,
+    "rs_pp": 0.0,
+    "signal": "中性"
+   },
+   {
+    "ticker": "QQQ",
+    "name": "那斯達克100",
+    "date": "2026-11-04",
+    "close": 691.95,
+    "day_pct": 0.97,
+    "wtd_pct": 0.21,
+    "m1_pct": -8.91,
+    "vol_ratio": 1.51,
+    "flow": 1.47,
+    "stale": false,
+    "rs_pp": -1.26,
+    "signal": "偏弱"
+   },
+   {
+    "ticker": "DIA",
+    "name": "道瓊工業",
+    "date": "2026-11-04",
+    "close": 533.11,
+    "day_pct": 3.1,
+    "wtd_pct": 3.09,
+    "m1_pct": 3.63,
+    "vol_ratio": 1.97,
+    "flow": 6.1,
+    "stale": false,
+    "rs_pp": 1.62,
+    "signal": "強勢"
+   },
+   {
+    "ticker": "IWM",
+    "name": "羅素2000",
+    "date": "2026-11-04",
+    "close": 284.02,
+    "day_pct": 1.51,
+    "wtd_pct": 1.68,
+    "m1_pct": 0.95,
+    "vol_ratio": 1.45,
+    "flow": 2.18,
+    "stale": false,
+    "rs_pp": 0.21,
+    "signal": "中性"
+   }
+  ],
+  "sectors": [
+   {
+    "ticker": "XLK",
+    "name": "資訊科技",
+    "date": "2026-11-04",
+    "close": 176.5,
+    "day_pct": -0.01,
+    "wtd_pct": -1.68,
+    "m1_pct": -12.62,
+    "vol_ratio": 1.29,
+    "flow": -0.01,
+    "stale": false,
+    "rs_pp": -3.15,
+    "signal": "弱勢"
+   },
+   {
+    "ticker": "XLC",
+    "name": "通訊服務",
+    "date": "2026-11-04",
+    "close": 104.96,
+    "day_pct": 3.47,
+    "wtd_pct": 5.07,
+    "m1_pct": -5.99,
+    "vol_ratio": 1.59,
+    "flow": 5.51,
+    "stale": false,
+    "rs_pp": 3.6,
+    "signal": "強勢"
+   },
+   {
+    "ticker": "XLY",
+    "name": "非必需消費",
+    "date": "2026-11-04",
+    "close": 122.33,
+    "day_pct": 4.26,
+    "wtd_pct": 6.02,
+    "m1_pct": 9.5,
+    "vol_ratio": 2.41,
+    "flow": 10.28,
+    "stale": false,
+    "rs_pp": 4.55,
+    "signal": "強勢"
+   },
+   {
+    "ticker": "XLF",
+    "name": "金融",
+    "date": "2026-11-04",
+    "close": 59.2,
+    "day_pct": 3.51,
+    "wtd_pct": 4.76,
+    "m1_pct": 9.61,
+    "vol_ratio": 1.55,
+    "flow": 5.43,
+    "stale": false,
+    "rs_pp": 3.29,
+    "signal": "強勢"
+   },
+   {
+    "ticker": "XLV",
+    "name": "醫療保健",
+    "date": "2026-11-04",
+    "close": 189.66,
+    "day_pct": 3.06,
+    "wtd_pct": 2.59,
+    "m1_pct": 13.51,
+    "vol_ratio": 1.7,
+    "flow": 5.2,
+    "stale": false,
+    "rs_pp": 1.12,
+    "signal": "強勢"
+   },
+   {
+    "ticker": "XLI",
+    "name": "工業",
+    "date": "2026-11-04",
+    "close": 169.46,
+    "day_pct": -1.09,
+    "wtd_pct": 1.23,
+    "m1_pct": -1.24,
+    "vol_ratio": 1.54,
+    "flow": -1.68,
+    "stale": false,
+    "rs_pp": -0.24,
+    "signal": "中性"
+   },
+   {
+    "ticker": "XLE",
+    "name": "能源",
+    "date": "2026-11-04",
+    "close": 63.52,
+    "day_pct": -4.74,
+    "wtd_pct": -9.28,
+    "m1_pct": -0.36,
+    "vol_ratio": 2.12,
+    "flow": -10.06,
+    "stale": false,
+    "rs_pp": -10.75,
+    "signal": "弱勢"
+   },
+   {
+    "ticker": "XLB",
+    "name": "原物料",
+    "date": "2026-11-04",
+    "close": 53.9,
+    "day_pct": 2.49,
+    "wtd_pct": 2.2,
+    "m1_pct": 8.39,
+    "vol_ratio": 1.98,
+    "flow": 4.93,
+    "stale": false,
+    "rs_pp": 0.73,
+    "signal": "偏強"
+   },
+   {
+    "ticker": "XLP",
+    "name": "必需消費",
+    "date": "2026-11-04",
+    "close": 91.94,
+    "day_pct": 3.36,
+    "wtd_pct": 2.82,
+    "m1_pct": 12.4,
+    "vol_ratio": 1.46,
+    "flow": 4.91,
+    "stale": false,
+    "rs_pp": 1.35,
+    "signal": "強勢"
+   },
+   {
+    "ticker": "XLU",
+    "name": "公用事業",
+    "date": "2026-11-04",
+    "close": 43.61,
+    "day_pct": 0.44,
+    "wtd_pct": 0.41,
+    "m1_pct": 5.95,
+    "vol_ratio": 1.56,
+    "flow": 0.69,
+    "stale": false,
+    "rs_pp": -1.06,
+    "signal": "偏弱"
+   },
+   {
+    "ticker": "XLRE",
+    "name": "不動產",
+    "date": "2026-11-04",
+    "close": 45.12,
+    "day_pct": 3.32,
+    "wtd_pct": 4.52,
+    "m1_pct": 9.78,
+    "vol_ratio": 1.12,
+    "flow": 3.7,
+    "stale": false,
+    "rs_pp": 3.05,
+    "signal": "強勢"
+   }
+  ],
+  "groups": [
+   {
+    "key": "megacap",
+    "name": "科技巨頭",
+    "day_pct": 2.32,
+    "wtd_pct": 2.63,
+    "m1_pct": -4.75,
+    "vol_ratio": 1.74,
+    "flow": 5.28,
+    "rs_pp": 1.16,
+    "signal": "強勢",
+    "members": [
+     {
+      "ticker": "AAPL",
+      "name": "AAPL",
+      "date": "2026-11-04",
+      "close": 349.51,
+      "day_pct": 5.31,
+      "wtd_pct": 1.42,
+      "m1_pct": 4.76,
+      "vol_ratio": 2.06,
+      "flow": 10.93,
+      "stale": false,
+      "rs_pp": -0.05,
+      "signal": "中性"
+     },
+     {
+      "ticker": "MSFT",
+      "name": "MSFT",
+      "date": "2026-11-04",
+      "close": 555.8,
+      "day_pct": 6.68,
+      "wtd_pct": 6.49,
+      "m1_pct": 5.01,
+      "vol_ratio": 2.27,
+      "flow": 15.17,
+      "stale": false,
+      "rs_pp": 5.02,
+      "signal": "強勢"
+     },
+     {
+      "ticker": "GOOGL",
+      "name": "GOOGL",
+      "date": "2026-11-04",
+      "close": 288.93,
+      "day_pct": 3.18,
+      "wtd_pct": 3.25,
+      "m1_pct": -16.9,
+      "vol_ratio": 1.47,
+      "flow": 4.69,
+      "stale": false,
+      "rs_pp": 1.78,
+      "signal": "強勢"
+     },
+     {
+      "ticker": "AMZN",
+      "name": "AMZN",
+      "date": "2026-11-04",
+      "close": 266.03,
+      "day_pct": 6.12,
+      "wtd_pct": 10.68,
+      "m1_pct": 3.8,
+      "vol_ratio": 2.18,
+      "flow": 13.31,
+      "stale": false,
+      "rs_pp": 9.21,
+      "signal": "強勢"
+     },
+     {
+      "ticker": "META",
+      "name": "META",
+      "date": "2026-11-04",
+      "close": 630.0,
+      "day_pct": 1.44,
+      "wtd_pct": 2.44,
+      "m1_pct": -14.74,
+      "vol_ratio": 1.39,
+      "flow": 1.99,
+      "stale": false,
+      "rs_pp": 0.97,
+      "signal": "偏強"
+     },
+     {
+      "ticker": "NVDA",
+      "name": "NVDA",
+      "date": "2026-11-04",
+      "close": 200.13,
+      "day_pct": -3.17,
+      "wtd_pct": -2.2,
+      "m1_pct": -16.35,
+      "vol_ratio": 1.49,
+      "flow": -4.72,
+      "stale": false,
+      "rs_pp": -3.67,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "TSLA",
+      "name": "TSLA",
+      "date": "2026-11-04",
+      "close": 385.19,
+      "day_pct": -3.34,
+      "wtd_pct": -3.66,
+      "m1_pct": 1.18,
+      "vol_ratio": 1.32,
+      "flow": -4.4,
+      "stale": false,
+      "rs_pp": -5.13,
+      "signal": "弱勢"
+     }
+    ]
+   },
+   {
+    "key": "semis",
+    "name": "半導體",
+    "day_pct": -2.86,
+    "wtd_pct": 20.05,
+    "m1_pct": -0.71,
+    "vol_ratio": 1.34,
+    "flow": -3.37,
+    "rs_pp": 18.58,
+    "signal": "偏強",
+    "members": [
+     {
+      "ticker": "SMH",
+      "name": "SMH",
+      "date": "2026-11-04",
+      "close": 504.27,
+      "day_pct": -2.75,
+      "wtd_pct": -3.49,
+      "m1_pct": -20.27,
+      "vol_ratio": 1.37,
+      "flow": -3.76,
+      "stale": false,
+      "rs_pp": -4.96,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "SOXX",
+      "name": "SOXX",
+      "date": "2026-11-04",
+      "close": 450.41,
+      "day_pct": -3.14,
+      "wtd_pct": 186.58,
+      "m1_pct": 129.24,
+      "vol_ratio": 0.62,
+      "flow": -1.94,
+      "stale": false,
+      "rs_pp": 185.11,
+      "signal": "偏強"
+     },
+     {
+      "ticker": "NVDA",
+      "name": "NVDA",
+      "date": "2026-11-04",
+      "close": 200.13,
+      "day_pct": -3.17,
+      "wtd_pct": -2.2,
+      "m1_pct": -16.35,
+      "vol_ratio": 1.49,
+      "flow": -4.72,
+      "stale": false,
+      "rs_pp": -3.67,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "AVGO",
+      "name": "AVGO",
+      "date": "2026-11-04",
+      "close": 325.48,
+      "day_pct": -2.0,
+      "wtd_pct": -0.18,
+      "m1_pct": -13.39,
+      "vol_ratio": 1.11,
+      "flow": -2.22,
+      "stale": false,
+      "rs_pp": -1.65,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "AMD",
+      "name": "AMD",
+      "date": "2026-11-04",
+      "close": 488.78,
+      "day_pct": 1.01,
+      "wtd_pct": -3.17,
+      "m1_pct": -24.74,
+      "vol_ratio": 2.32,
+      "flow": 2.34,
+      "stale": false,
+      "rs_pp": -4.64,
+      "signal": "偏弱"
+     },
+     {
+      "ticker": "TSM",
+      "name": "TSM",
+      "date": "2026-11-04",
+      "close": 395.75,
+      "day_pct": -2.24,
+      "wtd_pct": -2.56,
+      "m1_pct": -17.95,
+      "vol_ratio": 1.19,
+      "flow": -2.68,
+      "stale": false,
+      "rs_pp": -4.03,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "MU",
+      "name": "MU",
+      "date": "2026-11-04",
+      "close": 795.23,
+      "day_pct": -7.0,
+      "wtd_pct": -10.12,
+      "m1_pct": -23.93,
+      "vol_ratio": 1.35,
+      "flow": -9.43,
+      "stale": false,
+      "rs_pp": -11.59,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "ASML",
+      "name": "ASML",
+      "date": "2026-11-04",
+      "close": 1496.3,
+      "day_pct": -3.6,
+      "wtd_pct": -4.44,
+      "m1_pct": -18.31,
+      "vol_ratio": 1.27,
+      "flow": -4.56,
+      "stale": false,
+      "rs_pp": -5.91,
+      "signal": "弱勢"
+     }
+    ]
+   },
+   {
+    "key": "defensive",
+    "name": "防禦（金融·必需·食品水）",
+    "day_pct": 2.85,
+    "wtd_pct": 3.75,
+    "m1_pct": 10.84,
+    "vol_ratio": 1.45,
+    "flow": 4.14,
+    "rs_pp": 2.28,
+    "signal": "強勢",
+    "members": [
+     {
+      "ticker": "XLF",
+      "name": "XLF",
+      "date": "2026-11-04",
+      "close": 59.2,
+      "day_pct": 3.51,
+      "wtd_pct": 4.76,
+      "m1_pct": 9.61,
+      "vol_ratio": 1.55,
+      "flow": 5.43,
+      "stale": false,
+      "rs_pp": 3.29,
+      "signal": "強勢"
+     },
+     {
+      "ticker": "XLP",
+      "name": "XLP",
+      "date": "2026-11-04",
+      "close": 91.94,
+      "day_pct": 3.36,
+      "wtd_pct": 2.82,
+      "m1_pct": 12.4,
+      "vol_ratio": 1.46,
+      "flow": 4.91,
+      "stale": false,
+      "rs_pp": 1.35,
+      "signal": "強勢"
+     },
+     {
+      "ticker": "PHO",
+      "name": "PHO",
+      "date": "2026-11-04",
+      "close": 77.49,
+      "day_pct": 1.76,
+      "wtd_pct": 5.06,
+      "m1_pct": 12.08,
+      "vol_ratio": 1.21,
+      "flow": 2.13,
+      "stale": false,
+      "rs_pp": 3.59,
+      "signal": "強勢"
+     },
+     {
+      "ticker": "KO",
+      "name": "KO",
+      "date": "2026-11-04",
+      "close": 95.8,
+      "day_pct": 1.05,
+      "wtd_pct": 1.83,
+      "m1_pct": 11.18,
+      "vol_ratio": 1.62,
+      "flow": 1.7,
+      "stale": false,
+      "rs_pp": 0.36,
+      "signal": "偏強"
+     },
+     {
+      "ticker": "PG",
+      "name": "PG",
+      "date": "2026-11-04",
+      "close": 167.32,
+      "day_pct": 3.25,
+      "wtd_pct": 3.56,
+      "m1_pct": 13.49,
+      "vol_ratio": 1.37,
+      "flow": 4.45,
+      "stale": false,
+      "rs_pp": 2.09,
+      "signal": "強勢"
+     },
+     {
+      "ticker": "JPM",
+      "name": "JPM",
+      "date": "2026-11-04",
+      "close": 352.11,
+      "day_pct": 4.18,
+      "wtd_pct": 4.47,
+      "m1_pct": 6.29,
+      "vol_ratio": 1.49,
+      "flow": 6.22,
+      "stale": false,
+      "rs_pp": 3.0,
+      "signal": "強勢"
+     }
+    ]
+   },
+   {
+    "key": "energy",
+    "name": "能源",
+    "day_pct": -4.86,
+    "wtd_pct": -9.69,
+    "m1_pct": 0.55,
+    "vol_ratio": 2.03,
+    "flow": -10.18,
+    "rs_pp": -11.16,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "XLE",
+      "name": "XLE",
+      "date": "2026-11-04",
+      "close": 63.52,
+      "day_pct": -4.74,
+      "wtd_pct": -9.28,
+      "m1_pct": -0.36,
+      "vol_ratio": 2.12,
+      "flow": -10.06,
+      "stale": false,
+      "rs_pp": -10.75,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "XOP",
+      "name": "XOP",
+      "date": "2026-11-04",
+      "close": 179.29,
+      "day_pct": -6.39,
+      "wtd_pct": -12.01,
+      "m1_pct": -4.87,
+      "vol_ratio": 2.43,
+      "flow": -15.5,
+      "stale": false,
+      "rs_pp": -13.48,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "XOM",
+      "name": "XOM",
+      "date": "2026-11-04",
+      "close": 169.27,
+      "day_pct": -4.62,
+      "wtd_pct": -9.6,
+      "m1_pct": 2.91,
+      "vol_ratio": 2.08,
+      "flow": -9.61,
+      "stale": false,
+      "rs_pp": -11.07,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "CVX",
+      "name": "CVX",
+      "date": "2026-11-04",
+      "close": 216.96,
+      "day_pct": -3.69,
+      "wtd_pct": -7.88,
+      "m1_pct": 4.52,
+      "vol_ratio": 1.5,
+      "flow": -5.55,
+      "stale": false,
+      "rs_pp": -9.35,
+      "signal": "弱勢"
+     }
+    ]
+   },
+   {
+    "key": "frontier",
+    "name": "太空·量子·長壽",
+    "day_pct": -1.05,
+    "wtd_pct": -1.82,
+    "m1_pct": -18.49,
+    "vol_ratio": 1.08,
+    "flow": -1.3,
+    "rs_pp": -3.29,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "UFO",
+      "name": "UFO",
+      "date": "2026-11-04",
+      "close": 39.41,
+      "day_pct": -2.86,
+      "wtd_pct": -2.06,
+      "m1_pct": -11.1,
+      "vol_ratio": 1.68,
+      "flow": -4.81,
+      "stale": false,
+      "rs_pp": -3.53,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "RKLB",
+      "name": "RKLB",
+      "date": "2026-11-04",
+      "close": 52.37,
+      "day_pct": -3.78,
+      "wtd_pct": -4.31,
+      "m1_pct": -30.23,
+      "vol_ratio": 1.0,
+      "flow": -3.77,
+      "stale": false,
+      "rs_pp": -5.78,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "IONQ",
+      "name": "IONQ",
+      "date": "2026-11-04",
+      "close": 29.54,
+      "day_pct": -1.5,
+      "wtd_pct": -1.66,
+      "m1_pct": -31.76,
+      "vol_ratio": 0.74,
+      "flow": -1.11,
+      "stale": false,
+      "rs_pp": -3.13,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "RGTI",
+      "name": "RGTI",
+      "date": "2026-11-04",
+      "close": 11.21,
+      "day_pct": 1.13,
+      "wtd_pct": -0.36,
+      "m1_pct": -26.1,
+      "vol_ratio": 0.86,
+      "flow": 0.97,
+      "stale": false,
+      "rs_pp": -1.83,
+      "signal": "偏弱"
+     },
+     {
+      "ticker": "QBTS",
+      "name": "QBTS",
+      "date": "2026-11-04",
+      "close": 10.38,
+      "day_pct": 0.1,
+      "wtd_pct": -2.54,
+      "m1_pct": -34.26,
+      "vol_ratio": 0.85,
+      "flow": 0.09,
+      "stale": false,
+      "rs_pp": -4.01,
+      "signal": "偏弱"
+     },
+     {
+      "ticker": "LLY",
+      "name": "LLY",
+      "date": "2026-11-04",
+      "close": 1417.99,
+      "day_pct": 0.61,
+      "wtd_pct": 0.03,
+      "m1_pct": 22.51,
+      "vol_ratio": 1.37,
+      "flow": 0.84,
+      "stale": false,
+      "rs_pp": -1.44,
+      "signal": "偏弱"
+     }
+    ]
+   },
+   {
+    "key": "ai_software",
+    "name": "AI 軟體與資安",
+    "day_pct": -0.59,
+    "wtd_pct": -2.7,
+    "m1_pct": -13.21,
+    "vol_ratio": 1.1,
+    "flow": -0.66,
+    "rs_pp": -4.17,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "IGV",
+      "name": "IGV",
+      "date": "2026-11-04",
+      "close": 103.56,
+      "day_pct": 0.88,
+      "wtd_pct": -0.7,
+      "m1_pct": -6.84,
+      "vol_ratio": 1.47,
+      "flow": 1.29,
+      "stale": false,
+      "rs_pp": -2.17,
+      "signal": "偏弱"
+     },
+     {
+      "ticker": "CIBR",
+      "name": "CIBR",
+      "date": "2026-11-04",
+      "close": 97.36,
+      "day_pct": 0.14,
+      "wtd_pct": -3.63,
+      "m1_pct": -9.96,
+      "vol_ratio": 0.69,
+      "flow": 0.1,
+      "stale": false,
+      "rs_pp": -5.1,
+      "signal": "偏弱"
+     },
+     {
+      "ticker": "PLTR",
+      "name": "PLTR",
+      "date": "2026-11-04",
+      "close": 171.7,
+      "day_pct": -2.11,
+      "wtd_pct": -6.74,
+      "m1_pct": -10.61,
+      "vol_ratio": 1.36,
+      "flow": -2.87,
+      "stale": false,
+      "rs_pp": -8.21,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "CRWD",
+      "name": "CRWD",
+      "date": "2026-11-04",
+      "close": 241.0,
+      "day_pct": -1.5,
+      "wtd_pct": -3.77,
+      "m1_pct": -13.58,
+      "vol_ratio": 0.97,
+      "flow": -1.46,
+      "stale": false,
+      "rs_pp": -5.24,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "PANW",
+      "name": "PANW",
+      "date": "2026-11-04",
+      "close": 348.04,
+      "day_pct": -0.62,
+      "wtd_pct": -4.87,
+      "m1_pct": -17.12,
+      "vol_ratio": 1.03,
+      "flow": -0.64,
+      "stale": false,
+      "rs_pp": -6.34,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "NOW",
+      "name": "NOW",
+      "date": "2026-11-04",
+      "close": 108.81,
+      "day_pct": -0.32,
+      "wtd_pct": 3.51,
+      "m1_pct": -21.14,
+      "vol_ratio": 1.1,
+      "flow": -0.35,
+      "stale": false,
+      "rs_pp": 2.04,
+      "signal": "偏強"
+     }
+    ]
+   },
+   {
+    "key": "dc_grid",
+    "name": "資料中心與電網",
+    "day_pct": -7.73,
+    "wtd_pct": -5.64,
+    "m1_pct": -16.2,
+    "vol_ratio": 2.16,
+    "flow": -18.23,
+    "rs_pp": -7.11,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "GRID",
+      "name": "GRID",
+      "date": "2026-11-04",
+      "close": 162.24,
+      "day_pct": -3.08,
+      "wtd_pct": -1.38,
+      "m1_pct": -11.97,
+      "vol_ratio": 1.48,
+      "flow": -4.56,
+      "stale": false,
+      "rs_pp": -2.85,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "VRT",
+      "name": "VRT",
+      "date": "2026-11-04",
+      "close": 205.55,
+      "day_pct": -12.89,
+      "wtd_pct": -11.59,
+      "m1_pct": -18.8,
+      "vol_ratio": 1.76,
+      "flow": -22.72,
+      "stale": false,
+      "rs_pp": -13.06,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "ETN",
+      "name": "ETN",
+      "date": "2026-11-04",
+      "close": 353.08,
+      "day_pct": -9.86,
+      "wtd_pct": -4.57,
+      "m1_pct": -20.67,
+      "vol_ratio": 2.23,
+      "flow": -21.96,
+      "stale": false,
+      "rs_pp": -6.04,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "PWR",
+      "name": "PWR",
+      "date": "2026-11-04",
+      "close": 580.44,
+      "day_pct": -11.65,
+      "wtd_pct": -6.49,
+      "m1_pct": -19.33,
+      "vol_ratio": 2.56,
+      "flow": -29.82,
+      "stale": false,
+      "rs_pp": -7.96,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "CEG",
+      "name": "CEG",
+      "date": "2026-11-04",
+      "close": 245.72,
+      "day_pct": -6.71,
+      "wtd_pct": -6.35,
+      "m1_pct": -18.2,
+      "vol_ratio": 1.88,
+      "flow": -12.62,
+      "stale": false,
+      "rs_pp": -7.82,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "VST",
+      "name": "VST",
+      "date": "2026-11-04",
+      "close": 120.29,
+      "day_pct": -13.83,
+      "wtd_pct": -13.07,
+      "m1_pct": -25.05,
+      "vol_ratio": 3.17,
+      "flow": -43.84,
+      "stale": false,
+      "rs_pp": -14.54,
+      "signal": "弱勢"
+     },
+     {
+      "ticker": "EQIX",
+      "name": "EQIX",
+      "date": "2026-11-04",
+      "close": 1054.09,
+      "day_pct": 3.91,
+      "wtd_pct": 3.98,
+      "m1_pct": 0.64,
+      "vol_ratio": 2.03,
+      "flow": 7.94,
+      "stale": false,
+      "rs_pp": 2.51,
+      "signal": "強勢"
+     }
+    ]
+   }
+  ],
+  "week_dates": [
+   "2026-11-02",
+   "2026-11-03",
+   "2026-11-04"
+  ],
+  "week_path": {
+   "SPY": [
+    -0.48,
+    -0.18,
+    1.47
+   ],
+   "XLK": [
+    -2.95,
+    -1.67,
+    -1.68
+   ],
+   "XLC": [
+    0.36,
+    1.54,
+    5.07
+   ],
+   "XLY": [
+    2.41,
+    1.69,
+    6.02
+   ],
+   "XLF": [
+    1.86,
+    1.2,
+    4.76
+   ],
+   "XLV": [
+    -0.15,
+    -0.46,
+    2.59
+   ],
+   "XLI": [
+    1.38,
+    2.34,
+    1.23
+   ],
+   "XLE": [
+    -3.96,
+    -4.77,
+    -9.28
+   ],
+   "XLB": [
+    1.76,
+    -0.28,
+    2.2
+   ],
+   "XLP": [
+    1.58,
+    -0.53,
+    2.82
+   ],
+   "XLU": [
+    0.55,
+    -0.02,
+    0.41
+   ],
+   "XLRE": [
+    1.09,
+    1.16,
+    4.52
+   ]
+  },
+  "macro": [
+   {
+    "ticker": "^VIX",
+    "name": "VIX 恐慌指數",
+    "value": 16.61,
+    "day_pct": -20.26,
+    "wtd_pct": -14.47
+   },
+   {
+    "ticker": "^TNX",
+    "name": "美10年債殖利率",
+    "value": 4.894,
+    "day_pct": -1.17,
+    "wtd_pct": -0.71,
+    "day_bp": -5.8
+   },
+   {
+    "ticker": "DX-Y.NYB",
+    "name": "美元指數",
+    "value": 101.51,
+    "day_pct": -0.35,
+    "wtd_pct": -0.36
+   },
+   {
+    "ticker": "CL=F",
+    "name": "WTI 原油",
+    "value": 88.12,
+    "day_pct": -8.29,
+    "wtd_pct": -15.37
+   },
+   {
+    "ticker": "GC=F",
+    "name": "黃金",
+    "value": 4073.0,
+    "day_pct": 3.37,
+    "wtd_pct": 4.47
+   }
+  ]
+ },
+ "taiwan": {
+  "date": "2026-11-06",
+  "relation": "reaction",
+  "reacts_to_us": "2026-11-04",
+  "indices": [
+   {
+    "ticker": "^TWII",
+    "name": "加權指數",
+    "date": "2026-11-06",
+    "close": 38126.1914,
+    "day_pct": -11.23,
+    "wtd_pct": -15.67,
+    "m1_pct": -21.35,
+    "vol_ratio": 0.0,
+    "flow": -0.0,
+    "stale": false
+   }
+  ],
+  "usdtwd": {
+   "date": "2026-11-06",
+   "close": 33.033,
+   "day_pct": 0.65,
+   "wtd_pct": 1.43,
+   "m1_pct": 3.72,
+   "vol_ratio": null,
+   "flow": null,
+   "stale": false
+  },
+  "adr_premium": [
+   {
+    "date": "2026-09-10",
+    "premium_pct": 9.97
+   },
+   {
+    "date": "2026-09-11",
+    "premium_pct": 13.77
+   },
+   {
+    "date": "2026-09-14",
+    "premium_pct": 11.3
+   },
+   {
+    "date": "2026-09-15",
+    "premium_pct": 10.08
+   },
+   {
+    "date": "2026-09-16",
+    "premium_pct": 11.53
+   },
+   {
+    "date": "2026-09-17",
+    "premium_pct": 13.05
+   },
+   {
+    "date": "2026-09-18",
+    "premium_pct": 12.56
+   },
+   {
+    "date": "2026-09-21",
+    "premium_pct": 14.19
+   },
+   {
+    "date": "2026-09-22",
+    "premium_pct": 16.63
+   },
+   {
+    "date": "2026-09-23",
+    "premium_pct": 13.18
+   },
+   {
+    "date": "2026-09-24",
+    "premium_pct": 15.89
+   },
+   {
+    "date": "2026-09-29",
+    "premium_pct": 17.35
+   },
+   {
+    "date": "2026-09-30",
+    "premium_pct": 17.17
+   },
+   {
+    "date": "2026-10-01",
+    "premium_pct": 16.6
+   },
+   {
+    "date": "2026-10-02",
+    "premium_pct": 20.6
+   },
+   {
+    "date": "2026-10-05",
+    "premium_pct": 20.12
+   },
+   {
+    "date": "2026-10-06",
+    "premium_pct": 18.48
+   },
+   {
+    "date": "2026-10-07",
+    "premium_pct": 16.09
+   },
+   {
+    "date": "2026-10-08",
+    "premium_pct": 14.4
+   },
+   {
+    "date": "2026-10-12",
+    "premium_pct": 11.67
+   },
+   {
+    "date": "2026-10-13",
+    "premium_pct": 14.15
+   },
+   {
+    "date": "2026-10-14",
+    "premium_pct": 10.88
+   },
+   {
+    "date": "2026-10-15",
+    "premium_pct": 11.41
+   },
+   {
+    "date": "2026-10-16",
+    "premium_pct": 10.23
+   },
+   {
+    "date": "2026-10-19",
+    "premium_pct": 12.48
+   },
+   {
+    "date": "2026-10-20",
+    "premium_pct": 14.82
+   },
+   {
+    "date": "2026-10-21",
+    "premium_pct": 16.28
+   },
+   {
+    "date": "2026-10-22",
+    "premium_pct": 11.92
+   },
+   {
+    "date": "2026-10-23",
+    "premium_pct": 14.4
+   },
+   {
+    "date": "2026-10-27",
+    "premium_pct": 18.45
+   },
+   {
+    "date": "2026-10-28",
+    "premium_pct": 17.54
+   },
+   {
+    "date": "2026-10-29",
+    "premium_pct": 15.8
+   },
+   {
+    "date": "2026-10-30",
+    "premium_pct": 11.62
+   },
+   {
+    "date": "2026-11-02",
+    "premium_pct": 11.57
+   },
+   {
+    "date": "2026-11-03",
+    "premium_pct": 14.95
+   },
+   {
+    "date": "2026-11-04",
+    "premium_pct": 14.64
+   }
+  ],
+  "mapping": [
+   {
+    "key": "semis",
+    "us_name": "半導體",
+    "us_ref_date": "2026-11-04",
+    "us_day_pct": -2.86,
+    "us_wtd_pct": 20.05,
+    "tw_name": "台股半導體",
+    "tw_day_pct": -9.6,
+    "tw_wtd_pct": -19.34,
+    "members": [
+     {
+      "ticker": "2330.TW",
+      "close": 2050.0,
+      "day_pct": -8.48,
+      "wtd_pct": -13.5,
+      "vol_ratio": 1.46,
+      "stale": false
+     },
+     {
+      "ticker": "2454.TW",
+      "close": 3115.0,
+      "day_pct": -9.97,
+      "wtd_pct": -20.43,
+      "vol_ratio": 0.43,
+      "stale": false
+     },
+     {
+      "ticker": "2303.TW",
+      "close": 88.6,
+      "day_pct": -9.96,
+      "wtd_pct": -20.54,
+      "vol_ratio": 0.21,
+      "stale": false
+     },
+     {
+      "ticker": "3711.TW",
+      "close": 515.0,
+      "day_pct": -9.97,
+      "wtd_pct": -22.9,
+      "vol_ratio": 0.23,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "megacap",
+    "us_name": "科技巨頭",
+    "us_ref_date": "2026-11-04",
+    "us_day_pct": 2.32,
+    "us_wtd_pct": 2.63,
+    "tw_name": "台股 AI 伺服器",
+    "tw_day_pct": -8.11,
+    "tw_wtd_pct": -14.29,
+    "members": [
+     {
+      "ticker": "2382.TW",
+      "close": 281.0,
+      "day_pct": -6.33,
+      "wtd_pct": -11.64,
+      "vol_ratio": 0.81,
+      "stale": false
+     },
+     {
+      "ticker": "2317.TW",
+      "close": 216.0,
+      "day_pct": -8.09,
+      "wtd_pct": -12.02,
+      "vol_ratio": 0.92,
+      "stale": false
+     },
+     {
+      "ticker": "3231.TW",
+      "close": 155.0,
+      "day_pct": -8.01,
+      "wtd_pct": -15.53,
+      "vol_ratio": 0.44,
+      "stale": false
+     },
+     {
+      "ticker": "6669.TW",
+      "close": 1485.0,
+      "day_pct": -10.0,
+      "wtd_pct": -17.96,
+      "vol_ratio": 0.27,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "dc_grid",
+    "us_name": "資料中心與電網",
+    "us_ref_date": "2026-11-04",
+    "us_day_pct": -7.73,
+    "us_wtd_pct": -5.64,
+    "tw_name": "台股重電·散熱",
+    "tw_day_pct": -8.92,
+    "tw_wtd_pct": -18.9,
+    "members": [
+     {
+      "ticker": "1513.TW",
+      "close": 133.0,
+      "day_pct": -7.32,
+      "wtd_pct": -13.07,
+      "vol_ratio": 0.75,
+      "stale": false
+     },
+     {
+      "ticker": "1519.TW",
+      "close": 449.5,
+      "day_pct": -8.92,
+      "wtd_pct": -18.42,
+      "vol_ratio": 0.23,
+      "stale": false
+     },
+     {
+      "ticker": "1503.TW",
+      "close": 154.0,
+      "day_pct": -8.61,
+      "wtd_pct": -16.98,
+      "vol_ratio": 0.64,
+      "stale": false
+     },
+     {
+      "ticker": "3017.TW",
+      "close": 2310.0,
+      "day_pct": -9.94,
+      "wtd_pct": -25.36,
+      "vol_ratio": 0.07,
+      "stale": false
+     },
+     {
+      "ticker": "3324.TWO",
+      "close": 1055.0,
+      "day_pct": -9.83,
+      "wtd_pct": -20.68,
+      "vol_ratio": 0.02,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "ai_software",
+    "us_name": "AI 軟體與資安",
+    "us_ref_date": "2026-11-04",
+    "us_day_pct": -0.59,
+    "us_wtd_pct": -2.7,
+    "tw_name": "台股網通",
+    "tw_day_pct": -9.78,
+    "tw_wtd_pct": -22.91,
+    "members": [
+     {
+      "ticker": "2345.TW",
+      "close": 1245.0,
+      "day_pct": -9.78,
+      "wtd_pct": -22.91,
+      "vol_ratio": 0.09,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "defensive",
+    "us_name": "防禦（金融·必需·食品水）",
+    "us_ref_date": "2026-11-04",
+    "us_day_pct": 2.85,
+    "us_wtd_pct": 3.75,
+    "tw_name": "台股金融",
+    "tw_day_pct": -9.4,
+    "tw_wtd_pct": -11.91,
+    "members": [
+     {
+      "ticker": "2881.TW",
+      "close": 140.0,
+      "day_pct": -9.97,
+      "wtd_pct": -13.31,
+      "vol_ratio": 0.7,
+      "stale": false
+     },
+     {
+      "ticker": "2882.TW",
+      "close": 101.0,
+      "day_pct": -9.82,
+      "wtd_pct": -12.93,
+      "vol_ratio": 0.64,
+      "stale": false
+     },
+     {
+      "ticker": "2891.TW",
+      "close": 68.6,
+      "day_pct": -8.41,
+      "wtd_pct": -9.5,
+      "vol_ratio": 0.33,
+      "stale": false
+     }
+    ]
+   }
+  ],
+  "foreign_flows": [
+   {
+    "date": "2026-11-05",
+    "foreign_net_e8": -1024.61,
+    "detail": {
+     "自營商(自行買賣)": -39.16,
+     "自營商(避險)": -396.11,
+     "投信": 225.94,
+     "外資及陸資(不含外資自營商)": -1024.61,
+     "外資自營商": 0.0,
+     "合計": -1233.94
+    }
+   },
+   {
+    "date": "2026-11-04",
+    "foreign_net_e8": -1499.0,
+    "detail": {
+     "自營商(自行買賣)": -7.53,
+     "自營商(避險)": -367.66,
+     "投信": 272.58,
+     "外資及陸資(不含外資自營商)": -1499.0,
+     "外資自營商": 0.0,
+     "合計": -1601.6
+    }
+   },
+   {
+    "date": "2026-11-03",
+    "foreign_net_e8": -1073.07,
+    "detail": {
+     "自營商(自行買賣)": -87.04,
+     "自營商(避險)": -503.5,
+     "投信": 184.6,
+     "外資及陸資(不含外資自營商)": -1073.07,
+     "外資自營商": 0.0,
+     "合計": -1479.01
+    }
+   },
+   {
+    "date": "2026-11-02",
+    "foreign_net_e8": -735.21,
+    "detail": {
+     "自營商(自行買賣)": 4.66,
+     "自營商(避險)": -157.55,
+     "投信": 338.16,
+     "外資及陸資(不含外資自營商)": -735.21,
+     "外資自營商": 0.0,
+     "合計": -549.93
+    }
+   },
+   {
+    "date": "2026-10-30",
+    "foreign_net_e8": -1124.67,
+    "detail": {
+     "自營商(自行買賣)": -38.4,
+     "自營商(避險)": -475.29,
+     "投信": 236.19,
+     "外資及陸資(不含外資自營商)": -1124.67,
+     "外資自營商": 0.0,
+     "合計": -1402.18
+    }
+   }
+  ]
+ }
+}
