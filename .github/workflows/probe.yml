@@ -9,6 +9,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install pandas requests
+      - run: pip install pandas requests lxml html5lib beautifulsoup4
       - run: timeout 360 python -u scripts/probe_liquidity.py || true
         timeout-minutes: 8
