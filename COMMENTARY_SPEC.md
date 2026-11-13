@@ -28,7 +28,7 @@ docs/data/commentary/<session_date>-<session>.json   例：2026-11-06-fri.json
 13. **門檻標示**：★＝一年分布判定、☆＝自訂研習門檻、○＝只記方向。判定沿用 `liquidity` 內的 `signal`，不自行改判；若要補充看法標（解讀）。
 14. **TGA 對照 QRA**：用 `liquidity.qra_check` 與 `liquidity.h41.tga_scenarios` 說明 TGA 是否在財政部預估高峰區間、距年底假設多遠，情境 A／B／C 對準備金的影響。
 15. **H.4.1 時間差**：H.4.1 每週四美東 16:30 公布、截至週三。週四報告若 `liquidity.h41.week` 不是本週三，要在 `liquidity_limits` 註明用的是上一週。
-16. **MMF**：ICI 擋自動下載，請用 WebSearch／WebFetch 找 ICI 每週四公布的 Money Market Fund Assets，填 `mmf`；找不到就寫「本期未取得」。
+16. **MMF**：ICI 擋自動下載。依序嘗試：① WebFetch ICI 原頁（https://www.ici.org/research/stats/mmf）；② WebSearch `cranedata ICI MMF` 找 Crane Data 當週轉載 ICI 數字的文章（標題多為「ICI: MMF Assets …」，會列出總額、政府型／優先型／免稅型與散戶／機構的金額與週變化），核對週別（截至週三）後填入，`source` 註明「ICI（經 Crane Data 轉載）」；③ 都找不到就寫「本期未取得」。使用者事後提供 ICI 截圖或數字時，直接補進當期檔案。`rows` 依序填：政府型合計、散戶、機構，優先型合計、散戶、機構，免稅型合計、散戶、機構，總計、散戶合計、機構合計（單位 B）。
 17. **預測答案表**：週五報告寫 `predictions`（下週一的範圍，3–6 項，如準備金、TGA、10 年債、美元指數、板塊輪動、美元兌新台幣）；下一個週四報告用實際數據寫 `scorecard` 評分（命中／部分命中／未命中／暫不判定）。
 
 ## 欄位（全部選填，沒有就省略）
