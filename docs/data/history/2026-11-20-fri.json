@@ -1,0 +1,4040 @@
+{
+ "generated_at": "2026-11-20T22:48:16+00:00",
+ "session": "fri",
+ "session_date": "2026-11-20",
+ "thu_date": "2026-11-19",
+ "market_closed_today": false,
+ "rules_note": "☆ 自訂、無外部參考點的門檻：強勢=週內相對SPY ≥+1.0pp 且當日資金分數>0；偏強=≥+0.3pp；弱勢=≤−1.0pp 且當日資金分數<0；偏弱=≤−0.3pp；其餘中性。由上往下依序判定。量比≥1.5 標示放量。",
+ "us": {
+  "benchmark": {
+   "date": "2026-11-20",
+   "close": 689.81,
+   "day_pct": -3.64,
+   "wtd_pct": -8.56,
+   "m1_pct": -9.71,
+   "vol_ratio": 2.83,
+   "flow": -10.32,
+   "stale": false
+  },
+  "indices": [
+   {
+    "ticker": "SPY",
+    "name": "S&P 500",
+    "date": "2026-11-20",
+    "close": 689.81,
+    "day_pct": -3.64,
+    "wtd_pct": -8.56,
+    "m1_pct": -9.71,
+    "vol_ratio": 2.83,
+    "flow": -10.32,
+    "stale": false,
+    "rs_pp": 0.0,
+    "signal": "中性",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -1.96,
+     "wtd_pct": -5.1,
+     "vol_ratio": 1.5,
+     "flow": -2.93,
+     "rs_pp": 0.0
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "QQQ",
+    "name": "那斯達克100",
+    "date": "2026-11-20",
+    "close": 608.45,
+    "day_pct": -5.67,
+    "wtd_pct": -10.51,
+    "m1_pct": -13.63,
+    "vol_ratio": 2.57,
+    "flow": -14.54,
+    "stale": false,
+    "rs_pp": -1.95,
+    "signal": "弱勢",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.19,
+     "wtd_pct": -5.13,
+     "vol_ratio": 1.39,
+     "flow": -3.04,
+     "rs_pp": -0.03
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "DIA",
+    "name": "道瓊工業",
+    "date": "2026-11-20",
+    "close": 481.08,
+    "day_pct": -1.98,
+    "wtd_pct": -8.04,
+    "m1_pct": -8.87,
+    "vol_ratio": 1.47,
+    "flow": -2.91,
+    "stale": false,
+    "rs_pp": 0.52,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.18,
+     "wtd_pct": -6.19,
+     "vol_ratio": 1.29,
+     "flow": -2.82,
+     "rs_pp": -1.09
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "IWM",
+    "name": "羅素2000",
+    "date": "2026-11-20",
+    "close": 256.61,
+    "day_pct": -2.88,
+    "wtd_pct": -7.54,
+    "m1_pct": -7.25,
+    "vol_ratio": 2.28,
+    "flow": -6.57,
+    "stale": false,
+    "rs_pp": 1.02,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.18,
+     "wtd_pct": -4.8,
+     "vol_ratio": 1.3,
+     "flow": -2.84,
+     "rs_pp": 0.3
+    },
+    "verdict": "確認"
+   }
+  ],
+  "sectors": [
+   {
+    "ticker": "XLK",
+    "name": "資訊科技",
+    "date": "2026-11-20",
+    "close": 149.01,
+    "day_pct": -7.27,
+    "wtd_pct": -12.49,
+    "m1_pct": -18.28,
+    "vol_ratio": 2.63,
+    "flow": -19.15,
+    "stale": false,
+    "rs_pp": -3.93,
+    "signal": "弱勢",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -1.9,
+     "wtd_pct": -5.63,
+     "vol_ratio": 1.58,
+     "flow": -3.0,
+     "rs_pp": -0.53
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLC",
+    "name": "通訊服務",
+    "date": "2026-11-20",
+    "close": 100.03,
+    "day_pct": -2.66,
+    "wtd_pct": -7.97,
+    "m1_pct": -6.88,
+    "vol_ratio": 1.22,
+    "flow": -3.25,
+    "stale": false,
+    "rs_pp": 0.59,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.67,
+     "wtd_pct": -5.46,
+     "vol_ratio": 1.24,
+     "flow": -3.31,
+     "rs_pp": -0.36
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLY",
+    "name": "非必需消費",
+    "date": "2026-11-20",
+    "close": 112.46,
+    "day_pct": -2.95,
+    "wtd_pct": -6.27,
+    "m1_pct": -2.22,
+    "vol_ratio": 1.34,
+    "flow": -3.96,
+    "stale": false,
+    "rs_pp": 2.29,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.79,
+     "wtd_pct": -3.42,
+     "vol_ratio": 1.27,
+     "flow": -3.55,
+     "rs_pp": 1.68
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLF",
+    "name": "金融",
+    "date": "2026-11-20",
+    "close": 54.57,
+    "day_pct": -1.82,
+    "wtd_pct": -7.0,
+    "m1_pct": -3.67,
+    "vol_ratio": 2.19,
+    "flow": -3.99,
+    "stale": false,
+    "rs_pp": 1.56,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -1.49,
+     "wtd_pct": -5.28,
+     "vol_ratio": 1.63,
+     "flow": -2.43,
+     "rs_pp": -0.18
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLV",
+    "name": "醫療保健",
+    "date": "2026-11-20",
+    "close": 177.24,
+    "day_pct": -0.12,
+    "wtd_pct": -6.15,
+    "m1_pct": -2.24,
+    "vol_ratio": 1.45,
+    "flow": -0.17,
+    "stale": false,
+    "rs_pp": 2.41,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.05,
+     "wtd_pct": -6.03,
+     "vol_ratio": 1.56,
+     "flow": -3.19,
+     "rs_pp": -0.93
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLI",
+    "name": "工業",
+    "date": "2026-11-20",
+    "close": 156.37,
+    "day_pct": -3.09,
+    "wtd_pct": -7.35,
+    "m1_pct": -6.21,
+    "vol_ratio": 1.5,
+    "flow": -4.63,
+    "stale": false,
+    "rs_pp": 1.21,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.0,
+     "wtd_pct": -4.4,
+     "vol_ratio": 1.34,
+     "flow": -2.68,
+     "rs_pp": 0.7
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLE",
+    "name": "能源",
+    "date": "2026-11-20",
+    "close": 60.51,
+    "day_pct": -0.62,
+    "wtd_pct": -6.85,
+    "m1_pct": -10.45,
+    "vol_ratio": 1.28,
+    "flow": -0.79,
+    "stale": false,
+    "rs_pp": 1.71,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -0.65,
+     "wtd_pct": -6.27,
+     "vol_ratio": 0.83,
+     "flow": -0.54,
+     "rs_pp": -1.17
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLB",
+    "name": "原物料",
+    "date": "2026-11-20",
+    "close": 48.34,
+    "day_pct": -2.19,
+    "wtd_pct": -7.45,
+    "m1_pct": -6.48,
+    "vol_ratio": 1.49,
+    "flow": -3.26,
+    "stale": false,
+    "rs_pp": 1.11,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -2.06,
+     "wtd_pct": -5.38,
+     "vol_ratio": 1.15,
+     "flow": -2.37,
+     "rs_pp": -0.28
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLP",
+    "name": "必需消費",
+    "date": "2026-11-20",
+    "close": 90.46,
+    "day_pct": 0.67,
+    "wtd_pct": -2.05,
+    "m1_pct": 0.52,
+    "vol_ratio": 1.69,
+    "flow": 1.13,
+    "stale": false,
+    "rs_pp": 6.51,
+    "signal": "強勢",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -1.45,
+     "wtd_pct": -2.7,
+     "vol_ratio": 1.36,
+     "flow": -1.97,
+     "rs_pp": 2.4
+    },
+    "verdict": "減弱"
+   },
+   {
+    "ticker": "XLU",
+    "name": "公用事業",
+    "date": "2026-11-20",
+    "close": 42.69,
+    "day_pct": -0.74,
+    "wtd_pct": -3.07,
+    "m1_pct": -0.42,
+    "vol_ratio": 1.25,
+    "flow": -0.93,
+    "stale": false,
+    "rs_pp": 5.49,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -1.24,
+     "wtd_pct": -2.34,
+     "vol_ratio": 1.42,
+     "flow": -1.76,
+     "rs_pp": 2.76
+    },
+    "verdict": "確認"
+   },
+   {
+    "ticker": "XLRE",
+    "name": "不動產",
+    "date": "2026-11-20",
+    "close": 42.46,
+    "day_pct": -0.98,
+    "wtd_pct": -4.3,
+    "m1_pct": -0.14,
+    "vol_ratio": 1.36,
+    "flow": -1.34,
+    "stale": false,
+    "rs_pp": 4.26,
+    "signal": "偏強",
+    "thu": {
+     "date": "2026-11-19",
+     "day_pct": -1.7,
+     "wtd_pct": -3.36,
+     "vol_ratio": 1.0,
+     "flow": -1.7,
+     "rs_pp": 1.74
+    },
+    "verdict": "確認"
+   }
+  ],
+  "groups": [
+   {
+    "key": "megacap",
+    "name": "科技巨頭",
+    "day_pct": -5.58,
+    "wtd_pct": -10.83,
+    "m1_pct": -12.87,
+    "vol_ratio": 1.56,
+    "flow": -9.61,
+    "rs_pp": -2.27,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "AAPL",
+      "name": "AAPL",
+      "date": "2026-11-20",
+      "close": 342.56,
+      "day_pct": -1.9,
+      "wtd_pct": -3.85,
+      "m1_pct": -1.55,
+      "vol_ratio": 1.67,
+      "flow": -3.18,
+      "stale": false,
+      "rs_pp": 4.71,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -0.92,
+       "wtd_pct": -1.98,
+       "vol_ratio": 0.85,
+       "flow": -0.78,
+       "rs_pp": 3.12
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "MSFT",
+      "name": "MSFT",
+      "date": "2026-11-20",
+      "close": 484.52,
+      "day_pct": -2.77,
+      "wtd_pct": -7.33,
+      "m1_pct": -6.84,
+      "vol_ratio": 1.64,
+      "flow": -4.54,
+      "stale": false,
+      "rs_pp": 1.23,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.78,
+       "wtd_pct": -4.7,
+       "vol_ratio": 1.05,
+       "flow": -1.87,
+       "rs_pp": 0.4
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "GOOGL",
+      "name": "GOOGL",
+      "date": "2026-11-20",
+      "close": 265.29,
+      "day_pct": -2.7,
+      "wtd_pct": -10.31,
+      "m1_pct": -18.18,
+      "vol_ratio": 1.32,
+      "flow": -3.57,
+      "stale": false,
+      "rs_pp": -1.75,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.46,
+       "wtd_pct": -7.81,
+       "vol_ratio": 1.18,
+       "flow": -4.08,
+       "rs_pp": -2.71
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "AMZN",
+      "name": "AMZN",
+      "date": "2026-11-20",
+      "close": 246.82,
+      "day_pct": -4.1,
+      "wtd_pct": -7.44,
+      "m1_pct": -1.42,
+      "vol_ratio": 1.44,
+      "flow": -5.9,
+      "stale": false,
+      "rs_pp": 1.12,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.87,
+       "wtd_pct": -3.48,
+       "vol_ratio": 1.06,
+       "flow": -4.08,
+       "rs_pp": 1.62
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "META",
+      "name": "META",
+      "date": "2026-11-20",
+      "close": 560.84,
+      "day_pct": -5.93,
+      "wtd_pct": -12.6,
+      "m1_pct": -13.56,
+      "vol_ratio": 1.21,
+      "flow": -7.17,
+      "stale": false,
+      "rs_pp": -4.04,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.27,
+       "wtd_pct": -7.09,
+       "vol_ratio": 0.69,
+       "flow": -2.24,
+       "rs_pp": -1.99
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "NVDA",
+      "name": "NVDA",
+      "date": "2026-11-20",
+      "close": 125.53,
+      "day_pct": -14.01,
+      "wtd_pct": -22.92,
+      "m1_pct": -40.85,
+      "vol_ratio": 2.39,
+      "flow": -33.42,
+      "stale": false,
+      "rs_pp": -14.36,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.3,
+       "wtd_pct": -10.36,
+       "vol_ratio": 1.29,
+       "flow": -4.26,
+       "rs_pp": -5.26
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "TSLA",
+      "name": "TSLA",
+      "date": "2026-11-20",
+      "close": 345.82,
+      "day_pct": -7.64,
+      "wtd_pct": -11.38,
+      "m1_pct": -7.68,
+      "vol_ratio": 1.24,
+      "flow": -9.51,
+      "stale": false,
+      "rs_pp": -2.82,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.43,
+       "wtd_pct": -4.05,
+       "vol_ratio": 0.71,
+       "flow": -1.72,
+       "rs_pp": 1.05
+      },
+      "verdict": "確認"
+     }
+    ],
+    "thu_wtd_pct": -5.64,
+    "verdict": "確認"
+   },
+   {
+    "key": "semis",
+    "name": "半導體",
+    "day_pct": -11.32,
+    "wtd_pct": -18.74,
+    "m1_pct": -22.62,
+    "vol_ratio": 2.05,
+    "flow": -23.25,
+    "rs_pp": -10.18,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "SMH",
+      "name": "SMH",
+      "date": "2026-11-20",
+      "close": 400.06,
+      "day_pct": -10.6,
+      "wtd_pct": -17.81,
+      "m1_pct": -23.56,
+      "vol_ratio": 1.97,
+      "flow": -20.87,
+      "stale": false,
+      "rs_pp": -9.25,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.62,
+       "wtd_pct": -8.07,
+       "vol_ratio": 0.88,
+       "flow": -2.3,
+       "rs_pp": -2.97
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "SOXX",
+      "name": "SOXX",
+      "date": "2026-11-20",
+      "close": 123.4,
+      "day_pct": -10.55,
+      "wtd_pct": -17.35,
+      "m1_pct": -22.18,
+      "vol_ratio": 2.11,
+      "flow": -22.26,
+      "stale": false,
+      "rs_pp": -8.79,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.75,
+       "wtd_pct": -7.6,
+       "vol_ratio": 1.01,
+       "flow": -2.78,
+       "rs_pp": -2.5
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "NVDA",
+      "name": "NVDA",
+      "date": "2026-11-20",
+      "close": 125.53,
+      "day_pct": -14.01,
+      "wtd_pct": -22.92,
+      "m1_pct": -40.85,
+      "vol_ratio": 2.39,
+      "flow": -33.42,
+      "stale": false,
+      "rs_pp": -14.36,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.3,
+       "wtd_pct": -10.36,
+       "vol_ratio": 1.29,
+       "flow": -4.26,
+       "rs_pp": -5.26
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "AVGO",
+      "name": "AVGO",
+      "date": "2026-11-20",
+      "close": 304.41,
+      "day_pct": -12.19,
+      "wtd_pct": -12.28,
+      "m1_pct": -5.83,
+      "vol_ratio": 2.11,
+      "flow": -25.68,
+      "stale": false,
+      "rs_pp": -3.72,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.09,
+       "wtd_pct": -0.1,
+       "vol_ratio": 0.92,
+       "flow": -1.93,
+       "rs_pp": 5.0
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "AMD",
+      "name": "AMD",
+      "date": "2026-11-20",
+      "close": 424.39,
+      "day_pct": -13.25,
+      "wtd_pct": -20.54,
+      "m1_pct": -16.45,
+      "vol_ratio": 1.76,
+      "flow": -23.33,
+      "stale": false,
+      "rs_pp": -11.98,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -7.72,
+       "wtd_pct": -8.4,
+       "vol_ratio": 1.92,
+       "flow": -14.79,
+       "rs_pp": -3.3
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "TSM",
+      "name": "TSM",
+      "date": "2026-11-20",
+      "close": 318.71,
+      "day_pct": -9.48,
+      "wtd_pct": -20.07,
+      "m1_pct": -22.71,
+      "vol_ratio": 2.37,
+      "flow": -22.5,
+      "stale": false,
+      "rs_pp": -11.51,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.9,
+       "wtd_pct": -11.7,
+       "vol_ratio": 1.16,
+       "flow": -3.36,
+       "rs_pp": -6.6
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "MU",
+      "name": "MU",
+      "date": "2026-11-20",
+      "close": 594.51,
+      "day_pct": -13.89,
+      "wtd_pct": -23.62,
+      "m1_pct": -30.59,
+      "vol_ratio": 1.84,
+      "flow": -25.6,
+      "stale": false,
+      "rs_pp": -15.06,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.1,
+       "wtd_pct": -11.29,
+       "vol_ratio": 1.12,
+       "flow": -2.34,
+       "rs_pp": -6.19
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "ASML",
+      "name": "ASML",
+      "date": "2026-11-20",
+      "close": 1266.22,
+      "day_pct": -6.63,
+      "wtd_pct": -15.31,
+      "m1_pct": -18.75,
+      "vol_ratio": 1.87,
+      "flow": -12.38,
+      "stale": false,
+      "rs_pp": -6.75,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.8,
+       "wtd_pct": -9.29,
+       "vol_ratio": 0.94,
+       "flow": -2.63,
+       "rs_pp": -4.19
+      },
+      "verdict": "確認"
+     }
+    ],
+    "thu_wtd_pct": -8.35,
+    "verdict": "確認"
+   },
+   {
+    "key": "defensive",
+    "name": "防禦（金融·必需·食品水）",
+    "day_pct": -0.69,
+    "wtd_pct": -4.26,
+    "m1_pct": -0.68,
+    "vol_ratio": 1.57,
+    "flow": -1.38,
+    "rs_pp": 4.3,
+    "signal": "偏強",
+    "members": [
+     {
+      "ticker": "XLF",
+      "name": "XLF",
+      "date": "2026-11-20",
+      "close": 54.57,
+      "day_pct": -1.82,
+      "wtd_pct": -7.0,
+      "m1_pct": -3.67,
+      "vol_ratio": 2.19,
+      "flow": -3.99,
+      "stale": false,
+      "rs_pp": 1.56,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.49,
+       "wtd_pct": -5.28,
+       "vol_ratio": 1.63,
+       "flow": -2.43,
+       "rs_pp": -0.18
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "XLP",
+      "name": "XLP",
+      "date": "2026-11-20",
+      "close": 90.46,
+      "day_pct": 0.67,
+      "wtd_pct": -2.05,
+      "m1_pct": 0.52,
+      "vol_ratio": 1.69,
+      "flow": 1.13,
+      "stale": false,
+      "rs_pp": 6.51,
+      "signal": "強勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.45,
+       "wtd_pct": -2.7,
+       "vol_ratio": 1.36,
+       "flow": -1.97,
+       "rs_pp": 2.4
+      },
+      "verdict": "減弱"
+     },
+     {
+      "ticker": "PHO",
+      "name": "PHO",
+      "date": "2026-11-20",
+      "close": 73.77,
+      "day_pct": -1.84,
+      "wtd_pct": -3.68,
+      "m1_pct": 2.09,
+      "vol_ratio": 1.1,
+      "flow": -2.03,
+      "stale": false,
+      "rs_pp": 4.88,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.43,
+       "wtd_pct": -1.88,
+       "vol_ratio": 0.99,
+       "flow": -1.42,
+       "rs_pp": 3.22
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "KO",
+      "name": "KO",
+      "date": "2026-11-20",
+      "close": 96.99,
+      "day_pct": 0.94,
+      "wtd_pct": -2.28,
+      "m1_pct": 1.73,
+      "vol_ratio": 1.35,
+      "flow": 1.27,
+      "stale": false,
+      "rs_pp": 6.28,
+      "signal": "強勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.04,
+       "wtd_pct": -3.18,
+       "vol_ratio": 1.24,
+       "flow": -2.53,
+       "rs_pp": 1.92
+      },
+      "verdict": "減弱"
+     },
+     {
+      "ticker": "PG",
+      "name": "PG",
+      "date": "2026-11-20",
+      "close": 169.37,
+      "day_pct": 0.91,
+      "wtd_pct": -0.25,
+      "m1_pct": 2.96,
+      "vol_ratio": 1.18,
+      "flow": 1.08,
+      "stale": false,
+      "rs_pp": 8.31,
+      "signal": "強勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.43,
+       "wtd_pct": -1.15,
+       "vol_ratio": 0.89,
+       "flow": -1.27,
+       "rs_pp": 3.95
+      },
+      "verdict": "減弱"
+     },
+     {
+      "ticker": "JPM",
+      "name": "JPM",
+      "date": "2026-11-20",
+      "close": 310.53,
+      "day_pct": -3.03,
+      "wtd_pct": -10.3,
+      "m1_pct": -7.73,
+      "vol_ratio": 1.88,
+      "flow": -5.71,
+      "stale": false,
+      "rs_pp": -1.74,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.2,
+       "wtd_pct": -7.5,
+       "vol_ratio": 1.06,
+       "flow": -1.27,
+       "rs_pp": -2.4
+      },
+      "verdict": "確認"
+     }
+    ],
+    "thu_wtd_pct": -3.61,
+    "verdict": "確認"
+   },
+   {
+    "key": "energy",
+    "name": "能源",
+    "day_pct": -0.04,
+    "wtd_pct": -6.5,
+    "m1_pct": -10.52,
+    "vol_ratio": 1.14,
+    "flow": 0.17,
+    "rs_pp": 2.07,
+    "signal": "強勢",
+    "members": [
+     {
+      "ticker": "XLE",
+      "name": "XLE",
+      "date": "2026-11-20",
+      "close": 60.51,
+      "day_pct": -0.62,
+      "wtd_pct": -6.85,
+      "m1_pct": -10.45,
+      "vol_ratio": 1.28,
+      "flow": -0.79,
+      "stale": false,
+      "rs_pp": 1.71,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -0.65,
+       "wtd_pct": -6.27,
+       "vol_ratio": 0.83,
+       "flow": -0.54,
+       "rs_pp": -1.17
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "XOP",
+      "name": "XOP",
+      "date": "2026-11-20",
+      "close": 168.06,
+      "day_pct": -1.11,
+      "wtd_pct": -9.06,
+      "m1_pct": -14.63,
+      "vol_ratio": 0.59,
+      "flow": -0.65,
+      "stale": false,
+      "rs_pp": -0.5,
+      "signal": "偏弱",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -0.95,
+       "wtd_pct": -8.04,
+       "vol_ratio": 0.53,
+       "flow": -0.51,
+       "rs_pp": -2.94
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "XOM",
+      "name": "XOM",
+      "date": "2026-11-20",
+      "close": 159.99,
+      "day_pct": 0.67,
+      "wtd_pct": -5.62,
+      "m1_pct": -9.67,
+      "vol_ratio": 1.26,
+      "flow": 0.84,
+      "stale": false,
+      "rs_pp": 2.94,
+      "signal": "強勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.03,
+       "wtd_pct": -6.25,
+       "vol_ratio": 0.84,
+       "flow": -0.86,
+       "rs_pp": -1.15
+      },
+      "verdict": "減弱"
+     },
+     {
+      "ticker": "CVX",
+      "name": "CVX",
+      "date": "2026-11-20",
+      "close": 208.37,
+      "day_pct": 0.91,
+      "wtd_pct": -4.45,
+      "m1_pct": -7.31,
+      "vol_ratio": 1.41,
+      "flow": 1.29,
+      "stale": false,
+      "rs_pp": 4.11,
+      "signal": "強勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": 0.3,
+       "wtd_pct": -5.31,
+       "vol_ratio": 1.04,
+       "flow": 0.31,
+       "rs_pp": -0.21
+      },
+      "verdict": "減弱"
+     }
+    ],
+    "thu_wtd_pct": -6.47,
+    "verdict": "確認"
+   },
+   {
+    "key": "frontier",
+    "name": "太空·量子·長壽",
+    "day_pct": -7.92,
+    "wtd_pct": -21.72,
+    "m1_pct": -22.03,
+    "vol_ratio": 1.5,
+    "flow": -11.73,
+    "rs_pp": -13.16,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "UFO",
+      "name": "UFO",
+      "date": "2026-11-20",
+      "close": 35.87,
+      "day_pct": -5.53,
+      "wtd_pct": -11.85,
+      "m1_pct": -9.01,
+      "vol_ratio": 2.46,
+      "flow": -13.61,
+      "stale": false,
+      "rs_pp": -3.29,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.87,
+       "wtd_pct": -6.68,
+       "vol_ratio": 0.54,
+       "flow": -1.56,
+       "rs_pp": -1.58
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "RKLB",
+      "name": "RKLB",
+      "date": "2026-11-20",
+      "close": 45.42,
+      "day_pct": -10.92,
+      "wtd_pct": -26.18,
+      "m1_pct": -11.32,
+      "vol_ratio": 1.14,
+      "flow": -12.45,
+      "stale": false,
+      "rs_pp": -17.62,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.92,
+       "wtd_pct": -17.13,
+       "vol_ratio": 0.83,
+       "flow": -3.27,
+       "rs_pp": -12.03
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "IONQ",
+      "name": "IONQ",
+      "date": "2026-11-20",
+      "close": 20.72,
+      "day_pct": -8.76,
+      "wtd_pct": -28.25,
+      "m1_pct": -33.5,
+      "vol_ratio": 1.31,
+      "flow": -11.51,
+      "stale": false,
+      "rs_pp": -19.69,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.28,
+       "wtd_pct": -21.36,
+       "vol_ratio": 1.23,
+       "flow": -4.03,
+       "rs_pp": -16.26
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "RGTI",
+      "name": "RGTI",
+      "date": "2026-11-20",
+      "close": 7.16,
+      "day_pct": -11.17,
+      "wtd_pct": -25.57,
+      "m1_pct": -37.63,
+      "vol_ratio": 1.47,
+      "flow": -16.46,
+      "stale": false,
+      "rs_pp": -17.01,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -3.24,
+       "wtd_pct": -16.22,
+       "vol_ratio": 1.05,
+       "flow": -3.39,
+       "rs_pp": -11.12
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "QBTS",
+      "name": "QBTS",
+      "date": "2026-11-20",
+      "close": 6.52,
+      "day_pct": -10.81,
+      "wtd_pct": -31.8,
+      "m1_pct": -43.94,
+      "vol_ratio": 1.48,
+      "flow": -16.03,
+      "stale": false,
+      "rs_pp": -23.24,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -4.94,
+       "wtd_pct": -23.54,
+       "vol_ratio": 1.23,
+       "flow": -6.06,
+       "rs_pp": -18.44
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "LLY",
+      "name": "LLY",
+      "date": "2026-11-20",
+      "close": 1347.11,
+      "day_pct": -0.3,
+      "wtd_pct": -6.68,
+      "m1_pct": 3.22,
+      "vol_ratio": 1.13,
+      "flow": -0.34,
+      "stale": false,
+      "rs_pp": 1.88,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.29,
+       "wtd_pct": -6.4,
+       "vol_ratio": 1.04,
+       "flow": -2.38,
+       "rs_pp": -1.3
+      },
+      "verdict": "確認"
+     }
+    ],
+    "thu_wtd_pct": -15.22,
+    "verdict": "確認"
+   },
+   {
+    "key": "ai_software",
+    "name": "AI 軟體與資安",
+    "day_pct": -4.77,
+    "wtd_pct": -5.72,
+    "m1_pct": -17.44,
+    "vol_ratio": 1.41,
+    "flow": -7.05,
+    "rs_pp": 2.84,
+    "signal": "偏強",
+    "members": [
+     {
+      "ticker": "IGV",
+      "name": "IGV",
+      "date": "2026-11-20",
+      "close": 91.66,
+      "day_pct": -4.62,
+      "wtd_pct": -9.42,
+      "m1_pct": -15.69,
+      "vol_ratio": 1.67,
+      "flow": -7.72,
+      "stale": false,
+      "rs_pp": -0.86,
+      "signal": "偏弱",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -0.87,
+       "wtd_pct": -5.03,
+       "vol_ratio": 1.19,
+       "flow": -1.04,
+       "rs_pp": 0.07
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "CIBR",
+      "name": "CIBR",
+      "date": "2026-11-20",
+      "close": 91.43,
+      "day_pct": -5.12,
+      "wtd_pct": -3.8,
+      "m1_pct": -11.07,
+      "vol_ratio": 1.36,
+      "flow": -6.95,
+      "stale": false,
+      "rs_pp": 4.76,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": 0.31,
+       "wtd_pct": 1.39,
+       "vol_ratio": 1.84,
+       "flow": 0.57,
+       "rs_pp": 6.49
+      },
+      "verdict": "反轉"
+     },
+     {
+      "ticker": "PLTR",
+      "name": "PLTR",
+      "date": "2026-11-20",
+      "close": 143.49,
+      "day_pct": -6.63,
+      "wtd_pct": -14.58,
+      "m1_pct": -26.86,
+      "vol_ratio": 1.52,
+      "flow": -10.07,
+      "stale": false,
+      "rs_pp": -6.02,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.91,
+       "wtd_pct": -8.52,
+       "vol_ratio": 0.89,
+       "flow": -1.69,
+       "rs_pp": -3.42
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "CRWD",
+      "name": "CRWD",
+      "date": "2026-11-20",
+      "close": 229.44,
+      "day_pct": -5.76,
+      "wtd_pct": 1.25,
+      "m1_pct": -3.57,
+      "vol_ratio": 1.36,
+      "flow": -7.85,
+      "stale": false,
+      "rs_pp": 9.81,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": 2.71,
+       "wtd_pct": 7.44,
+       "vol_ratio": 1.27,
+       "flow": 3.43,
+       "rs_pp": 12.54
+      },
+      "verdict": "減弱"
+     },
+     {
+      "ticker": "PANW",
+      "name": "PANW",
+      "date": "2026-11-20",
+      "close": 343.32,
+      "day_pct": -5.09,
+      "wtd_pct": 6.54,
+      "m1_pct": -3.27,
+      "vol_ratio": 1.66,
+      "flow": -8.44,
+      "stale": false,
+      "rs_pp": 15.1,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": 6.42,
+       "wtd_pct": 12.25,
+       "vol_ratio": 2.79,
+       "flow": 17.91,
+       "rs_pp": 17.35
+      },
+      "verdict": "減弱"
+     },
+     {
+      "ticker": "NOW",
+      "name": "NOW",
+      "date": "2026-11-20",
+      "close": 87.61,
+      "day_pct": -1.42,
+      "wtd_pct": -14.32,
+      "m1_pct": -44.2,
+      "vol_ratio": 0.91,
+      "flow": -1.3,
+      "stale": false,
+      "rs_pp": -5.76,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.9,
+       "wtd_pct": -13.09,
+       "vol_ratio": 1.01,
+       "flow": -1.91,
+       "rs_pp": -7.99
+      },
+      "verdict": "確認"
+     }
+    ],
+    "thu_wtd_pct": -0.93,
+    "verdict": "確認"
+   },
+   {
+    "key": "dc_grid",
+    "name": "資料中心與電網",
+    "day_pct": -6.18,
+    "wtd_pct": -11.73,
+    "m1_pct": -8.99,
+    "vol_ratio": 1.46,
+    "flow": -8.93,
+    "rs_pp": -3.17,
+    "signal": "弱勢",
+    "members": [
+     {
+      "ticker": "GRID",
+      "name": "GRID",
+      "date": "2026-11-20",
+      "close": 145.44,
+      "day_pct": -4.58,
+      "wtd_pct": -9.26,
+      "m1_pct": -10.88,
+      "vol_ratio": 1.55,
+      "flow": -7.11,
+      "stale": false,
+      "rs_pp": -0.7,
+      "signal": "偏弱",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.78,
+       "wtd_pct": -4.91,
+       "vol_ratio": 0.74,
+       "flow": -1.31,
+       "rs_pp": 0.19
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "VRT",
+      "name": "VRT",
+      "date": "2026-11-20",
+      "close": 166.24,
+      "day_pct": -10.14,
+      "wtd_pct": -17.73,
+      "m1_pct": -15.01,
+      "vol_ratio": 1.42,
+      "flow": -14.38,
+      "stale": false,
+      "rs_pp": -9.17,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -4.88,
+       "wtd_pct": -8.45,
+       "vol_ratio": 0.86,
+       "flow": -4.2,
+       "rs_pp": -3.35
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "ETN",
+      "name": "ETN",
+      "date": "2026-11-20",
+      "close": 311.33,
+      "day_pct": -5.82,
+      "wtd_pct": -11.8,
+      "m1_pct": -15.37,
+      "vol_ratio": 1.49,
+      "flow": -8.67,
+      "stale": false,
+      "rs_pp": -3.24,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.3,
+       "wtd_pct": -6.35,
+       "vol_ratio": 1.02,
+       "flow": -2.35,
+       "rs_pp": -1.25
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "PWR",
+      "name": "PWR",
+      "date": "2026-11-20",
+      "close": 559.03,
+      "day_pct": -4.83,
+      "wtd_pct": -7.14,
+      "m1_pct": 1.19,
+      "vol_ratio": 1.31,
+      "flow": -6.32,
+      "stale": false,
+      "rs_pp": 1.42,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -2.52,
+       "wtd_pct": -2.42,
+       "vol_ratio": 0.71,
+       "flow": -1.79,
+       "rs_pp": 2.68
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "CEG",
+      "name": "CEG",
+      "date": "2026-11-20",
+      "close": 237.41,
+      "day_pct": -5.8,
+      "wtd_pct": -15.14,
+      "m1_pct": -6.83,
+      "vol_ratio": 1.44,
+      "flow": -8.35,
+      "stale": false,
+      "rs_pp": -6.58,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -4.08,
+       "wtd_pct": -9.92,
+       "vol_ratio": 0.96,
+       "flow": -3.92,
+       "rs_pp": -4.82
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "VST",
+      "name": "VST",
+      "date": "2026-11-20",
+      "close": 115.25,
+      "day_pct": -7.17,
+      "wtd_pct": -13.35,
+      "m1_pct": -18.16,
+      "vol_ratio": 1.28,
+      "flow": -9.15,
+      "stale": false,
+      "rs_pp": -4.79,
+      "signal": "弱勢",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.14,
+       "wtd_pct": -6.66,
+       "vol_ratio": 0.65,
+       "flow": -0.74,
+       "rs_pp": -1.56
+      },
+      "verdict": "確認"
+     },
+     {
+      "ticker": "EQIX",
+      "name": "EQIX",
+      "date": "2026-11-20",
+      "close": 968.22,
+      "day_pct": -4.89,
+      "wtd_pct": -7.66,
+      "m1_pct": 2.15,
+      "vol_ratio": 1.75,
+      "flow": -8.55,
+      "stale": false,
+      "rs_pp": 0.9,
+      "signal": "偏強",
+      "thu": {
+       "date": "2026-11-19",
+       "day_pct": -1.78,
+       "wtd_pct": -2.91,
+       "vol_ratio": 1.07,
+       "flow": -1.9,
+       "rs_pp": 2.19
+      },
+      "verdict": "確認"
+     }
+    ],
+    "thu_wtd_pct": -5.95,
+    "verdict": "確認"
+   }
+  ],
+  "week_dates": [
+   "2026-11-16",
+   "2026-11-17",
+   "2026-11-18",
+   "2026-11-19",
+   "2026-11-20"
+  ],
+  "week_path": {
+   "SPY": [
+    -1.91,
+    -2.91,
+    -3.2,
+    -5.1,
+    -8.56
+   ],
+   "XLK": [
+    -3.24,
+    -4.12,
+    -3.8,
+    -5.63,
+    -12.49
+   ],
+   "XLC": [
+    -1.72,
+    -3.16,
+    -2.86,
+    -5.46,
+    -7.97
+   ],
+   "XLY": [
+    -1.53,
+    -2.4,
+    -0.65,
+    -3.42,
+    -6.27
+   ],
+   "XLF": [
+    -0.85,
+    -2.74,
+    -3.85,
+    -5.28,
+    -7.0
+   ],
+   "XLV": [
+    -0.51,
+    -1.91,
+    -4.07,
+    -6.03,
+    -6.15
+   ],
+   "XLI": [
+    -1.85,
+    -2.39,
+    -2.44,
+    -4.4,
+    -7.35
+   ],
+   "XLE": [
+    -1.96,
+    -2.46,
+    -5.65,
+    -6.27,
+    -6.85
+   ],
+   "XLB": [
+    -1.46,
+    -2.66,
+    -3.39,
+    -5.38,
+    -7.45
+   ],
+   "XLP": [
+    0.27,
+    -0.96,
+    -1.27,
+    -2.7,
+    -2.05
+   ],
+   "XLU": [
+    0.18,
+    -1.41,
+    -1.11,
+    -2.34,
+    -3.07
+   ],
+   "XLRE": [
+    -0.27,
+    -1.76,
+    -1.69,
+    -3.36,
+    -4.3
+   ]
+  },
+  "macro": [
+   {
+    "ticker": "^VIX",
+    "name": "VIX 恐慌指數",
+    "value": 35.89,
+    "day_pct": 26.2,
+    "wtd_pct": 85.96
+   },
+   {
+    "ticker": "^TNX",
+    "name": "美10年債殖利率",
+    "value": 4.912,
+    "day_pct": -2.77,
+    "wtd_pct": -4.7,
+    "day_bp": -14.0
+   },
+   {
+    "ticker": "DX-Y.NYB",
+    "name": "美元指數",
+    "value": 103.84,
+    "day_pct": -0.06,
+    "wtd_pct": 0.42
+   },
+   {
+    "ticker": "CL=F",
+    "name": "WTI 原油",
+    "value": 83.62,
+    "day_pct": 0.49,
+    "wtd_pct": -5.58
+   },
+   {
+    "ticker": "GC=F",
+    "name": "黃金",
+    "value": 3539.0,
+    "day_pct": -3.98,
+    "wtd_pct": -8.94
+   }
+  ]
+ },
+ "taiwan": {
+  "date": "2026-11-19",
+  "relation": "before",
+  "reacts_to_us": "2026-11-18",
+  "indices": [
+   {
+    "ticker": "^TWII",
+    "name": "加權指數",
+    "date": "2026-11-19",
+    "close": 38426.8906,
+    "day_pct": -4.4,
+    "wtd_pct": -12.02,
+    "m1_pct": -17.93,
+    "vol_ratio": 1.1,
+    "flow": -4.84,
+    "stale": false
+   }
+  ],
+  "usdtwd": {
+   "date": "2026-11-19",
+   "close": 32.9299,
+   "day_pct": 0.06,
+   "wtd_pct": -0.03,
+   "m1_pct": 1.08,
+   "vol_ratio": null,
+   "flow": null,
+   "stale": false
+  },
+  "adr_premium": [
+   {
+    "date": "2026-09-29",
+    "premium_pct": 17.35
+   },
+   {
+    "date": "2026-09-30",
+    "premium_pct": 17.17
+   },
+   {
+    "date": "2026-10-01",
+    "premium_pct": 16.6
+   },
+   {
+    "date": "2026-10-02",
+    "premium_pct": 20.6
+   },
+   {
+    "date": "2026-10-05",
+    "premium_pct": 20.12
+   },
+   {
+    "date": "2026-10-06",
+    "premium_pct": 18.48
+   },
+   {
+    "date": "2026-10-07",
+    "premium_pct": 16.09
+   },
+   {
+    "date": "2026-10-08",
+    "premium_pct": 14.4
+   },
+   {
+    "date": "2026-10-12",
+    "premium_pct": 11.67
+   },
+   {
+    "date": "2026-10-13",
+    "premium_pct": 14.15
+   },
+   {
+    "date": "2026-10-14",
+    "premium_pct": 10.88
+   },
+   {
+    "date": "2026-10-15",
+    "premium_pct": 11.41
+   },
+   {
+    "date": "2026-10-16",
+    "premium_pct": 10.23
+   },
+   {
+    "date": "2026-10-19",
+    "premium_pct": 12.48
+   },
+   {
+    "date": "2026-10-20",
+    "premium_pct": 14.82
+   },
+   {
+    "date": "2026-10-21",
+    "premium_pct": 16.28
+   },
+   {
+    "date": "2026-10-22",
+    "premium_pct": 11.92
+   },
+   {
+    "date": "2026-10-23",
+    "premium_pct": 14.4
+   },
+   {
+    "date": "2026-10-27",
+    "premium_pct": 18.45
+   },
+   {
+    "date": "2026-10-28",
+    "premium_pct": 17.54
+   },
+   {
+    "date": "2026-10-29",
+    "premium_pct": 15.8
+   },
+   {
+    "date": "2026-10-30",
+    "premium_pct": 11.62
+   },
+   {
+    "date": "2026-11-02",
+    "premium_pct": 11.57
+   },
+   {
+    "date": "2026-11-03",
+    "premium_pct": 14.95
+   },
+   {
+    "date": "2026-11-04",
+    "premium_pct": 14.64
+   },
+   {
+    "date": "2026-11-05",
+    "premium_pct": 3.47
+   },
+   {
+    "date": "2026-11-06",
+    "premium_pct": 16.45
+   },
+   {
+    "date": "2026-11-09",
+    "premium_pct": 13.93
+   },
+   {
+    "date": "2026-11-10",
+    "premium_pct": 13.79
+   },
+   {
+    "date": "2026-11-11",
+    "premium_pct": 13.75
+   },
+   {
+    "date": "2026-11-12",
+    "premium_pct": 13.89
+   },
+   {
+    "date": "2026-11-13",
+    "premium_pct": 11.78
+   },
+   {
+    "date": "2026-11-16",
+    "premium_pct": 10.86
+   },
+   {
+    "date": "2026-11-17",
+    "premium_pct": 9.28
+   },
+   {
+    "date": "2026-11-18",
+    "premium_pct": 9.74
+   },
+   {
+    "date": "2026-11-19",
+    "premium_pct": 10.42
+   },
+   {
+    "date": "2026-11-20",
+    "premium_pct": 5.04
+   }
+  ],
+  "mapping": [
+   {
+    "key": "semis",
+    "us_name": "半導體",
+    "us_ref_date": "2026-11-18",
+    "us_day_pct": 0.86,
+    "us_wtd_pct": -18.74,
+    "tw_name": "台股半導體",
+    "tw_day_pct": -5.55,
+    "tw_wtd_pct": -12.29,
+    "members": [
+     {
+      "ticker": "2330.TW",
+      "close": 2100.0,
+      "day_pct": -3.45,
+      "wtd_pct": -10.64,
+      "vol_ratio": 1.38,
+      "stale": false
+     },
+     {
+      "ticker": "2454.TW",
+      "close": 3720.0,
+      "day_pct": -5.58,
+      "wtd_pct": -9.71,
+      "vol_ratio": 1.6,
+      "stale": false
+     },
+     {
+      "ticker": "2303.TW",
+      "close": 88.2,
+      "day_pct": -5.16,
+      "wtd_pct": -13.1,
+      "vol_ratio": 0.98,
+      "stale": false
+     },
+     {
+      "ticker": "3711.TW",
+      "close": 504.0,
+      "day_pct": -8.03,
+      "wtd_pct": -15.72,
+      "vol_ratio": 1.25,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "megacap",
+    "us_name": "科技巨頭",
+    "us_ref_date": "2026-11-18",
+    "us_day_pct": 0.4,
+    "us_wtd_pct": -10.83,
+    "tw_name": "台股 AI 伺服器",
+    "tw_day_pct": -2.32,
+    "tw_wtd_pct": -9.03,
+    "members": [
+     {
+      "ticker": "2382.TW",
+      "close": 262.5,
+      "day_pct": -0.94,
+      "wtd_pct": -5.06,
+      "vol_ratio": 0.73,
+      "stale": false
+     },
+     {
+      "ticker": "2317.TW",
+      "close": 220.5,
+      "day_pct": -0.23,
+      "wtd_pct": -8.51,
+      "vol_ratio": 1.16,
+      "stale": false
+     },
+     {
+      "ticker": "3231.TW",
+      "close": 156.0,
+      "day_pct": -3.7,
+      "wtd_pct": -8.77,
+      "vol_ratio": 0.72,
+      "stale": false
+     },
+     {
+      "ticker": "6669.TW",
+      "close": 1410.0,
+      "day_pct": -4.41,
+      "wtd_pct": -13.76,
+      "vol_ratio": 1.04,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "dc_grid",
+    "us_name": "資料中心與電網",
+    "us_ref_date": "2026-11-18",
+    "us_day_pct": 0.09,
+    "us_wtd_pct": -11.73,
+    "tw_name": "台股重電·散熱",
+    "tw_day_pct": -5.81,
+    "tw_wtd_pct": -12.23,
+    "members": [
+     {
+      "ticker": "1513.TW",
+      "close": 138.5,
+      "day_pct": -3.48,
+      "wtd_pct": -5.46,
+      "vol_ratio": 1.11,
+      "stale": false
+     },
+     {
+      "ticker": "1519.TW",
+      "close": 468.0,
+      "day_pct": -2.09,
+      "wtd_pct": -7.33,
+      "vol_ratio": 1.76,
+      "stale": false
+     },
+     {
+      "ticker": "1503.TW",
+      "close": 159.5,
+      "day_pct": -3.63,
+      "wtd_pct": -6.18,
+      "vol_ratio": 1.68,
+      "stale": false
+     },
+     {
+      "ticker": "3017.TW",
+      "close": 2445.0,
+      "day_pct": -9.94,
+      "wtd_pct": -19.57,
+      "vol_ratio": 1.43,
+      "stale": false
+     },
+     {
+      "ticker": "3324.TWO",
+      "close": 882.0,
+      "day_pct": -9.91,
+      "wtd_pct": -22.63,
+      "vol_ratio": 0.61,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "ai_software",
+    "us_name": "AI 軟體與資安",
+    "us_ref_date": "2026-11-18",
+    "us_day_pct": 3.57,
+    "us_wtd_pct": -5.72,
+    "tw_name": "台股網通",
+    "tw_day_pct": -4.93,
+    "tw_wtd_pct": -11.18,
+    "members": [
+     {
+      "ticker": "2345.TW",
+      "close": 1350.0,
+      "day_pct": -4.93,
+      "wtd_pct": -11.18,
+      "vol_ratio": 1.91,
+      "stale": false
+     }
+    ]
+   },
+   {
+    "key": "defensive",
+    "us_name": "防禦（金融·必需·食品水）",
+    "us_ref_date": "2026-11-18",
+    "us_day_pct": -0.64,
+    "us_wtd_pct": -4.26,
+    "tw_name": "台股金融",
+    "tw_day_pct": -2.33,
+    "tw_wtd_pct": -8.36,
+    "members": [
+     {
+      "ticker": "2881.TW",
+      "close": 148.0,
+      "day_pct": -0.67,
+      "wtd_pct": -8.36,
+      "vol_ratio": 1.46,
+      "stale": false
+     },
+     {
+      "ticker": "2882.TW",
+      "close": 103.5,
+      "day_pct": -5.91,
+      "wtd_pct": -9.61,
+      "vol_ratio": 1.92,
+      "stale": false
+     },
+     {
+      "ticker": "2891.TW",
+      "close": 73.1,
+      "day_pct": -0.41,
+      "wtd_pct": -7.12,
+      "vol_ratio": 1.5,
+      "stale": false
+     }
+    ]
+   }
+  ],
+  "foreign_flows": [
+   {
+    "date": "2026-11-19",
+    "foreign_net_e8": -243.12,
+    "detail": {
+     "自營商(自行買賣)": -18.63,
+     "自營商(避險)": -214.4,
+     "投信": 43.9,
+     "外資及陸資(不含外資自營商)": -243.12,
+     "外資自營商": 0.0,
+     "合計": -432.25
+    }
+   },
+   {
+    "date": "2026-11-18",
+    "foreign_net_e8": -765.64,
+    "detail": {
+     "自營商(自行買賣)": 54.72,
+     "自營商(避險)": -96.73,
+     "投信": 166.12,
+     "外資及陸資(不含外資自營商)": -765.64,
+     "外資自營商": 0.0,
+     "合計": -641.53
+    }
+   },
+   {
+    "date": "2026-11-17",
+    "foreign_net_e8": -380.94,
+    "detail": {
+     "自營商(自行買賣)": 63.87,
+     "自營商(避險)": -220.84,
+     "投信": -38.21,
+     "外資及陸資(不含外資自營商)": -380.94,
+     "外資自營商": 0.0,
+     "合計": -576.11
+    }
+   },
+   {
+    "date": "2026-11-16",
+    "foreign_net_e8": -701.89,
+    "detail": {
+     "自營商(自行買賣)": 31.19,
+     "自營商(避險)": -290.22,
+     "投信": -183.02,
+     "外資及陸資(不含外資自營商)": -701.89,
+     "外資自營商": 0.0,
+     "合計": -1143.94
+    }
+   },
+   {
+    "date": "2026-11-13",
+    "foreign_net_e8": 288.37,
+    "detail": {
+     "自營商(自行買賣)": 42.99,
+     "自營商(避險)": 25.94,
+     "投信": 95.39,
+     "外資及陸資(不含外資自營商)": 288.37,
+     "外資自營商": 0.0,
+     "合計": 452.68
+    }
+   }
+  ]
+ },
+ "liquidity": {
+  "generated_at": "2026-11-20T22:48:16Z",
+  "log": [
+   "H.4.1 週別 66（本次補抓 0），最新週 2026-11-18"
+  ],
+  "qra_key": "2026-11",
+  "h41": {
+   "week": "2026-11-18",
+   "prev_week": "2026-11-11",
+   "weeks_in_history": 66,
+   "cards": [
+    {
+     "key": "reserves",
+     "name": "銀行準備金",
+     "avg": 2979.7,
+     "wed": 3001.8,
+     "chg_wk": 19.1,
+     "chg_wed": 31.8,
+     "chg_yr": 91.0,
+     "pct": 54.0,
+     "signal": "正常",
+     "note": "★ 一年分布：第 20 百分位以下▲、第 5 百分位以下■；單週減少 ≥500 億美元也列▲"
+    },
+    {
+     "key": "tga",
+     "name": "TGA 財政部帳戶",
+     "avg": 916.6,
+     "wed": 892.3,
+     "chg_wk": 2.2,
+     "chg_wed": -19.8,
+     "chg_yr": -25.3,
+     "pct": 70.0,
+     "signal": "正常",
+     "note": "★ 一年分布：第 80 百分位以上▲、第 95 百分位以上■"
+    },
+    {
+     "key": "rrp_others",
+     "name": "國內逆回購（Others）",
+     "avg": 0.3,
+     "wed": 0.3,
+     "chg_wk": 0.1,
+     "chg_wed": 0.2,
+     "chg_yr": -1.7,
+     "pct": null,
+     "signal": "注意",
+     "note": "☆ 低於 1,000 億美元▲（緩衝幾乎耗盡）"
+    },
+    {
+     "key": "primary",
+     "name": "貼現窗口 Primary credit",
+     "avg": 9.4,
+     "wed": 9.1,
+     "chg_wk": 0.5,
+     "chg_wed": -0.2,
+     "chg_yr": 3.1,
+     "pct": null,
+     "signal": "注意",
+     "note": "☆ <50 億●、50–150 億▲、≥150 億■"
+    },
+    {
+     "key": "secondary",
+     "name": "Secondary credit",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": 0.0,
+     "pct": null,
+     "signal": "正常",
+     "note": "☆ 只要不為 0 即■"
+    },
+    {
+     "key": "swaps",
+     "name": "央行美元交換",
+     "avg": 0.1,
+     "wed": 0.1,
+     "chg_wk": -0.0,
+     "chg_wed": -0.0,
+     "chg_yr": 0.1,
+     "pct": null,
+     "signal": "正常",
+     "note": "☆ <10 億●、10–50 億▲、≥50 億■"
+    },
+    {
+     "key": "repo_fima",
+     "name": "FIMA 回購",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": 0.0,
+     "pct": null,
+     "signal": "正常",
+     "note": "☆ 0 正常，大於 0▲"
+    },
+    {
+     "key": "repo_others",
+     "name": "常備回購 SRF 等",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": -0.0,
+     "chg_yr": -1.3,
+     "pct": null,
+     "signal": "正常",
+     "note": "☆ 接近 0●，達 10 億美元以上▲"
+    },
+    {
+     "key": "bills",
+     "name": "聯準會持有 Bills",
+     "avg": 580.7,
+     "wed": 580.7,
+     "chg_wk": 3.1,
+     "chg_wed": 0.0,
+     "chg_yr": 385.2,
+     "pct": null,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "key": "custody_ust",
+     "name": "外國機構保管公債",
+     "avg": 2537.4,
+     "wed": 2544.0,
+     "chg_wk": 6.0,
+     "chg_wed": 19.8,
+     "chg_yr": -204.1,
+     "pct": null,
+     "signal": "方向",
+     "note": "○ 只記方向；持續減少▲"
+    }
+   ],
+   "rows": [
+    {
+     "key": "fed_credit",
+     "name": "聯準會信用供給 Reserve Bank credit",
+     "avg": 6705.7,
+     "wed": 6695.0,
+     "chg_wk": -1.8,
+     "chg_wed": -17.1,
+     "chg_yr": 184.5,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "supply",
+     "name": "供給因素合計",
+     "avg": 6804.1,
+     "wed": 6793.4,
+     "chg_wk": -2.0,
+     "chg_wed": -17.3,
+     "chg_yr": 184.7,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "ust",
+     "name": "美國公債",
+     "avg": 4586.9,
+     "wed": 4587.1,
+     "chg_wk": 3.6,
+     "chg_wed": 0.5,
+     "chg_yr": 394.8,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "bills",
+     "name": "Bills 短期公債",
+     "avg": 580.7,
+     "wed": 580.7,
+     "chg_wk": 3.1,
+     "chg_wed": 0.0,
+     "chg_yr": 385.2,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "nb_nominal",
+     "name": "名目 Notes 與 Bonds",
+     "avg": 3620.7,
+     "wed": 3620.7,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": 46.7,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "tips",
+     "name": "TIPS",
+     "avg": 277.7,
+     "wed": 277.7,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": -32.1,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "mbs",
+     "name": "MBS",
+     "avg": 1883.5,
+     "wed": 1883.5,
+     "chg_wk": -0.0,
+     "chg_wed": -0.1,
+     "chg_yr": -186.4,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "repo_fima",
+     "name": "回購：FIMA",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": 0.0,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "repo_others",
+     "name": "回購：其他（SRF 等）",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": -0.0,
+     "chg_yr": -1.3,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "primary",
+     "name": "Primary credit",
+     "avg": 9.4,
+     "wed": 9.1,
+     "chg_wk": 0.5,
+     "chg_wed": -0.2,
+     "chg_yr": 3.1,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "secondary",
+     "name": "Secondary credit",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": 0.0,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "seasonal",
+     "name": "Seasonal credit",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": -0.0,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "swaps",
+     "name": "央行美元交換",
+     "avg": 0.1,
+     "wed": 0.1,
+     "chg_wk": -0.0,
+     "chg_wed": -0.0,
+     "chg_yr": 0.1,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "currency",
+     "name": "流通現金",
+     "avg": 2496.9,
+     "wed": 2497.7,
+     "chg_wk": 3.5,
+     "chg_wed": 1.6,
+     "chg_yr": 74.5,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "rrp",
+     "name": "逆回購合計",
+     "avg": 324.4,
+     "wed": 317.0,
+     "chg_wk": -12.1,
+     "chg_wed": -19.2,
+     "chg_yr": -6.1,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "rrp_foreign",
+     "name": "逆回購：海外官方",
+     "avg": 324.1,
+     "wed": 316.7,
+     "chg_wk": -12.2,
+     "chg_wed": -19.4,
+     "chg_yr": -4.4,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "rrp_others",
+     "name": "逆回購：國內 Others",
+     "avg": 0.3,
+     "wed": 0.3,
+     "chg_wk": 0.1,
+     "chg_wed": 0.2,
+     "chg_yr": -1.7,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "term_dep",
+     "name": "定期存款",
+     "avg": 0.0,
+     "wed": 0.0,
+     "chg_wk": 0.0,
+     "chg_wed": 0.0,
+     "chg_yr": 0.0,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "tga",
+     "name": "TGA",
+     "avg": 916.6,
+     "wed": 892.3,
+     "chg_wk": 2.2,
+     "chg_wed": -19.8,
+     "chg_yr": -25.3,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "dep_foreign",
+     "name": "海外官方存款",
+     "avg": 9.5,
+     "wed": 9.5,
+     "chg_wk": -0.2,
+     "chg_wed": 0.0,
+     "chg_yr": 0.0,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "dep_other",
+     "name": "其他存款",
+     "avg": 252.5,
+     "wed": 249.5,
+     "chg_wk": -12.4,
+     "chg_wed": -9.5,
+     "chg_yr": 36.9,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "other_liab",
+     "name": "其他負債與資本",
+     "avg": -175.7,
+     "wed": -174.7,
+     "chg_wk": -2.0,
+     "chg_wed": -2.2,
+     "chg_yr": 15.7,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "reserves",
+     "name": "準備金",
+     "avg": 2979.7,
+     "wed": 3001.8,
+     "chg_wk": 19.1,
+     "chg_wed": 31.8,
+     "chg_yr": 91.0,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    }
+   ],
+   "memo": [
+    {
+     "key": "custody",
+     "name": "外國機構保管證券合計",
+     "avg": 2806.6,
+     "wed": 2813.2,
+     "chg_wk": 5.7,
+     "chg_wed": 19.6,
+     "chg_yr": -250.3,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "custody_ust",
+     "name": "其中：可交易美國公債",
+     "avg": 2537.4,
+     "wed": 2544.0,
+     "chg_wk": 6.0,
+     "chg_wed": 19.8,
+     "chg_yr": -204.1,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "custody_agency",
+     "name": "其中：機構債與 MBS",
+     "avg": 196.5,
+     "wed": 196.4,
+     "chg_wk": -0.2,
+     "chg_wed": -0.2,
+     "chg_yr": -40.7,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "custody_other",
+     "name": "其中：其他",
+     "avg": 72.8,
+     "wed": 72.8,
+     "chg_wk": -0.1,
+     "chg_wed": 0.0,
+     "chg_yr": -5.5,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    },
+    {
+     "key": "sec_lent",
+     "name": "借出證券（隔夜）",
+     "avg": 39.9,
+     "wed": 41.0,
+     "chg_wk": -2.1,
+     "chg_wed": -0.5,
+     "chg_yr": 9.0,
+     "pct": null,
+     "signal": "方向",
+     "note": ""
+    }
+   ],
+   "waterfall": [
+    {
+     "name": "聯準會供給",
+     "impact": -2.0
+    },
+    {
+     "name": "TGA",
+     "impact": -2.2
+    },
+    {
+     "name": "其他存款等",
+     "impact": 12.7
+    },
+    {
+     "name": "現金",
+     "impact": -3.5
+    },
+    {
+     "name": "逆回購",
+     "impact": 12.1
+    },
+    {
+     "name": "其他負債與資本",
+     "impact": 2.0
+    },
+    {
+     "name": "合計 準備金",
+     "impact": 19.1,
+     "total": true
+    }
+   ],
+   "net_liquidity": {
+    "total_assets_wed": 6741.5,
+    "total_assets_chg": -17.4,
+    "level": 5532.1,
+    "level_domestic": 5848.8,
+    "chg": 21.6,
+    "chg_domestic": 2.2,
+    "simple_chg": -4.4,
+    "simple_chg_prev": 51.3,
+    "formula": "淨流動性＝總資產（週三）－TGA（週三）－逆回購（週三）；簡易流動性變化＝Δ供給－ΔTGA－Δ國內逆回購（週平均）"
+   },
+   "trend": [
+    {
+     "week": "2026-10-28",
+     "reserves": 2893.8,
+     "reserves_chg": -68.8,
+     "tga": 999.7,
+     "tga_chg": 47.7,
+     "rrp": 330.4,
+     "rrp_chg": 3.1,
+     "total_assets": 6745.6,
+     "signal": "注意"
+    },
+    {
+     "week": "2026-11-04",
+     "reserves": 2930.1,
+     "reserves_chg": 36.3,
+     "tga": 957.2,
+     "tga_chg": -42.6,
+     "rrp": 341.0,
+     "rrp_chg": 10.6,
+     "total_assets": 6748.1,
+     "signal": "正常"
+    },
+    {
+     "week": "2026-11-11",
+     "reserves": 2960.6,
+     "reserves_chg": 30.5,
+     "tga": 914.4,
+     "tga_chg": -42.8,
+     "rrp": 336.5,
+     "rrp_chg": -4.4,
+     "total_assets": 6758.9,
+     "signal": "正常"
+    },
+    {
+     "week": "2026-11-18",
+     "reserves": 2979.7,
+     "reserves_chg": 19.1,
+     "tga": 916.6,
+     "tga_chg": 2.2,
+     "rrp": 324.4,
+     "rrp_chg": -12.1,
+     "total_assets": 6741.5,
+     "signal": "正常"
+    }
+   ],
+   "direction": [
+    {
+     "name": "銀行準備金",
+     "chg_wed": 31.8,
+     "chg_avg": 19.1,
+     "verdict": "方向一致"
+    },
+    {
+     "name": "TGA",
+     "chg_wed": -19.8,
+     "chg_avg": 2.2,
+     "verdict": "方向不同，趨勢以週平均判讀"
+    },
+    {
+     "name": "逆回購總額",
+     "chg_wed": -19.2,
+     "chg_avg": -12.1,
+     "verdict": "方向一致"
+    },
+    {
+     "name": "聯準會供給",
+     "chg_wed": -17.4,
+     "chg_avg": -2.0,
+     "verdict": "方向一致"
+    },
+    {
+     "name": "MBS",
+     "chg_wed": -0.1,
+     "chg_avg": -0.0,
+     "verdict": "方向不同，趨勢以週平均判讀"
+    }
+   ],
+   "maturity": [
+    {
+     "bucket": "15 天內",
+     "holdings": 127.9,
+     "share": 2.8,
+     "weekly_change": 21.7
+    },
+    {
+     "bucket": "16–90 天",
+     "holdings": 423.5,
+     "share": 9.2,
+     "weekly_change": -4.4
+    },
+    {
+     "bucket": "91 天–1 年",
+     "holdings": 506.4,
+     "share": 11.0,
+     "weekly_change": 7.3
+    },
+    {
+     "bucket": "1–5 年",
+     "holdings": 1435.4,
+     "share": 31.3,
+     "weekly_change": -4.3
+    },
+    {
+     "bucket": "5–10 年",
+     "holdings": 462.3,
+     "share": 10.1,
+     "weekly_change": -25.1
+    },
+    {
+     "bucket": "10 年以上",
+     "holdings": 1631.7,
+     "share": 35.6,
+     "weekly_change": 5.3
+    }
+   ],
+   "maturity_note": "一年內到期 1057.8，占 23.0%（計算）",
+   "tga_scenarios": [
+    {
+     "name": "A 過峰後下降",
+     "path": "降至財政部年底假設 850",
+     "tga_change": -42.3,
+     "reserves_end": 3044.1,
+     "pct": 84.0,
+     "signal": "正常"
+    },
+    {
+     "name": "B 繼續累積",
+     "path": "升至財政部高峰估計上緣 1,075",
+     "tga_change": 182.7,
+     "reserves_end": 2819.1,
+     "pct": 0.0,
+     "signal": "警告"
+    },
+    {
+     "name": "C 橫盤",
+     "path": "維持目前水準",
+     "tga_change": 0.0,
+     "reserves_end": 3001.8,
+     "pct": 64.0,
+     "signal": "正常"
+    }
+   ],
+   "reserves_range": {
+    "min": 2848.0,
+    "max": 3142.7,
+    "p5": 2862.6,
+    "p20": 2925.2
+   }
+  },
+  "rate_ladder": {
+   "target": [
+    3.75,
+    4.0
+   ],
+   "items": [
+    {
+     "name": "隔夜逆回購 ON RRP（下限）",
+     "rate": 3.75,
+     "src": "紐約聯準銀行"
+    },
+    {
+     "name": "有效聯邦基金利率 EFFR",
+     "rate": 3.88,
+     "date": "2026-11-19",
+     "src": "紐約聯準銀行"
+    },
+    {
+     "name": "準備金餘額利率 IORB",
+     "rate": 3.9,
+     "src": "計算：目標區間上限 -0.10（依 FOMC 執行說明慣例）"
+    },
+    {
+     "name": "SOFR",
+     "rate": 3.91,
+     "date": "2026-11-19",
+     "src": "紐約聯準銀行"
+    },
+    {
+     "name": "常備回購 SRF（上限）",
+     "rate": 4.0,
+     "src": "紐約聯準銀行"
+    },
+    {
+     "name": "1 個月期 T-bill",
+     "rate": 4.11,
+     "date": "2026-11-20",
+     "src": "財政部（約當殖利率）"
+    },
+    {
+     "name": "3 個月期 T-bill",
+     "rate": 4.23,
+     "date": "2026-11-20",
+     "src": "財政部（約當殖利率）"
+    }
+   ]
+  },
+  "rates": [
+   {
+    "name": "美國 3 個月期公債",
+    "group": "利率結構",
+    "value": 4.32,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": 0.0,
+    "chg_unit": "bp",
+    "pct": 98.0,
+    "lo": 3.62,
+    "hi": 4.34,
+    "signal": "方向",
+    "note": "○ 只記方向"
+   },
+   {
+    "name": "美國 6 個月期公債",
+    "group": "利率結構",
+    "value": 4.38,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": -4.0,
+    "chg_unit": "bp",
+    "pct": 97.0,
+    "lo": 3.56,
+    "hi": 4.43,
+    "signal": "方向",
+    "note": "○ 只記方向"
+   },
+   {
+    "name": "美國 2 年期公債",
+    "group": "利率結構",
+    "value": 4.63,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": -25.0,
+    "chg_unit": "bp",
+    "pct": 84.0,
+    "lo": 3.38,
+    "hi": 4.92,
+    "signal": "注意",
+    "note": "★ 一年分布"
+   },
+   {
+    "name": "美國 10 年期公債",
+    "group": "利率結構",
+    "value": 4.92,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": -23.0,
+    "chg_unit": "bp",
+    "pct": 82.0,
+    "lo": 3.97,
+    "hi": 5.31,
+    "signal": "注意",
+    "note": "★ 一年分布"
+   },
+   {
+    "name": "美國 30 年期公債",
+    "group": "利率結構",
+    "value": 5.31,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": -16.0,
+    "chg_unit": "bp",
+    "pct": 85.0,
+    "lo": 4.64,
+    "hi": 5.67,
+    "signal": "注意",
+    "note": "★ 一年分布"
+   },
+   {
+    "name": "10 年－3 個月利差",
+    "group": "利率結構",
+    "value": 0.6,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": -23.0,
+    "chg_unit": "bp",
+    "pct": 36.0,
+    "lo": 0.08,
+    "hi": 1.09,
+    "signal": "正常",
+    "note": "☆ 低於 0 為倒掛"
+   },
+   {
+    "name": "10 年－2 年利差",
+    "group": "利率結構",
+    "value": 0.29,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": 2.0,
+    "chg_unit": "bp",
+    "pct": 7.0,
+    "lo": 0.2,
+    "hi": 0.74,
+    "signal": "方向",
+    "note": "○ 只記方向"
+   },
+   {
+    "name": "實質利率 10 年 TIPS",
+    "group": "利率結構",
+    "value": 2.77,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": -14.0,
+    "chg_unit": "bp",
+    "pct": 91.0,
+    "lo": 1.72,
+    "hi": 2.95,
+    "signal": "注意",
+    "note": "☆ 超過 2% 壓抑成長股"
+   },
+   {
+    "name": "預期通膨 10 年 BEI（計算）",
+    "group": "利率結構",
+    "value": 2.15,
+    "unit": "%",
+    "date": "2026-11-20",
+    "chg_wk": -9.0,
+    "chg_unit": "bp",
+    "pct": 0.0,
+    "lo": 2.15,
+    "hi": 2.5,
+    "signal": "正常",
+    "note": "☆ 2–2.5% 正常；＝名目 10 年－實質 10 年"
+   },
+   {
+    "name": "SOFR－IORB（bp）",
+    "group": "資金市場",
+    "value": 1.0,
+    "unit": "bp",
+    "date": "2026-11-19",
+    "chg_wk": 1.0,
+    "chg_unit": "abs",
+    "pct": 78.0,
+    "lo": -15.0,
+    "hi": 22.0,
+    "signal": "正常",
+    "note": "★ 一年分布＋☆ 5bp 以上▲，取較保守者；IORB＝目標上限 −0.10（計算）"
+   },
+   {
+    "name": "國內 ON RRP 每日（十億美元）",
+    "group": "資金市場",
+    "value": 0.4,
+    "unit": "B",
+    "date": "2026-11-20",
+    "chg_wk": 0.1,
+    "chg_unit": "abs",
+    "pct": 24.0,
+    "lo": 0.0,
+    "hi": 106.0,
+    "signal": "方向",
+    "note": "○ 只記方向"
+   },
+   {
+    "name": "常備回購每日（十億美元）",
+    "group": "資金市場",
+    "value": 0.0,
+    "unit": "B",
+    "date": "2026-11-20",
+    "chg_wk": 0.0,
+    "chg_unit": "abs",
+    "pct": 53.0,
+    "lo": 0.0,
+    "hi": 1.2,
+    "signal": "正常",
+    "note": "☆ 達 10 億美元▲"
+   },
+   {
+    "name": "NFCI 芝加哥聯準銀行",
+    "group": "金融情勢",
+    "value": -0.518,
+    "unit": "",
+    "date": "2026-04-24",
+    "chg_wk": -0.02,
+    "chg_unit": "abs",
+    "pct": 51.0,
+    "lo": -0.566,
+    "hi": -0.396,
+    "signal": "方向",
+    "note": "★ 一年分布；☆ −0.5～0 屬寬鬆、正值偏緊；⚠ 資料停在 2026-04-24，來源未更新，暫不判定"
+   },
+   {
+    "name": "高收益債利差",
+    "group": "FRED（選用）",
+    "value": null,
+    "note": "未設定 FRED_API_KEY，資料未取得"
+   },
+   {
+    "name": "投資等級債利差",
+    "group": "FRED（選用）",
+    "value": null,
+    "note": "未設定 FRED_API_KEY，資料未取得"
+   },
+   {
+    "name": "STLFSI4 聖路易聯準銀行",
+    "group": "FRED（選用）",
+    "value": null,
+    "note": "未設定 FRED_API_KEY，資料未取得"
+   },
+   {
+    "name": "聯準會遞延資產（十億美元）",
+    "group": "FRED（選用）",
+    "value": null,
+    "note": "未設定 FRED_API_KEY，資料未取得"
+   },
+   {
+    "name": "M2 貨幣供給（十億美元）",
+    "group": "FRED（選用）",
+    "value": null,
+    "note": "未設定 FRED_API_KEY，資料未取得"
+   },
+   {
+    "name": "工商業貸款 C&I（十億美元）",
+    "group": "FRED（選用）",
+    "value": null,
+    "note": "未設定 FRED_API_KEY，資料未取得"
+   },
+   {
+    "name": "初領失業救濟金（人）",
+    "group": "FRED（選用）",
+    "value": null,
+    "note": "未設定 FRED_API_KEY，資料未取得"
+   }
+  ],
+  "market": {
+   "credit": [
+    {
+     "name": "HYG/SHY",
+     "group": "信用",
+     "value": 0.9353,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -0.0126,
+     "chg_unit": "abs",
+     "pct": 0.0,
+     "lo": 0.9353,
+     "hi": 0.9687,
+     "signal": "警告",
+     "note": "★ 一年分布"
+    },
+    {
+     "name": "垃圾債 JNK",
+     "group": "信用",
+     "value": 91.54,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -0.78,
+     "chg_unit": "abs",
+     "pct": 11.0,
+     "lo": 90.53,
+     "hi": 94.56,
+     "signal": "注意",
+     "note": "★ 一年分布"
+    },
+    {
+     "name": "區域銀行 KRE",
+     "group": "信用",
+     "value": 68.32,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -4.42,
+     "chg_unit": "abs",
+     "pct": 36.0,
+     "lo": 60.18,
+     "hi": 77.49,
+     "signal": "正常",
+     "note": "★ 一年分布"
+    },
+    {
+     "name": "長天期公債 TLT",
+     "group": "信用",
+     "value": 81.45,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 2.07,
+     "chg_unit": "abs",
+     "pct": 24.0,
+     "lo": 76.79,
+     "hi": 87.73,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    }
+   ],
+   "internal": [
+    {
+     "name": "IWM/QQQ 小型對大型",
+     "group": "市場內部",
+     "value": 0.4217,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 0.0135,
+     "chg_unit": "abs",
+     "pct": 78.0,
+     "lo": 0.3665,
+     "hi": 0.437,
+     "signal": "正常",
+     "note": "★ 一年分布"
+    },
+    {
+     "name": "RSP/SPY 市場廣度",
+     "group": "市場內部",
+     "value": 0.3007,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 0.0075,
+     "chg_unit": "abs",
+     "pct": 100.0,
+     "lo": 0.271,
+     "hi": 0.3007,
+     "signal": "正常",
+     "note": "★ 一年分布"
+    },
+    {
+     "name": "QQQ/SPY",
+     "group": "市場內部",
+     "value": 0.8821,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -0.0192,
+     "chg_unit": "abs",
+     "pct": 0.0,
+     "lo": 0.8821,
+     "hi": 0.9928,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "XLY/XLP 非必需對必需",
+     "group": "市場內部",
+     "value": 1.2432,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -0.056,
+     "chg_unit": "abs",
+     "pct": 0.0,
+     "lo": 1.2432,
+     "hi": 1.5984,
+     "signal": "警告",
+     "note": "★ 一年分布"
+    },
+    {
+     "name": "半導體 SOXX",
+     "group": "市場內部",
+     "value": 123.4,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -25.9,
+     "chg_unit": "abs",
+     "pct": 37.0,
+     "lo": 89.99,
+     "hi": 218.19,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "住宅建築 XHB",
+     "group": "市場內部",
+     "value": 96.6,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -5.47,
+     "chg_unit": "abs",
+     "pct": 10.0,
+     "lo": 92.84,
+     "hi": 120.15,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "運輸 IYT",
+     "group": "市場內部",
+     "value": 78.62,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -5.09,
+     "chg_unit": "abs",
+     "pct": 31.0,
+     "lo": 69.36,
+     "hi": 89.81,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    }
+   ],
+   "sentiment": [
+    {
+     "name": "VIX",
+     "group": "情緒與波動度",
+     "value": 35.89,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 16.59,
+     "chg_unit": "abs",
+     "pct": 100.0,
+     "lo": 13.47,
+     "hi": 35.89,
+     "signal": "警告",
+     "note": "★ 一年分布"
+    },
+    {
+     "name": "MOVE 債券波動度",
+     "group": "情緒與波動度",
+     "value": 106.31,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 7.52,
+     "chg_unit": "abs",
+     "pct": 96.0,
+     "lo": 55.77,
+     "hi": 115.02,
+     "signal": "警告",
+     "note": "★ 一年分布"
+    }
+   ],
+   "global": [
+    {
+     "name": "美元指數 DXY",
+     "group": "全球與匯率",
+     "value": 103.84,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 0.43,
+     "chg_unit": "abs",
+     "pct": 99.0,
+     "lo": 96.22,
+     "hi": 103.9,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "美元兌新台幣",
+     "group": "全球與匯率",
+     "value": 32.96,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 0.02,
+     "chg_unit": "abs",
+     "pct": 99.0,
+     "lo": 31.08,
+     "hi": 33.11,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "美元兌日圓",
+     "group": "全球與匯率",
+     "value": 158.51,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -1.36,
+     "chg_unit": "abs",
+     "pct": 54.0,
+     "lo": 152.45,
+     "hi": 163.86,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "美元兌人民幣",
+     "group": "全球與匯率",
+     "value": 6.68,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 0.01,
+     "chg_unit": "abs",
+     "pct": 7.0,
+     "lo": 6.65,
+     "hi": 7.11,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "歐元兌美元",
+     "group": "全球與匯率",
+     "value": 1.1,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -0.01,
+     "chg_unit": "abs",
+     "pct": 1.0,
+     "lo": 1.1,
+     "hi": 1.2,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "美元兌韓元",
+     "group": "全球與匯率",
+     "value": 1346.13,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 12.35,
+     "chg_unit": "abs",
+     "pct": 15.0,
+     "lo": 1321.76,
+     "hi": 1554.48,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "新興市場股票 EEM",
+     "group": "全球與匯率",
+     "value": 53.84,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -7.08,
+     "chg_unit": "abs",
+     "pct": 8.0,
+     "lo": 52.08,
+     "hi": 71.21,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "新興市場債 EMB",
+     "group": "全球與匯率",
+     "value": 89.92,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -1.21,
+     "chg_unit": "abs",
+     "pct": 2.0,
+     "lo": 89.7,
+     "hi": 94.69,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "日經 225",
+     "group": "全球與匯率",
+     "value": 59444.21,
+     "unit": "",
+     "date": "2026-11-19",
+     "chg_wk": -1375.15,
+     "chg_unit": "abs",
+     "pct": 44.0,
+     "lo": 48625.88,
+     "hi": 72366.34,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "歐洲 STOXX 50",
+     "group": "全球與匯率",
+     "value": 5941.95,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -444.91,
+     "chg_unit": "abs",
+     "pct": 33.0,
+     "lo": 5501.28,
+     "hi": 6551.22,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    }
+   ],
+   "commod": [
+    {
+     "name": "黃金 GLD",
+     "group": "原物料與加密貨幣",
+     "value": 322.87,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -32.58,
+     "chg_unit": "abs",
+     "pct": 0.0,
+     "lo": 322.87,
+     "hi": 495.9,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "白銀 SLV",
+     "group": "原物料與加密貨幣",
+     "value": 36.97,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -7.16,
+     "chg_unit": "abs",
+     "pct": 0.0,
+     "lo": 36.97,
+     "hi": 105.6,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "銅 CPER",
+     "group": "原物料與加密貨幣",
+     "value": 32.92,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -3.61,
+     "chg_unit": "abs",
+     "pct": 5.0,
+     "lo": 31.07,
+     "hi": 41.43,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "金銅比 GLD/CPER",
+     "group": "原物料與加密貨幣",
+     "value": 9.8077,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 0.0774,
+     "chg_unit": "abs",
+     "pct": 24.0,
+     "lo": 9.1249,
+     "hi": 13.4888,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "原油 USO",
+     "group": "原物料與加密貨幣",
+     "value": 139.63,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -5.95,
+     "chg_unit": "abs",
+     "pct": 72.0,
+     "lo": 66.17,
+     "hi": 169.53,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "布蘭特 BNO",
+     "group": "原物料與加密貨幣",
+     "value": 59.02,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -2.04,
+     "chg_unit": "abs",
+     "pct": 83.0,
+     "lo": 27.2,
+     "hi": 71.39,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "天然氣 UNG",
+     "group": "原物料與加密貨幣",
+     "value": 10.56,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": 0.41,
+     "chg_unit": "abs",
+     "pct": 34.0,
+     "lo": 9.0,
+     "hi": 16.9,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "比特幣",
+     "group": "原物料與加密貨幣",
+     "value": 58865.61,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -9383.66,
+     "chg_unit": "abs",
+     "pct": 1.0,
+     "lo": 58558.86,
+     "hi": 96929.33,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    },
+    {
+     "name": "以太幣",
+     "group": "原物料與加密貨幣",
+     "value": 1613.7,
+     "unit": "",
+     "date": "2026-11-20",
+     "chg_wk": -313.89,
+     "chg_unit": "abs",
+     "pct": 3.0,
+     "lo": 1564.82,
+     "hi": 3354.72,
+     "signal": "方向",
+     "note": "○ 只記方向"
+    }
+   ]
+  },
+  "tga_daily": [
+   {
+    "date": "2026-10-15",
+    "tga": 934.7
+   },
+   {
+    "date": "2026-10-16",
+    "tga": 948.5
+   },
+   {
+    "date": "2026-10-19",
+    "tga": 965.0
+   },
+   {
+    "date": "2026-10-20",
+    "tga": 973.7
+   },
+   {
+    "date": "2026-10-21",
+    "tga": 945.2
+   },
+   {
+    "date": "2026-10-22",
+    "tga": 961.8
+   },
+   {
+    "date": "2026-10-23",
+    "tga": 982.5
+   },
+   {
+    "date": "2026-10-26",
+    "tga": 1020.7
+   },
+   {
+    "date": "2026-10-27",
+    "tga": 1052.5
+   },
+   {
+    "date": "2026-10-28",
+    "tga": 1015.6
+   },
+   {
+    "date": "2026-10-29",
+    "tga": 1040.2
+   },
+   {
+    "date": "2026-10-30",
+    "tga": 951.6
+   },
+   {
+    "date": "2026-11-02",
+    "tga": 930.8
+   },
+   {
+    "date": "2026-11-03",
+    "tga": 938.2
+   },
+   {
+    "date": "2026-11-04",
+    "tga": 936.2
+   },
+   {
+    "date": "2026-11-05",
+    "tga": 922.8
+   },
+   {
+    "date": "2026-11-06",
+    "tga": 910.3
+   },
+   {
+    "date": "2026-11-09",
+    "tga": 922.6
+   },
+   {
+    "date": "2026-11-10",
+    "tga": 912.1
+   },
+   {
+    "date": "2026-11-12",
+    "tga": 933.1
+   },
+   {
+    "date": "2026-11-13",
+    "tga": 924.6
+   },
+   {
+    "date": "2026-11-16",
+    "tga": 895.8
+   },
+   {
+    "date": "2026-11-17",
+    "tga": 921.2
+   },
+   {
+    "date": "2026-11-18",
+    "tga": 892.3
+   },
+   {
+    "date": "2026-11-19",
+    "tga": 891.2
+   }
+  ],
+  "auctions": [
+   {
+    "date": "2026-11-12",
+    "type": "Bill",
+    "term": "4-Week",
+    "size_b": 115.0,
+    "rate": 4.022,
+    "btc": 2.94,
+    "band": "普通",
+    "dealer_pct": 25.2,
+    "indirect_pct": 67.1,
+    "reopening": "Yes"
+   },
+   {
+    "date": "2026-11-12",
+    "type": "Bill",
+    "term": "8-Week",
+    "size_b": 110.0,
+    "rate": 4.163,
+    "btc": 2.5,
+    "band": "普通",
+    "dealer_pct": 39.2,
+    "indirect_pct": 53.0,
+    "reopening": "Yes"
+   },
+   {
+    "date": "2026-11-12",
+    "type": "Bill",
+    "term": "17-Week",
+    "size_b": 75.0,
+    "rate": 4.344,
+    "btc": 2.78,
+    "band": "普通",
+    "dealer_pct": 42.3,
+    "indirect_pct": 52.9,
+    "reopening": "No"
+   },
+   {
+    "date": "2026-11-12",
+    "type": "Bond",
+    "term": "30-Year",
+    "size_b": 25.0,
+    "rate": 5.441,
+    "btc": 2.36,
+    "band": "偏弱",
+    "dealer_pct": 11.4,
+    "indirect_pct": 68.1,
+    "reopening": "No"
+   },
+   {
+    "date": "2026-11-16",
+    "type": "Bill",
+    "term": "13-Week",
+    "size_b": 95.0,
+    "rate": 4.257,
+    "btc": 2.76,
+    "band": "普通",
+    "dealer_pct": 34.8,
+    "indirect_pct": 56.9,
+    "reopening": "Yes"
+   },
+   {
+    "date": "2026-11-16",
+    "type": "Bill",
+    "term": "26-Week",
+    "size_b": 82.0,
+    "rate": 4.467,
+    "btc": 2.83,
+    "band": "普通",
+    "dealer_pct": 30.6,
+    "indirect_pct": 58.1,
+    "reopening": "No"
+   },
+   {
+    "date": "2026-11-17",
+    "type": "Bill",
+    "term": "6-Week",
+    "size_b": 100.0,
+    "rate": 4.131,
+    "btc": 2.82,
+    "band": "普通",
+    "dealer_pct": 29.7,
+    "indirect_pct": 65.7,
+    "reopening": "Yes"
+   },
+   {
+    "date": "2026-11-18",
+    "type": "Bond",
+    "term": "20-Year",
+    "size_b": 16.0,
+    "rate": 5.459,
+    "btc": 2.63,
+    "band": "普通",
+    "dealer_pct": 13.1,
+    "indirect_pct": 60.2,
+    "reopening": "No"
+   },
+   {
+    "date": "2026-11-18",
+    "type": "Bill",
+    "term": "17-Week",
+    "size_b": 75.0,
+    "rate": 4.35,
+    "btc": 3.05,
+    "band": "強",
+    "dealer_pct": 37.5,
+    "indirect_pct": 56.8,
+    "reopening": "No"
+   },
+   {
+    "date": "2026-11-19",
+    "type": "Note",
+    "term": "9-Year 8-Month TIPS",
+    "size_b": 19.0,
+    "rate": 2.903,
+    "btc": 2.43,
+    "band": "偏弱",
+    "dealer_pct": 6.0,
+    "indirect_pct": 68.6,
+    "reopening": "Yes"
+   },
+   {
+    "date": "2026-11-19",
+    "type": "Bill",
+    "term": "9-Day CMB",
+    "size_b": 15.0,
+    "rate": 3.968,
+    "btc": 3.97,
+    "band": "強",
+    "dealer_pct": 52.1,
+    "indirect_pct": 45.9,
+    "reopening": "Yes"
+   },
+   {
+    "date": "2026-11-19",
+    "type": "Bill",
+    "term": "4-Week",
+    "size_b": 115.0,
+    "rate": 4.119,
+    "btc": 2.55,
+    "band": "普通",
+    "dealer_pct": 36.4,
+    "indirect_pct": 59.3,
+    "reopening": "Yes"
+   },
+   {
+    "date": "2026-11-19",
+    "type": "Bill",
+    "term": "8-Week",
+    "size_b": 110.0,
+    "rate": 4.194,
+    "btc": 2.72,
+    "band": "普通",
+    "dealer_pct": 27.9,
+    "indirect_pct": 67.8,
+    "reopening": "Yes"
+   }
+  ],
+  "cftc": [
+   {
+    "name": "美元指數",
+    "date": "2026-11-17",
+    "noncomm_net": 13345.0,
+    "noncomm_chg": -468.0,
+    "levmoney_net": -1251.0,
+    "levmoney_chg": -4101.0,
+    "assetmgr_net": 18828.0,
+    "assetmgr_chg": 2384.0
+   },
+   {
+    "name": "S&P 500（E-mini）",
+    "date": "2026-11-17",
+    "noncomm_net": -93966.0,
+    "noncomm_chg": 44668.0,
+    "levmoney_net": -234978.0,
+    "levmoney_chg": 68082.0,
+    "assetmgr_net": 895049.0,
+    "assetmgr_chg": -19081.0
+   },
+   {
+    "name": "那斯達克100（mini）",
+    "date": "2026-11-17",
+    "noncomm_net": 4305.0,
+    "noncomm_chg": -24826.0,
+    "levmoney_net": -10928.0,
+    "levmoney_chg": -24895.0,
+    "assetmgr_net": 82900.0,
+    "assetmgr_chg": 10115.0
+   }
+  ],
+  "dealers": {
+   "asof": "2026-11-11",
+   "positions": [
+    {
+     "key": "PDPOSGST-TOT",
+     "desc": "公債合計（不含 TIPS）",
+     "value_b": 456.0,
+     "chg_b": -11.3,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGS-B",
+     "desc": "Bills",
+     "value_b": 97.0,
+     "chg_b": 4.9,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGSC-L2",
+     "desc": "附息 2 年內",
+     "value_b": 63.2,
+     "chg_b": -11.8,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGSC-G2L3",
+     "desc": "附息 2–3 年",
+     "value_b": 17.6,
+     "chg_b": 1.0,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGSC-G3L6",
+     "desc": "附息 3–6 年",
+     "value_b": 56.2,
+     "chg_b": -2.3,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGSC-G6L7",
+     "desc": "附息 6–7 年",
+     "value_b": 28.3,
+     "chg_b": -2.1,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGSC-G7L11",
+     "desc": "附息 7–11 年",
+     "value_b": 37.4,
+     "chg_b": 0.1,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGSC-G11L21",
+     "desc": "附息 11–21 年",
+     "value_b": 70.8,
+     "chg_b": -0.7,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGSC-G21",
+     "desc": "附息 21 年以上",
+     "value_b": 42.2,
+     "chg_b": 0.2,
+     "asof": "2026-11-11"
+    },
+    {
+     "key": "PDPOSGS-BFRN",
+     "desc": "FRN",
+     "value_b": 3.2,
+     "chg_b": 0.3,
+     "asof": "2026-11-11"
+    }
+   ]
+  },
+  "qra": {
+   "key": "2026-11",
+   "announced": "2026-11-04",
+   "next_announcement": "2027-02-03",
+   "borrowing_estimate": {
+    "released": "2026-11-02",
+    "current_quarter": {
+     "label": "2026 年 10–12 月",
+     "net_marketable_b": 618,
+     "end_cash_b": 850,
+     "vs_prior_b": -10,
+     "ex_cash_effect_vs_prior_b": 24
+    },
+    "next_quarter": {
+     "label": "2027 年 1–3 月",
+     "net_marketable_b": 800,
+     "end_cash_b": 1000
+    },
+    "prior_quarter_actual": {
+     "label": "2026 年 7–9 月",
+     "net_marketable_b": 742,
+     "estimate_b": 739,
+     "end_cash_b": 984,
+     "assumed_end_cash_b": 950
+    }
+   },
+   "refunding": {
+    "total_b": 125,
+    "maturing_private_b": 97,
+    "new_cash_b": 28,
+    "settle": "2026-11-16",
+    "auctions": [
+     {
+      "tenor": "3 年",
+      "size_b": 58,
+      "date": "2026-11-09"
+     },
+     {
+      "tenor": "10 年",
+      "size_b": 42,
+      "date": "2026-11-10"
+     },
+     {
+      "tenor": "30 年",
+      "size_b": 25,
+      "date": "2026-11-12"
+     }
+    ]
+   },
+   "coupon_sizes": {
+    "tenors": [
+     "2Y",
+     "3Y",
+     "5Y",
+     "7Y",
+     "10Y",
+     "20Y",
+     "30Y",
+     "FRN"
+    ],
+    "rows": [
+     {
+      "month": "2026-08",
+      "actual": true,
+      "v": [
+       69,
+       58,
+       70,
+       44,
+       42,
+       16,
+       25,
+       28
+      ]
+     },
+     {
+      "month": "2026-09",
+      "actual": true,
+      "v": [
+       69,
+       58,
+       70,
+       44,
+       39,
+       13,
+       22,
+       28
+      ]
+     },
+     {
+      "month": "2026-10",
+      "actual": true,
+      "v": [
+       69,
+       58,
+       70,
+       44,
+       39,
+       13,
+       22,
+       30
+      ]
+     },
+     {
+      "month": "2026-11",
+      "actual": false,
+      "v": [
+       69,
+       58,
+       70,
+       44,
+       42,
+       16,
+       25,
+       28
+      ]
+     },
+     {
+      "month": "2026-12",
+      "actual": false,
+      "v": [
+       69,
+       58,
+       70,
+       44,
+       39,
+       13,
+       22,
+       28
+      ]
+     },
+     {
+      "month": "2027-01",
+      "actual": false,
+      "v": [
+       69,
+       58,
+       70,
+       44,
+       39,
+       13,
+       22,
+       30
+      ]
+     }
+    ],
+    "guidance": "名目附息債與 FRN 標售規模「未來數季」維持不變（措辭沿用）"
+   },
+   "tips": [
+    {
+     "what": "11 月 10 年 TIPS 增額",
+     "size_b": 19
+    },
+    {
+     "what": "12 月 5 年 TIPS 增額",
+     "size_b": 24
+    },
+    {
+     "what": "1 月 10 年 TIPS 新發",
+     "size_b": 21
+    }
+   ],
+   "bills": "11 月下旬前維持基準 Bills 規模，月底可能發行短天期 CMB；12 月中企業稅入帳後縮減短天期 Bills；1 月因季節性支出擴大整條 Bills 曲線。",
+   "tga": {
+    "end_dec_assumption_b": 850,
+    "end_mar_assumption_b": 1000,
+    "peak_b": 1025,
+    "peak_band_b": 50,
+    "peak_when": "11 月下旬與 1 月下旬"
+   },
+   "buybacks": {
+    "liquidity_support_b": 70,
+    "cash_mgmt_b": 25,
+    "cash_mgmt_bucket": "1 個月–2 年"
+   },
+   "structural": [
+    "7 年期票券自 2027 年 3 月起改為每季新發、兩次增額（比照 10 年期）。",
+    "財政部持續觀察 SOMA 買進 Bills 與民間對 Bills 的需求成長。"
+   ],
+   "tbac": {
+    "recommendation": "本季名目附息債、FRN、TIPS 規模維持不變；FY2027 下半年可能需要擴大附息債規模，增量集中在 2–10 年。建議調整前瞻指引措辭。",
+    "funding_gap": "主要交易商中位數預估：以現行附息債規模，FY2028–29 合計資金缺口約 2.14 兆美元；FY2027 缺口小，可用 Bills 補。",
+    "views": [
+     "殖利率上升主要反映成長、政策預期與能源價格，而非發債造成的供給衝擊。",
+     "目前沒有證據顯示 AI／SI 相關企業發債排擠長天期公債需求，但融資循環仍在早期。",
+     "MMF 資產已持平，Bills 市場開始出現價格敏感跡象。",
+     "8 月以來 2 年殖利率約升 50bp、10 年約升 40bp；10 年一度約 5.4%、30 年約 5.7%（10 月初）。",
+     "紐約聯準銀行 ACM 模型的 10 年期限溢酬 9 月約升 20bp。"
+    ]
+   },
+   "sources": [
+    {
+     "name": "美國財政部 季度再融資聲明（2026/11/4）",
+     "url": "https://home.treasury.gov/news/press-releases"
+    },
+    {
+     "name": "TBAC 致財政部長報告（2026/11/4）",
+     "url": "https://home.treasury.gov/news/press-releases"
+    },
+    {
+     "name": "TBAC 會議紀錄（2026/11/3）",
+     "url": "https://home.treasury.gov/news/press-releases"
+    },
+    {
+     "name": "財政部借款估計（2026/11/2）",
+     "url": "https://home.treasury.gov/news/press-releases/sb0675"
+    }
+   ]
+  },
+  "qra_check": {
+   "tga_wed": 892.3,
+   "peak": 1025,
+   "band": 50,
+   "end_dec": 850,
+   "in_peak_band": false,
+   "gap_to_end_dec": 42.3
+  }
+ }
+}
