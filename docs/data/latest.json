@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T02:47:25+00:00",
+ "generated_at": "2026-11-22T08:17:44+00:00",
  "session": "fri",
  "session_date": "2026-11-20",
  "thu_date": "2026-11-19",
@@ -1594,25 +1594,18 @@
     "day_bp": -14.0
    },
    {
-    "ticker": "DX-Y.NYB",
-    "name": "美元指數",
-    "value": 103.84,
-    "day_pct": -0.06,
-    "wtd_pct": 0.42
-   },
-   {
     "ticker": "CL=F",
     "name": "WTI 原油",
-    "value": 83.62,
-    "day_pct": 0.49,
-    "wtd_pct": -5.58
+    "value": 83.41,
+    "day_pct": 0.24,
+    "wtd_pct": -5.82
    },
    {
     "ticker": "GC=F",
     "name": "黃金",
-    "value": 3539.0,
-    "day_pct": -3.98,
-    "wtd_pct": -8.94
+    "value": 3515.3999,
+    "day_pct": -4.62,
+    "wtd_pct": -9.54
    }
   ]
  },
@@ -2056,7 +2049,7 @@
   ]
  },
  "liquidity": {
-  "generated_at": "2026-11-21T02:47:25Z",
+  "generated_at": "2026-11-22T08:17:44Z",
   "log": [
    "H.4.1 週別 66（本次補抓 0），最新週 2026-11-18"
   ],
@@ -2952,44 +2945,100 @@
    {
     "name": "高收益債利差",
     "group": "FRED（選用）",
-    "value": null,
-    "note": "未設定 FRED_API_KEY，資料未取得"
+    "value": 3.52,
+    "unit": "%",
+    "date": "2026-11-19",
+    "chg_wk": 32.0,
+    "chg_unit": "bp",
+    "pct": 100.0,
+    "lo": 2.6,
+    "hi": 3.52,
+    "signal": "警告",
+    "note": "★＋☆ 2.9–3.5% 注意區"
    },
    {
     "name": "投資等級債利差",
     "group": "FRED（選用）",
-    "value": null,
-    "note": "未設定 FRED_API_KEY，資料未取得"
+    "value": 0.94,
+    "unit": "%",
+    "date": "2026-11-19",
+    "chg_wk": 5.0,
+    "chg_unit": "bp",
+    "pct": 100.0,
+    "lo": 0.73,
+    "hi": 0.94,
+    "signal": "警告",
+    "note": "★ 一年分布"
    },
    {
     "name": "STLFSI4 聖路易聯準銀行",
     "group": "FRED（選用）",
-    "value": null,
-    "note": "未設定 FRED_API_KEY，資料未取得"
+    "value": -0.866,
+    "unit": "",
+    "date": "2026-11-13",
+    "chg_wk": -0.375,
+    "chg_unit": "abs",
+    "pct": 6.0,
+    "lo": -0.946,
+    "hi": -0.124,
+    "signal": "正常",
+    "note": "☆ 低於 0 無壓力"
    },
    {
     "name": "聯準會遞延資產（十億美元）",
     "group": "FRED（選用）",
-    "value": null,
-    "note": "未設定 FRED_API_KEY，資料未取得"
+    "value": -230.8,
+    "unit": "B",
+    "date": "2026-11-18",
+    "chg_wk": 0.3,
+    "chg_unit": "abs",
+    "pct": 100.0,
+    "lo": -245.9,
+    "hi": -230.8,
+    "signal": "方向",
+    "note": "○ 只記方向"
    },
    {
     "name": "M2 貨幣供給（十億美元）",
     "group": "FRED（選用）",
-    "value": null,
-    "note": "未設定 FRED_API_KEY，資料未取得"
+    "value": 23508.0,
+    "unit": "B",
+    "date": "2026-10-05",
+    "chg_wk": 214.0,
+    "chg_unit": "abs",
+    "pct": 100.0,
+    "lo": 22062.0,
+    "hi": 23508.0,
+    "signal": "方向",
+    "note": "○ 只記方向"
    },
    {
     "name": "工商業貸款 C&I（十億美元）",
     "group": "FRED（選用）",
-    "value": null,
-    "note": "未設定 FRED_API_KEY，資料未取得"
+    "value": 2997.0,
+    "unit": "B",
+    "date": "2026-10-01",
+    "chg_wk": 28.0,
+    "chg_unit": "abs",
+    "pct": 100.0,
+    "lo": 2701.0,
+    "hi": 2997.0,
+    "signal": "方向",
+    "note": "○ 只記方向"
    },
    {
     "name": "初領失業救濟金（人）",
     "group": "FRED（選用）",
-    "value": null,
-    "note": "未設定 FRED_API_KEY，資料未取得"
+    "value": 203000.0,
+    "unit": "",
+    "date": "2026-11-14",
+    "chg_wk": 1000.0,
+    "chg_unit": "abs",
+    "pct": 34.0,
+    "lo": 189000.0,
+    "hi": 235000.0,
+    "signal": "方向",
+    "note": "○ 只記方向"
    }
   ],
   "market": {
@@ -3185,10 +3234,10 @@
     {
      "name": "美元指數 DXY",
      "group": "全球與匯率",
-     "value": 103.84,
+     "value": 103.81,
      "unit": "",
      "date": "2026-11-20",
-     "chg_wk": 0.43,
+     "chg_wk": 0.4,
      "chg_unit": "abs",
      "pct": 99.0,
      "lo": 96.22,
@@ -3227,12 +3276,12 @@
     {
      "name": "美元兌人民幣",
      "group": "全球與匯率",
-     "value": 6.66,
+     "value": 6.68,
      "unit": "",
-     "date": "2026-11-21",
-     "chg_wk": -0.01,
+     "date": "2026-11-22",
+     "chg_wk": 0.01,
      "chg_unit": "abs",
-     "pct": 2.0,
+     "pct": 7.0,
      "lo": 6.65,
      "hi": 7.11,
      "signal": "方向",
@@ -3255,12 +3304,12 @@
     {
      "name": "美元兌韓元",
      "group": "全球與匯率",
-     "value": 1334.79,
+     "value": 1337.8,
      "unit": "",
-     "date": "2026-11-20",
-     "chg_wk": 1.01,
+     "date": "2026-11-22",
+     "chg_wk": 4.02,
      "chg_unit": "abs",
-     "pct": 6.0,
+     "pct": 7.0,
      "lo": 1321.76,
      "hi": 1554.48,
      "signal": "方向",
@@ -3425,13 +3474,13 @@
     {
      "name": "比特幣",
      "group": "原物料與加密貨幣",
-     "value": 58552.04,
+     "value": 59211.79,
      "unit": "",
-     "date": "2026-11-21",
-     "chg_wk": -5576.01,
+     "date": "2026-11-22",
+     "chg_wk": -6093.27,
      "chg_unit": "abs",
-     "pct": 0.0,
-     "lo": 58552.04,
+     "pct": 1.0,
+     "lo": 58558.86,
      "hi": 96929.33,
      "signal": "方向",
      "note": "○ 只記方向"
@@ -3439,12 +3488,12 @@
     {
      "name": "以太幣",
      "group": "原物料與加密貨幣",
-     "value": 1616.04,
+     "value": 1671.11,
      "unit": "",
-     "date": "2026-11-21",
-     "chg_wk": -153.08,
+     "date": "2026-11-22",
+     "chg_wk": -164.39,
      "chg_unit": "abs",
-     "pct": 3.0,
+     "pct": 4.0,
      "lo": 1564.82,
      "hi": 3354.72,
      "signal": "方向",
@@ -3555,54 +3604,6 @@
    }
   ],
   "auctions": [
-   {
-    "date": "2026-11-12",
-    "type": "Bill",
-    "term": "4-Week",
-    "size_b": 115.0,
-    "rate": 4.022,
-    "btc": 2.94,
-    "band": "普通",
-    "dealer_pct": 25.2,
-    "indirect_pct": 67.1,
-    "reopening": "Yes"
-   },
-   {
-    "date": "2026-11-12",
-    "type": "Bill",
-    "term": "8-Week",
-    "size_b": 110.0,
-    "rate": 4.163,
-    "btc": 2.5,
-    "band": "普通",
-    "dealer_pct": 39.2,
-    "indirect_pct": 53.0,
-    "reopening": "Yes"
-   },
-   {
-    "date": "2026-11-12",
-    "type": "Bill",
-    "term": "17-Week",
-    "size_b": 75.0,
-    "rate": 4.344,
-    "btc": 2.78,
-    "band": "普通",
-    "dealer_pct": 42.3,
-    "indirect_pct": 52.9,
-    "reopening": "No"
-   },
-   {
-    "date": "2026-11-12",
-    "type": "Bond",
-    "term": "30-Year",
-    "size_b": 25.0,
-    "rate": 5.441,
-    "btc": 2.36,
-    "band": "偏弱",
-    "dealer_pct": 11.4,
-    "indirect_pct": 68.1,
-    "reopening": "No"
-   },
    {
     "date": "2026-11-16",
     "type": "Bill",
