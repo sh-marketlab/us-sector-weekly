@@ -35,6 +35,11 @@
   "session": "fri"
  },
  {
+  "key": "2026-11-25-other",
+  "date": "2026-11-25",
+  "session": "other"
+ },
+ {
   "key": "2026-11-25-thu",
   "date": "2026-11-25",
   "session": "thu"

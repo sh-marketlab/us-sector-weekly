@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-26T22:49:34+00:00",
- "session": "thu",
+ "generated_at": "2026-11-27T03:46:07+00:00",
+ "session": "other",
  "session_date": "2026-11-25",
  "thu_date": null,
  "market_closed_today": true,
@@ -1046,29 +1046,29 @@
   ]
  },
  "taiwan": {
-  "date": "2026-11-25",
-  "relation": "before",
-  "reacts_to_us": "2026-11-24",
+  "date": "2026-11-27",
+  "relation": "reaction",
+  "reacts_to_us": "2026-11-25",
   "indices": [
    {
     "ticker": "^TWII",
     "name": "加權指數",
-    "date": "2026-11-25",
-    "close": 38195.4297,
-    "day_pct": -4.8,
-    "wtd_pct": 6.0,
-    "m1_pct": -17.14,
-    "vol_ratio": 1.14,
-    "flow": -5.47,
+    "date": "2026-11-27",
+    "close": 39374.0,
+    "day_pct": 0.57,
+    "wtd_pct": 9.27,
+    "m1_pct": -15.08,
+    "vol_ratio": 0.0,
+    "flow": 0.0,
     "stale": false
    }
   ],
   "usdtwd": {
-   "date": "2026-11-25",
-   "close": 32.921,
-   "day_pct": 0.22,
-   "wtd_pct": -0.32,
-   "m1_pct": 1.19,
+   "date": "2026-11-27",
+   "close": 32.943,
+   "day_pct": -0.74,
+   "wtd_pct": -0.25,
+   "m1_pct": 1.73,
    "vol_ratio": null,
    "flow": null,
    "stale": false
@@ -1231,43 +1231,43 @@
    {
     "key": "semis",
     "us_name": "半導體",
-    "us_ref_date": "2026-11-24",
-    "us_day_pct": -6.58,
+    "us_ref_date": "2026-11-25",
+    "us_day_pct": -2.02,
     "us_wtd_pct": 4.28,
     "tw_name": "台股半導體",
-    "tw_day_pct": -7.88,
-    "tw_wtd_pct": 7.98,
+    "tw_day_pct": 0.78,
+    "tw_wtd_pct": 10.91,
     "members": [
      {
       "ticker": "2330.TW",
-      "close": 2150.0,
-      "day_pct": -3.59,
-      "wtd_pct": 7.5,
-      "vol_ratio": 1.94,
+      "close": 2170.0,
+      "day_pct": 1.17,
+      "wtd_pct": 8.5,
+      "vol_ratio": 0.36,
       "stale": false
      },
      {
       "ticker": "2454.TW",
-      "close": 3645.0,
-      "day_pct": -10.0,
-      "wtd_pct": 8.81,
-      "vol_ratio": 1.73,
+      "close": 3700.0,
+      "day_pct": -0.13,
+      "wtd_pct": 10.45,
+      "vol_ratio": 0.44,
       "stale": false
      },
      {
       "ticker": "2303.TW",
-      "close": 87.4,
-      "day_pct": -9.99,
-      "wtd_pct": 8.84,
-      "vol_ratio": 1.24,
+      "close": 88.9,
+      "day_pct": 0.11,
+      "wtd_pct": 10.71,
+      "vol_ratio": 0.35,
       "stale": false
      },
      {
       "ticker": "3711.TW",
-      "close": 488.0,
-      "day_pct": -7.92,
-      "wtd_pct": 6.78,
-      "vol_ratio": 1.39,
+      "close": 521.0,
+      "day_pct": 1.96,
+      "wtd_pct": 14.0,
+      "vol_ratio": 0.38,
       "stale": false
      }
     ]
@@ -1275,43 +1275,43 @@
    {
     "key": "megacap",
     "us_name": "科技巨頭",
-    "us_ref_date": "2026-11-24",
-    "us_day_pct": -1.07,
+    "us_ref_date": "2026-11-25",
+    "us_day_pct": -1.11,
     "us_wtd_pct": 6.36,
     "tw_name": "台股 AI 伺服器",
-    "tw_day_pct": -7.12,
-    "tw_wtd_pct": 3.3,
+    "tw_day_pct": 1.96,
+    "tw_wtd_pct": 13.95,
     "members": [
      {
       "ticker": "2382.TW",
-      "close": 261.0,
-      "day_pct": -7.61,
-      "wtd_pct": 3.57,
-      "vol_ratio": 1.24,
+      "close": 281.5,
+      "day_pct": 0.18,
+      "wtd_pct": 11.71,
+      "vol_ratio": 0.24,
       "stale": false
      },
      {
       "ticker": "2317.TW",
-      "close": 206.5,
-      "day_pct": -8.83,
-      "wtd_pct": -1.67,
-      "vol_ratio": 1.86,
+      "close": 220.5,
+      "day_pct": 1.85,
+      "wtd_pct": 5.0,
+      "vol_ratio": 0.36,
       "stale": false
      },
      {
       "ticker": "3231.TW",
-      "close": 152.0,
-      "day_pct": -6.75,
-      "wtd_pct": 3.4,
-      "vol_ratio": 1.05,
+      "close": 164.5,
+      "day_pct": -1.5,
+      "wtd_pct": 11.9,
+      "vol_ratio": 0.32,
       "stale": false
      },
      {
       "ticker": "6669.TW",
-      "close": 1430.0,
-      "day_pct": -5.3,
-      "wtd_pct": 7.92,
-      "vol_ratio": 1.25,
+      "close": 1685.0,
+      "day_pct": 7.32,
+      "wtd_pct": 27.17,
+      "vol_ratio": 1.28,
       "stale": false
      }
     ]
@@ -1319,51 +1319,51 @@
    {
     "key": "dc_grid",
     "us_name": "資料中心與電網",
-    "us_ref_date": "2026-11-24",
-    "us_day_pct": -3.42,
+    "us_ref_date": "2026-11-25",
+    "us_day_pct": -1.35,
     "us_wtd_pct": 2.3,
     "tw_name": "台股重電·散熱",
-    "tw_day_pct": -5.33,
-    "tw_wtd_pct": 5.84,
+    "tw_day_pct": -0.12,
+    "tw_wtd_pct": 13.69,
     "members": [
      {
       "ticker": "1513.TW",
-      "close": 133.0,
-      "day_pct": -5.34,
-      "wtd_pct": 4.31,
-      "vol_ratio": 0.88,
+      "close": 137.5,
+      "day_pct": -0.36,
+      "wtd_pct": 7.84,
+      "vol_ratio": 0.23,
       "stale": false
      },
      {
       "ticker": "1519.TW",
-      "close": 433.0,
-      "day_pct": -7.38,
-      "wtd_pct": 2.73,
-      "vol_ratio": 0.68,
+      "close": 489.0,
+      "day_pct": 2.73,
+      "wtd_pct": 16.01,
+      "vol_ratio": 0.49,
       "stale": false
      },
      {
       "ticker": "1503.TW",
-      "close": 153.0,
-      "day_pct": -5.26,
-      "wtd_pct": 6.25,
-      "vol_ratio": 1.04,
+      "close": 161.5,
+      "day_pct": -0.31,
+      "wtd_pct": 12.15,
+      "vol_ratio": 0.24,
       "stale": false
      },
      {
       "ticker": "3017.TW",
-      "close": 2545.0,
-      "day_pct": -2.12,
-      "wtd_pct": 15.42,
-      "vol_ratio": 2.51,
+      "close": 2870.0,
+      "day_pct": 2.68,
+      "wtd_pct": 30.16,
+      "vol_ratio": 0.91,
       "stale": false
      },
      {
       "ticker": "3324.TWO",
-      "close": 798.0,
-      "day_pct": -6.56,
-      "wtd_pct": 0.5,
-      "vol_ratio": 1.22,
+      "close": 812.0,
+      "day_pct": -5.36,
+      "wtd_pct": 2.27,
+      "vol_ratio": 0.58,
       "stale": false
      }
     ]
@@ -1371,19 +1371,19 @@
    {
     "key": "ai_software",
     "us_name": "AI 軟體與資安",
-    "us_ref_date": "2026-11-24",
-    "us_day_pct": 0.25,
+    "us_ref_date": "2026-11-25",
+    "us_day_pct": 0.38,
     "us_wtd_pct": 3.59,
     "tw_name": "台股網通",
-    "tw_day_pct": -0.67,
-    "tw_wtd_pct": 19.92,
+    "tw_day_pct": -2.47,
+    "tw_wtd_pct": 28.46,
     "members": [
      {
       "ticker": "2345.TW",
-      "close": 1475.0,
-      "day_pct": -0.67,
-      "wtd_pct": 19.92,
-      "vol_ratio": 2.11,
+      "close": 1580.0,
+      "day_pct": -2.47,
+      "wtd_pct": 28.46,
+      "vol_ratio": 0.73,
       "stale": false
      }
     ]
@@ -1391,41 +1391,53 @@
    {
     "key": "defensive",
     "us_name": "防禦（金融·必需·食品水）",
-    "us_ref_date": "2026-11-24",
-    "us_day_pct": 1.2,
+    "us_ref_date": "2026-11-25",
+    "us_day_pct": 0.4,
     "us_wtd_pct": 2.54,
     "tw_name": "台股金融",
-    "tw_day_pct": -5.74,
-    "tw_wtd_pct": -0.77,
+    "tw_day_pct": 0.1,
+    "tw_wtd_pct": 3.64,
     "members": [
      {
       "ticker": "2881.TW",
-      "close": 132.5,
-      "day_pct": -7.67,
-      "wtd_pct": -2.93,
-      "vol_ratio": 1.44,
+      "close": 140.0,
+      "day_pct": 1.08,
+      "wtd_pct": 2.56,
+      "vol_ratio": 0.34,
       "stale": false
      },
      {
       "ticker": "2882.TW",
-      "close": 100.5,
-      "day_pct": -3.83,
-      "wtd_pct": 3.72,
-      "vol_ratio": 1.98,
+      "close": 104.0,
+      "day_pct": -0.48,
+      "wtd_pct": 7.33,
+      "vol_ratio": 0.57,
       "stale": false
      },
      {
       "ticker": "2891.TW",
-      "close": 65.9,
-      "day_pct": -5.72,
-      "wtd_pct": -3.09,
-      "vol_ratio": 1.19,
+      "close": 68.7,
+      "day_pct": -0.29,
+      "wtd_pct": 1.03,
+      "vol_ratio": 0.44,
       "stale": false
      }
     ]
    }
   ],
   "foreign_flows": [
+   {
+    "date": "2026-11-26",
+    "foreign_net_e8": -491.81,
+    "detail": {
+     "自營商(自行買賣)": 40.03,
+     "自營商(避險)": 88.62,
+     "投信": 212.13,
+     "外資及陸資(不含外資自營商)": -491.81,
+     "外資自營商": 0.0,
+     "合計": -151.03
+    }
+   },
    {
     "date": "2026-11-25",
     "foreign_net_e8": -1236.55,
@@ -1473,25 +1485,14 @@
      "外資自營商": 0.0,
      "合計": -509.41
     }
-   },
-   {
-    "date": "2026-11-19",
-    "foreign_net_e8": -243.12,
-    "detail": {
-     "自營商(自行買賣)": -18.63,
-     "自營商(避險)": -214.4,
-     "投信": 43.9,
-     "外資及陸資(不含外資自營商)": -243.12,
-     "外資自營商": 0.0,
-     "合計": -432.25
-    }
    }
   ]
  },
  "liquidity": {
-  "generated_at": "2026-11-26T22:49:34Z",
+  "generated_at": "2026-11-27T03:46:07Z",
   "log": [
-   "H.4.1 週別 66（本次補抓 0），最新週 2026-11-18"
+   "H.4.1 週別 66（本次補抓 0），最新週 2026-11-18",
+   "每日 TGA 失敗：504 Server Error: Gateway Time-out for url: https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance?filter=record_date:gte:2026-10-13&page%5Bsize%5D=1000"
   ],
   "qra_key": "2026-11",
   "h41": {
@@ -2674,10 +2675,10 @@
     {
      "name": "美元指數 DXY",
      "group": "全球與匯率",
-     "value": 103.76,
+     "value": 103.68,
      "unit": "",
      "date": "2026-11-26",
-     "chg_wk": -0.14,
+     "chg_wk": -0.22,
      "chg_unit": "abs",
      "pct": 98.0,
      "lo": 96.22,
@@ -2688,24 +2689,24 @@
     {
      "name": "美元兌新台幣",
      "group": "全球與匯率",
-     "value": 32.92,
+     "value": 32.94,
      "unit": "",
-     "date": "2026-11-26",
-     "chg_wk": -0.01,
+     "date": "2026-11-27",
+     "chg_wk": -0.08,
      "chg_unit": "abs",
-     "pct": 97.0,
+     "pct": 98.0,
      "lo": 31.08,
-     "hi": 33.11,
+     "hi": 33.19,
      "signal": "方向",
      "note": "○ 只記方向"
     },
     {
      "name": "美元兌日圓",
      "group": "全球與匯率",
-     "value": 159.22,
+     "value": 159.23,
      "unit": "",
-     "date": "2026-11-26",
-     "chg_wk": -0.16,
+     "date": "2026-11-27",
+     "chg_wk": -0.48,
      "chg_unit": "abs",
      "pct": 68.0,
      "lo": 152.45,
@@ -2718,10 +2719,10 @@
      "group": "全球與匯率",
      "value": 6.66,
      "unit": "",
-     "date": "2026-11-26",
-     "chg_wk": -0.01,
+     "date": "2026-11-27",
+     "chg_wk": -0.0,
      "chg_unit": "abs",
-     "pct": 1.0,
+     "pct": 2.0,
      "lo": 6.65,
      "hi": 7.08,
      "signal": "方向",
@@ -2732,10 +2733,10 @@
      "group": "全球與匯率",
      "value": 1.1,
      "unit": "",
-     "date": "2026-11-26",
+     "date": "2026-11-27",
      "chg_wk": 0.0,
      "chg_unit": "abs",
-     "pct": 2.0,
+     "pct": 3.0,
      "lo": 1.09,
      "hi": 1.2,
      "signal": "方向",
@@ -2744,12 +2745,12 @@
     {
      "name": "美元兌韓元",
      "group": "全球與匯率",
-     "value": 1343.21,
+     "value": 1341.18,
      "unit": "",
-     "date": "2026-11-26",
-     "chg_wk": 12.81,
+     "date": "2026-11-27",
+     "chg_wk": 6.39,
      "chg_unit": "abs",
-     "pct": 14.0,
+     "pct": 12.0,
      "lo": 1321.76,
      "hi": 1554.48,
      "signal": "方向",
@@ -2786,12 +2787,12 @@
     {
      "name": "日經 225",
      "group": "全球與匯率",
-     "value": 57011.62,
+     "value": 58473.32,
      "unit": "",
-     "date": "2026-11-25",
-     "chg_wk": -2012.66,
+     "date": "2026-11-27",
+     "chg_wk": 2036.67,
      "chg_unit": "abs",
-     "pct": 35.0,
+     "pct": 39.0,
      "lo": 49001.5,
      "hi": 72366.34,
      "signal": "方向",
@@ -2914,12 +2915,12 @@
     {
      "name": "比特幣",
      "group": "原物料與加密貨幣",
-     "value": 60564.61,
+     "value": 61456.65,
      "unit": "",
-     "date": "2026-11-26",
-     "chg_wk": -1337.21,
+     "date": "2026-11-27",
+     "chg_wk": 2657.67,
      "chg_unit": "abs",
-     "pct": 3.0,
+     "pct": 5.0,
      "lo": 58558.86,
      "hi": 96929.33,
      "signal": "方向",
@@ -2928,12 +2929,12 @@
     {
      "name": "以太幣",
      "group": "原物料與加密貨幣",
-     "value": 1696.33,
+     "value": 1728.22,
      "unit": "",
-     "date": "2026-11-26",
-     "chg_wk": -58.86,
+     "date": "2026-11-27",
+     "chg_wk": 108.79,
      "chg_unit": "abs",
-     "pct": 6.0,
+     "pct": 9.0,
      "lo": 1564.82,
      "hi": 3354.72,
      "signal": "方向",
@@ -2941,108 +2942,6 @@
     }
    ]
   },
-  "tga_daily": [
-   {
-    "date": "2026-10-20",
-    "tga": 973.7
-   },
-   {
-    "date": "2026-10-21",
-    "tga": 945.2
-   },
-   {
-    "date": "2026-10-22",
-    "tga": 961.8
-   },
-   {
-    "date": "2026-10-23",
-    "tga": 982.5
-   },
-   {
-    "date": "2026-10-26",
-    "tga": 1020.7
-   },
-   {
-    "date": "2026-10-27",
-    "tga": 1052.5
-   },
-   {
-    "date": "2026-10-28",
-    "tga": 1015.6
-   },
-   {
-    "date": "2026-10-29",
-    "tga": 1040.2
-   },
-   {
-    "date": "2026-10-30",
-    "tga": 951.6
-   },
-   {
-    "date": "2026-11-02",
-    "tga": 930.8
-   },
-   {
-    "date": "2026-11-03",
-    "tga": 938.2
-   },
-   {
-    "date": "2026-11-04",
-    "tga": 936.2
-   },
-   {
-    "date": "2026-11-05",
-    "tga": 922.8
-   },
-   {
-    "date": "2026-11-06",
-    "tga": 910.3
-   },
-   {
-    "date": "2026-11-09",
-    "tga": 922.6
-   },
-   {
-    "date": "2026-11-10",
-    "tga": 912.1
-   },
-   {
-    "date": "2026-11-12",
-    "tga": 933.1
-   },
-   {
-    "date": "2026-11-13",
-    "tga": 924.6
-   },
-   {
-    "date": "2026-11-16",
-    "tga": 895.8
-   },
-   {
-    "date": "2026-11-17",
-    "tga": 921.2
-   },
-   {
-    "date": "2026-11-18",
-    "tga": 892.3
-   },
-   {
-    "date": "2026-11-19",
-    "tga": 891.2
-   },
-   {
-    "date": "2026-11-20",
-    "tga": 880.8
-   },
-   {
-    "date": "2026-11-23",
-    "tga": 898.8
-   },
-   {
-    "date": "2026-11-24",
-    "tga": 958.4
-   }
-  ],
   "auctions": [
    {
     "date": "2026-11-17",
